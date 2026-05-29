@@ -1,0 +1,55 @@
+{
+  "game": {
+    "name": "Pickaxe Tycoon",
+    "robloxId": "73814003954154",
+    "developer": "Popular Marketplace",
+    "genre": "Tycoon / Simulator",
+    "currentVersion": "Magmatic Cavern Update",
+    "lastUpdated": "2026-05-18",
+    "platforms": ["PC", "Mobile", "Console"]
+  },
+  "stats": {
+    "visits": "9.8M+",
+    "favorites": "46,700+",
+    "likes": "133,800+",
+    "onlineNow": "16,000+",
+    "serverSize": 6,
+    "active": true,
+    "rating": "98.9%",
+    "pickaxeCount": 24
+  },
+  "seo": {
+    "siteTitle": "Pickaxe Tycoon Guide & Tools (2026)",
+    "siteDescription": "The ultimate Pickaxe Tycoon companion — merge calculator, tier list, codes, and beginner guides. Updated for the Magmatic Cavern update.",
+    "baseUrl": "https://pickaxe-tycoon.gg",
+    "primaryKeywords": [
+      "Pickaxe Tycoon",
+      "Pickaxe Tycoon Roblox",
+      "Pickaxe Tycoon codes",
+      "Pickaxe Tycoon merge"
+    ],
+    "secondaryKeywords": [
+      "Pickaxe Tycoon calculator",
+      "Pickaxe Tycoon tier list",
+      "Pickaxe Tycoon guide",
+      "Pickaxe Tycoon legendary pickaxe"
+    ],
+    "defaultOgImage": "/og-default.jpg"
+  },
+  "routes": [
+    { "path": "/", "title": "Pickaxe Tycoon Guide", "priority": "1.0" },
+    { "path": "/calculator/", "title": "Pickaxe Tycoon Merge Calculator", "priority": "0.9" },
+    { "path": "/codes/", "title": "Pickaxe Tycoon Codes", "priority": "0.9" },
+    { "path": "/tier-list/", "title": "Pickaxe Tycoon Tier List", "priority": "0.9" },
+    { "path": "/beginner-guide/", "title": "Pickaxe Tycoon Beginner Guide", "priority": "0.8" },
+    { "path": "/wiki/", "title": "Pickaxe Tycoon Wiki", "priority": "0.8" },
+    { "path": "/updates/", "title": "Pickaxe Tycoon Updates", "priority": "0.8" }
+  ],
+  "calculator": {
+    "type": "progression",
+    "dataFile": "pickaxes.json"
+  },
+  "socials": {
+    "roblox": "https://www.roblox.com/games/73814003954154/Pickaxe-Tycoon"
+  }
+}

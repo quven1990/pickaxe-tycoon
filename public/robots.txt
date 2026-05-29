@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pickaxe-tycoon.gg/sitemap.xml

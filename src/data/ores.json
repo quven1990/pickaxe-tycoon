@@ -1,0 +1,39 @@
+{
+  "areas": [
+    {
+      "id": "home-base",
+      "name": "Home Base",
+      "status": "available",
+      "description": "Your personal plot with mining basin, furnace, merge platform, and purchase pads (Buy 1/5/25/100)."
+    },
+    {
+      "id": "magmatic-cavern",
+      "name": "Magmatic Cavern",
+      "status": "expanded",
+      "updated": "2026-05-16",
+      "description": "Fiery underground zone with tougher ores. Expanded in the May 2026 update with a locked gate hinting at future content.",
+      "ores": ["amber", "kunzite"],
+      "enemies": ["Galatean Warrior"],
+      "pickaxeUnlock": "Magma Pickaxe (Tier 18)"
+    },
+    {
+      "id": "upcoming-zone",
+      "name": "Upcoming Zone",
+      "status": "locked",
+      "description": "A locked gate in Magmatic Cavern leads to an unreleased area. Not ready yet per developer update (May 16, 2026)."
+    }
+  ],
+  "ores": [
+    { "id": "stone", "name": "Stone", "tierRange": "1-6", "rarity": "common", "description": "Basic minerals mined in early game." },
+    { "id": "copper-ore", "name": "Copper", "tierRange": "1-6", "rarity": "common", "description": "Common ore from early tiers." },
+    { "id": "gold-ore", "name": "Gold", "tierRange": "7-14", "rarity": "rare", "description": "Higher-value ore unlocked at mid tiers." },
+    { "id": "crystal-ore", "name": "Crystal", "tierRange": "7-14", "rarity": "rare", "description": "Rare ore requiring higher-tier pickaxes." },
+    { "id": "dark-matter-ore", "name": "Dark Matter", "tierRange": "15-24", "rarity": "legendary", "description": "Very high value, lower volume — late game." },
+    { "id": "amber", "name": "Amber", "tierRange": "Magmatic Cavern", "rarity": "rare", "description": "New ore introduced in Magmatic Cavern (May 2026 update)." },
+    { "id": "kunzite", "name": "Kunzite", "tierRange": "Magmatic Cavern", "rarity": "rare", "description": "New ore found in the expanded Magmatic Cavern area." }
+  ],
+  "events": [
+    { "id": "meteor", "name": "Meteor Spawns", "description": "Notifications alert when meteors appear for bonus resources." },
+    { "id": "weak-pickaxe", "name": "Pickaxe Weakness Warning", "description": "In-game notification when your pickaxe struggles with current ores — time to upgrade." }
+  ]
+}

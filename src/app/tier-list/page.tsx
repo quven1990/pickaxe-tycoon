@@ -1,0 +1,69 @@
+import { getPickaxes, GRADE_COLORS } from '@/lib/data';
+import { JsonLd } from '@/components/JsonLd';
+import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+
+export const metadata = generateSEOMetadata({
+  title: 'Pickaxe Tycoon Tier List',
+  description:
+    'Complete Pickaxe Tycoon tier list — all 24 pickaxes ranked from Wood (Tier 1) to Legendary (Tier 24). Merge info and area requirements.',
+  keywords: ['Pickaxe Tycoon tier list', 'best pickaxe Pickaxe Tycoon', 'Pickaxe Tycoon legendary'],
+  path: '/tier-list/',
+});
+
+const gradeOrder = ['S', 'A', 'B', 'C', 'D'] as const;
+
+export default function TierListPage() {
+  const pickaxes = getPickaxes();
+  const byGrade = gradeOrder.map((grade) => ({
+    grade,
+    pickaxes: pickaxes.filter((p) => p.grade === grade),
+  }));
+
+  return (
+    <>
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Tier List', url: '/tier-list/' },
+        ])}
+      />
+      <div className="max-w-4xl mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Tier List</h1>
+        <p className="text-zinc-400 mb-8">
+          All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Legendary Pickaxe) to complete the collection.
+        </p>
+
+        {byGrade.map(({ grade, pickaxes: group }) =>
+          group.length > 0 ? (
+            <section key={grade} className="mb-10">
+              <h2 className={`inline-block px-3 py-1 rounded-lg text-sm font-bold border mb-4 ${GRADE_COLORS[grade]}`}>
+                Grade {grade}
+              </h2>
+              <div className="space-y-3">
+                {group.map((p) => (
+                  <div
+                    key={p.id}
+                    className="flex items-center justify-between p-4 rounded-xl bg-zinc-900 border border-zinc-800"
+                  >
+                    <div>
+                      <div className="font-bold text-white">{p.name}</div>
+                      <div className="text-sm text-zinc-500">Tier {p.tier}</div>
+                      <div className="text-xs text-zinc-600 mt-1">{p.description}</div>
+                    </div>
+                    <div className="text-right flex-shrink-0 ml-4">
+                      {p.tier === 1 ? (
+                        <span className="text-xs text-green-400">Free</span>
+                      ) : (
+                        <span className="text-xs text-amber-400/80">Merge 3x prev tier</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null
+        )}
+      </div>
+    </>
+  );
+}

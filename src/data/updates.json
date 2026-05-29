@@ -1,0 +1,58 @@
+{
+  "updates": [
+    {
+      "id": "magmatic-cavern-may16",
+      "title": "Magmatic Cavern Expansion",
+      "date": "2026-05-16",
+      "version": "May 2026",
+      "summary": "Major expansion of Magmatic Cavern with new ores, combat improvements, and a locked gate to future content.",
+      "highlights": [
+        "Expanded Magmatic Cavern area with gate to new zone (not ready yet)",
+        "New ores: Amber and Kunzite in Magmatic Cavern",
+        "New boss: Galatean Warrior in Magmatic Caverns",
+        "Pickaxe Workshop — upgrade pickaxe damage and toughness resistance",
+        "Sword hit cooldown reduced from 0.2s to 0.11s",
+        "Items now persist through death",
+        "In-game feedback option in Settings menu",
+        "Mining hit registration and performance optimizations"
+      ]
+    },
+    {
+      "id": "magmatic-cavern-may18",
+      "title": "Magmatic Cavern Patch",
+      "date": "2026-05-18",
+      "version": "May 2026",
+      "summary": "Follow-up patch fixing Magmatic Cavern map errors and UI issues.",
+      "highlights": [
+        "Fixed map error in Magmatic Cavern area",
+        "UI fixes for smaller screen resolutions",
+        "Client and server optimizations (saving ~1ms on clients)"
+      ]
+    },
+    {
+      "id": "daily-rewards-april",
+      "title": "Daily Rewards System",
+      "date": "2026-04-26",
+      "version": "April 2026",
+      "summary": "Added daily reward system with free Money, Boosters, Items, and even gamepass perks.",
+      "highlights": [
+        "Claim free daily rewards every day (resets 00:00 UTC)",
+        "Rewards include Money, Boosters, Items, and gamepass perks",
+        "UI blur and zoom effects when opening menus"
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Game Launch",
+      "date": "2026-04-24",
+      "version": "1.0",
+      "summary": "Pickaxe Tycoon officially launched on Roblox by Popular Marketplace.",
+      "highlights": [
+        "Core loop: buy pickaxes, mine ores, merge upgrades, build mining tower",
+        "24 pickaxes in the index (Wood to Legendary)",
+        "Gamepasses: Auto Money (29R$), Auto Loot (79R$), Double Ore (499R$), 2x All Money (12R$)",
+        "Ore Multiplier peaks at 1.5x every 30 seconds"
+      ]
+    }
+  ]
+}

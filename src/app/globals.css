@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #f59e0b;
+    --color-secondary: #d97706;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply antialiased bg-zinc-950 text-zinc-100;
+  }
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/5 hover:-translate-y-0.5;
+}
+
+.prose-content h2 {
+  @apply text-2xl font-bold text-white mt-8 mb-4;
+}
+
+.prose-content h3 {
+  @apply text-xl font-semibold text-zinc-200 mt-6 mb-3;
+}
+
+.prose-content p {
+  @apply text-zinc-400 leading-relaxed mb-4;
+}
+
+.prose-content ul {
+  @apply list-disc list-inside text-zinc-400 space-y-2 mb-4;
+}
+
+.prose-content ol {
+  @apply list-decimal list-inside text-zinc-400 space-y-2 mb-4;
+}
+
+.prose-content strong {
+  @apply text-zinc-200;
+}
