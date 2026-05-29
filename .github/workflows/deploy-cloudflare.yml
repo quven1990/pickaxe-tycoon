@@ -36,10 +36,15 @@ jobs:
             exit 1
           fi
           TOKEN=$(printf '%s' "$CLOUDFLARE_API_TOKEN" | tr -d '\n\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          echo "Verifying API token..."
           verify=$(curl -sS "https://api.cloudflare.com/client/v4/user/tokens/verify" \
             -H "Authorization: Bearer ${TOKEN}")
+          echo "$verify" | head -c 500
           if ! echo "$verify" | grep -q '"success":true'; then
             echo "::error::CLOUDFLARE_API_TOKEN is invalid or expired."
+            echo "::error::Re-create at https://dash.cloudflare.com/profile/api-tokens (template: Edit Cloudflare Workers)"
+            echo "::error::Paste ONLY the long token string — not the permission summary text."
+            echo "::error::Update at https://github.com/${{ github.repository }}/settings/secrets/actions"
             exit 1
           fi
           echo "Cloudflare token verified."
