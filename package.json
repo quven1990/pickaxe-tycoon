@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && wrangler pages deploy out --project-name=pickaxe-tycoon"
+    "deploy": "npm run build && wrangler pages deploy out --project-name=pickaxe-tycoon-quven"
   },
   "dependencies": {
     "next": "^15.3.3",
