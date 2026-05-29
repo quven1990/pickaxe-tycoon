@@ -46,7 +46,19 @@ jobs:
             echo "::error::CLOUDFLARE_API_TOKEN is invalid or expired."
             exit 1
           fi
-          echo "Cloudflare token verified."
+          echo "Checking Cloudflare Pages API access..."
+          pages=$(curl -sS -w "\n%{http_code}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects" \
+            -H "Authorization: Bearer ${TOKEN}")
+          http_code=$(echo "$pages" | tail -n1)
+          body=$(echo "$pages" | sed '$d')
+          echo "$body" | head -c 500
+          if [ "$http_code" = "403" ] || [ "$http_code" = "401" ]; then
+            echo "::error::Token cannot access Cloudflare Pages (HTTP ${http_code})."
+            echo "::error::Recreate token with Account → Cloudflare Pages → Edit permission."
+            exit 1
+          fi
+          echo "Cloudflare token verified (Pages API HTTP ${http_code})."
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -62,6 +74,21 @@ jobs:
 
       - name: List build output
         run: ls -la out/ | head -20
+
+      - name: Ensure Pages project exists
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          TOKEN=$(printf '%s' "$CLOUDFLARE_API_TOKEN" | tr -d '\n\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          resp=$(curl -sS -w "\n%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects" \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"name":"pickaxe-tycoon-quven","production_branch":"main"}')
+          http_code=$(echo "$resp" | tail -n1)
+          body=$(echo "$resp" | sed '$d')
+          echo "$body" | head -c 500
+          echo "Create project HTTP ${http_code} (8000007/8000015 = already exists, OK)"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
