@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import PlausibleAnalytics from '@/components/PlausibleAnalytics';
+import MicrosoftClarity from '@/components/MicrosoftClarity';
 import './globals.css';
 
 const config = getGameConfig();
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen font-sans">
         <GoogleAnalytics />
         <PlausibleAnalytics />
+        <MicrosoftClarity />
         <Header />
         <main className="min-h-[calc(100vh-180px)]">{children}</main>
         <Footer />
