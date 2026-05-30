@@ -5,18 +5,22 @@
     "developer": "Popular Marketplace",
     "genre": "Tycoon / Simulator",
     "currentVersion": "Magmatic Cavern Update",
-    "lastUpdated": "2026-05-18",
+    "lastUpdated": "2026-05-31",
     "platforms": ["PC", "Mobile", "Console"]
   },
   "stats": {
-    "visits": "9.8M+",
-    "favorites": "46,700+",
+    "visits": "15M+",
+    "favorites": "69,000+",
     "likes": "133,800+",
-    "onlineNow": "16,000+",
+    "onlineNow": "20,000+",
     "serverSize": 6,
     "active": true,
     "rating": "98.9%",
     "pickaxeCount": 24
+  },
+  "contact": {
+    "privacy": "privacy@pickaxe-tycoon.xyz",
+    "general": "contract@pickaxe-tycoon.xyz"
   },
   "seo": {
     "siteTitle": "Pickaxe Tycoon Guide & Tools (2026)",
@@ -49,13 +53,13 @@
     ]
   },
   "routes": [
-    { "path": "/", "title": "Pickaxe Tycoon Guide", "priority": "1.0" },
-    { "path": "/calculator/", "title": "Pickaxe Tycoon Merge Calculator", "priority": "0.9" },
-    { "path": "/codes/", "title": "Pickaxe Tycoon Codes", "priority": "0.9" },
-    { "path": "/tier-list/", "title": "Pickaxe Tycoon Tier List", "priority": "0.9" },
-    { "path": "/beginner-guide/", "title": "Pickaxe Tycoon Beginner Guide", "priority": "0.8" },
-    { "path": "/wiki/", "title": "Pickaxe Tycoon Wiki", "priority": "0.8" },
-    { "path": "/updates/", "title": "Pickaxe Tycoon Updates", "priority": "0.8" }
+    { "path": "/", "title": "Pickaxe Tycoon Guide", "priority": "1.0", "lastUpdated": "2026-05-31" },
+    { "path": "/calculator/", "title": "Pickaxe Tycoon Merge Calculator", "priority": "0.9", "lastUpdated": "2026-05-18" },
+    { "path": "/codes/", "title": "Pickaxe Tycoon Codes", "priority": "0.9", "lastUpdated": "2026-05-31" },
+    { "path": "/tier-list/", "title": "Pickaxe Tycoon Tier List", "priority": "0.9", "lastUpdated": "2026-05-18" },
+    { "path": "/beginner-guide/", "title": "Pickaxe Tycoon Beginner Guide", "priority": "0.8", "lastUpdated": "2026-05-18" },
+    { "path": "/wiki/", "title": "Pickaxe Tycoon Wiki", "priority": "0.8", "lastUpdated": "2026-05-31" },
+    { "path": "/updates/", "title": "Pickaxe Tycoon Updates", "priority": "0.8", "lastUpdated": "2026-05-18" }
   ],
   "calculator": {
     "type": "progression",

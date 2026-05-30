@@ -4,7 +4,7 @@ import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 import Image from 'next/image';
 
 export const metadata = generateSEOMetadata({
-  title: 'Pickaxe Tycoon Wiki',
+  title: 'Wiki',
   description:
     'Pickaxe Tycoon wiki — complete pickaxe database (24 tiers), ores guide, Magmatic Cavern area info, and merge rules.',
   keywords: ['Pickaxe Tycoon wiki', 'Pickaxe Tycoon all pickaxes', 'Magmatic Cavern Pickaxe Tycoon'],

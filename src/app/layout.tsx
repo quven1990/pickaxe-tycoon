@@ -12,7 +12,7 @@ const config = getGameConfig();
 export const metadata: Metadata = {
   title: {
     default: config.seo.siteTitle,
-    template: `%s | ${config.game.name}`,
+    template: `%s | Pickaxe Tycoon Guide`,
   },
   description: config.seo.siteDescription,
   keywords: [...config.seo.primaryKeywords, ...config.seo.secondaryKeywords],
@@ -24,7 +24,13 @@ export const metadata: Metadata = {
     description: config.seo.siteDescription,
     url: `${config.seo.baseUrl}/`,
     siteName: config.game.name,
-    images: [{ url: `${config.seo.baseUrl}/og-default.jpg`, width: 1200, height: 630 }],
+    locale: 'en_US',
+    images: [{
+      url: `${config.seo.baseUrl}/og-default.jpg`,
+      width: 1200,
+      height: 630,
+      alt: config.seo.siteTitle,
+    }],
     type: 'website',
   },
   twitter: {
@@ -36,6 +42,8 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
   },
   icons: {
     icon: [

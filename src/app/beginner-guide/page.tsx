@@ -3,7 +3,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: 'Pickaxe Tycoon Beginner Guide',
+  title: 'Beginner Guide',
   description:
     'Complete Pickaxe Tycoon beginner guide — mining ores, 1.5x multiplier timing, merging pickaxes, and building your mining tower.',
   keywords: ['Pickaxe Tycoon guide', 'Pickaxe Tycoon beginner', 'how to play Pickaxe Tycoon'],

@@ -88,7 +88,11 @@ export interface GameConfig {
     hero: string;
     screenshots: { src: string; alt: string }[];
   };
-  routes: { path: string; title: string; priority: string }[];
+  contact?: {
+    privacy: string;
+    general: string;
+  };
+  routes: { path: string; title: string; priority: string; lastUpdated?: string }[];
   socials?: {
     roblox?: string;
     discord?: string;

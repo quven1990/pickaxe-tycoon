@@ -13,6 +13,11 @@ export default function Footer() {
           <Link href="/privacy-policy/" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
           <Link href="/about/" className="hover:text-amber-400 transition-colors">About</Link>
           <Link href="/sitemap/" className="hover:text-amber-400 transition-colors">Sitemap</Link>
+          {config.contact?.general && (
+            <a href={`mailto:${config.contact.general}`} className="hover:text-amber-400 transition-colors">
+              Contact
+            </a>
+          )}
         </div>
         <p className="mb-2">
           {config.game.name} Guide & Tools — Fan-made companion site. Not affiliated with Roblox Corporation or Popular Marketplace.

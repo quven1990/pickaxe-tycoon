@@ -6,12 +6,15 @@ export interface SitemapPage {
   description?: string;
   priority: string;
   changeFrequency: 'daily' | 'weekly' | 'monthly';
+  lastUpdated: string;
 }
 
 export interface SitemapSection {
   title: string;
   pages: SitemapPage[];
 }
+
+const legalLastUpdated = '2026-05-31';
 
 const legalPages: SitemapPage[] = [
   {
@@ -20,18 +23,21 @@ const legalPages: SitemapPage[] = [
     description: 'About this fan-made companion site.',
     priority: '0.4',
     changeFrequency: 'monthly',
+    lastUpdated: legalLastUpdated,
   },
   {
     path: '/terms/',
     title: 'Terms of Service',
     priority: '0.3',
     changeFrequency: 'monthly',
+    lastUpdated: legalLastUpdated,
   },
   {
     path: '/privacy-policy/',
     title: 'Privacy Policy',
     priority: '0.3',
     changeFrequency: 'monthly',
+    lastUpdated: legalLastUpdated,
   },
   {
     path: '/sitemap/',
@@ -39,6 +45,7 @@ const legalPages: SitemapPage[] = [
     description: 'Full list of pages on this site.',
     priority: '0.3',
     changeFrequency: 'monthly',
+    lastUpdated: legalLastUpdated,
   },
 ];
 
@@ -61,6 +68,7 @@ export function getSitemapSections(): SitemapSection[] {
     description: pageDescriptions[route.path],
     priority: route.priority,
     changeFrequency: route.path === '/codes/' ? 'daily' : 'weekly',
+    lastUpdated: route.lastUpdated ?? config.game.lastUpdated,
   }));
 
   return [

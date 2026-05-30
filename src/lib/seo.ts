@@ -90,6 +90,21 @@ export function generateFAQSchema(questions: { question: string; answer: string 
   };
 }
 
+export function generateWebSiteSchema(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: config.seo.siteTitle,
+    url: `${baseUrl}/`,
+    description: config.seo.siteDescription,
+    publisher: {
+      '@type': 'Organization',
+      name: `${config.game.name} Guide`,
+      url: `${baseUrl}/`,
+    },
+  };
+}
+
 export function generateVideoGameSchema(): object {
   const gameImage = config.assets?.thumbnail ?? config.seo.defaultOgImage;
   return {
@@ -105,6 +120,29 @@ export function generateVideoGameSchema(): object {
       '@type': 'Organization',
       name: config.game.developer,
     },
+  };
+}
+
+export function generateArticleSchema(props: {
+  title: string;
+  description: string;
+  path: string;
+  publishedTime: string;
+  modifiedTime?: string;
+}): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: props.title,
+    description: props.description,
+    url: `${baseUrl}${props.path}`,
+    datePublished: props.publishedTime,
+    dateModified: props.modifiedTime ?? props.publishedTime,
+    author: {
+      '@type': 'Organization',
+      name: `${config.game.name} Guide`,
+    },
+    image: `${baseUrl}${config.seo.defaultOgImage}`,
   };
 }
 

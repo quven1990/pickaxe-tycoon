@@ -1,5 +1,6 @@
 import { getGameConfig } from '@/lib/data';
-import { generateSEOMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
   title: 'About',
@@ -9,18 +10,35 @@ export const metadata = generateSEOMetadata({
 
 export default function AboutPage() {
   const config = getGameConfig();
+  const contactEmail = config.contact?.general ?? 'contract@pickaxe-tycoon.xyz';
+
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10 prose-content">
-      <h1 className="text-3xl font-bold text-white mb-4">About</h1>
-      <p>
-        This is a fan-made companion site for <strong>{config.game.name}</strong>, the Roblox mining
-        tycoon game by {config.game.developer}. We provide merge calculators, tier lists, codes tracking,
-        and guides to help players progress faster.
-      </p>
-      <p>
-        This site is not affiliated with Roblox Corporation or Popular Marketplace. All game data is
-        sourced from public gameplay, YouTube research, and community resources.
-      </p>
-    </div>
+    <>
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'About', url: '/about/' },
+        ])}
+      />
+      <div className="max-w-3xl mx-auto px-4 py-10 prose-content">
+        <h1 className="text-3xl font-bold text-white mb-4">About</h1>
+        <p>
+          This is a fan-made companion site for <strong>{config.game.name}</strong>, the Roblox mining
+          tycoon game by {config.game.developer}. We provide merge calculators, tier lists, codes tracking,
+          and guides to help players progress faster.
+        </p>
+        <p>
+          This site is not affiliated with Roblox Corporation or Popular Marketplace. All game data is
+          sourced from public gameplay, YouTube research, and community resources.
+        </p>
+        <h2 className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
+        <p>
+          Reach us at{' '}
+          <a href={`mailto:${contactEmail}`} className="text-amber-400 hover:text-amber-300">
+            {contactEmail}
+          </a>
+        </p>
+      </div>
+    </>
   );
 }

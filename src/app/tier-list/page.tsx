@@ -3,7 +3,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: 'Pickaxe Tycoon Tier List',
+  title: 'Tier List',
   description:
     'Complete Pickaxe Tycoon tier list — all 24 pickaxes ranked from Wood (Tier 1) to Legendary (Tier 24). Merge info and area requirements.',
   keywords: ['Pickaxe Tycoon tier list', 'best pickaxe Pickaxe Tycoon', 'Pickaxe Tycoon legendary'],

@@ -9,7 +9,7 @@ const codesData = getCodesData();
 const currentDate = getCurrentDateString();
 
 export const metadata = generateSEOMetadata({
-  title: `Pickaxe Tycoon Codes (${currentDate})`,
+  title: `Codes (${currentDate})`,
   description: `All working Pickaxe Tycoon codes for ${currentDate}. Active and expired codes verified daily. Get free rewards when new codes drop.`,
   keywords: ['Pickaxe Tycoon codes', 'Pickaxe Tycoon codes 2026', 'roblox Pickaxe Tycoon codes'],
   path: '/codes/',

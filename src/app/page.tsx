@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getGameConfig, getPickaxes } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
-import { generateVideoGameSchema } from '@/lib/seo';
+import { generateVideoGameSchema, generateWebSiteSchema } from '@/lib/seo';
 
 const config = getGameConfig();
 const pickaxes = getPickaxes();
@@ -39,7 +39,7 @@ const tools = [
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={generateVideoGameSchema()} />
+      <JsonLd data={[generateWebSiteSchema(), generateVideoGameSchema()]} />
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-800">

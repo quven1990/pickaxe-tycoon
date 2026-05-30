@@ -3,7 +3,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: 'Pickaxe Tycoon Merge Calculator',
+  title: 'Merge Calculator',
   description:
     'Plan your Pickaxe Tycoon merge path from Wood to Legendary. Calculate pickaxes needed and merge steps for any of the 24 tiers.',
   keywords: ['Pickaxe Tycoon calculator', 'Pickaxe Tycoon merge', 'Pickaxe Tycoon legendary pickaxe'],
