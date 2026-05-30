@@ -1,6 +1,7 @@
-import { getPickaxes, getAreas, getOres, GRADE_COLORS } from '@/lib/data';
+import { getPickaxes, getAreas, getOres, getGameConfig, GRADE_COLORS } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+import Image from 'next/image';
 
 export const metadata = generateSEOMetadata({
   title: 'Pickaxe Tycoon Wiki',
@@ -14,6 +15,8 @@ export default function WikiPage() {
   const pickaxes = getPickaxes();
   const areas = getAreas();
   const ores = getOres();
+  const config = getGameConfig();
+  const banner = config.assets?.thumbnail;
 
   return (
     <>
@@ -24,6 +27,18 @@ export default function WikiPage() {
         ])}
       />
       <div className="max-w-4xl mx-auto px-4 py-10">
+        {banner && (
+          <div className="mb-8 overflow-hidden rounded-xl border border-zinc-800">
+            <Image
+              src={banner}
+              alt={`${config.game.name} gameplay`}
+              width={768}
+              height={432}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        )}
         <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Wiki</h1>
         <p className="text-zinc-400 mb-8">
           Complete database of all 24 pickaxes, ores, areas, and merge mechanics.

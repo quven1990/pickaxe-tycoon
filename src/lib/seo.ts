@@ -91,6 +91,7 @@ export function generateFAQSchema(questions: { question: string; answer: string 
 }
 
 export function generateVideoGameSchema(): object {
+  const gameImage = config.assets?.thumbnail ?? config.seo.defaultOgImage;
   return {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
@@ -98,6 +99,7 @@ export function generateVideoGameSchema(): object {
     description: config.seo.siteDescription,
     genre: config.game.genre,
     url: `https://www.roblox.com/games/${config.game.robloxId}`,
+    image: `${baseUrl}${gameImage}`,
     operatingSystem: config.game.platforms.join(', '),
     author: {
       '@type': 'Organization',

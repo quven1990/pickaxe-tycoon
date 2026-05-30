@@ -36,6 +36,18 @@
     ],
     "defaultOgImage": "/og-default.jpg"
   },
+  "assets": {
+    "icon": "/images/game-icon.png",
+    "thumbnail": "/images/game-thumbnail.png",
+    "hero": "/hero-bg.jpg",
+    "screenshots": [
+      { "src": "/images/game-thumbnail.png", "alt": "Pickaxe Tycoon — mining tower overview" },
+      { "src": "/images/screenshot-1.png", "alt": "Pickaxe Tycoon — pickaxe collection" },
+      { "src": "/images/screenshot-2.png", "alt": "Pickaxe Tycoon — mining gameplay" },
+      { "src": "/images/screenshot-3.png", "alt": "Pickaxe Tycoon — merge system" },
+      { "src": "/images/screenshot-4.png", "alt": "Pickaxe Tycoon — Magmatic Cavern area" }
+    ]
+  },
   "routes": [
     { "path": "/", "title": "Pickaxe Tycoon Guide", "priority": "1.0" },
     { "path": "/calculator/", "title": "Pickaxe Tycoon Merge Calculator", "priority": "0.9" },

@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getGameConfig } from '@/lib/data';
 
 const config = getGameConfig();
+const gameIcon = config.assets?.icon ?? '/images/game-icon.png';
 
 const navLinks = [
   { href: '/calculator/', label: 'Calculator' },
@@ -17,9 +19,14 @@ export default function Header() {
     <header className="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight hover:text-amber-400 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-amber-500">
-            <path d="M14.5 2.5L16 4l-7 7-1.5-1.5 7-7zM3 17l4 4 1.5-1.5L4.5 15.5 3 17zm14-5l-7 7 1.5 1.5 7-7-1.5-1.5zM10 6.5L8.5 8l7 7 1.5-1.5-7-7z" />
-          </svg>
+          <Image
+            src={gameIcon}
+            alt=""
+            width={28}
+            height={28}
+            className="w-7 h-7 rounded-md"
+            priority
+          />
           {config.game.name}
           <span className="text-xs text-zinc-500 font-normal hidden sm:inline">Guide & Tools</span>
         </Link>

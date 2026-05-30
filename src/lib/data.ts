@@ -82,6 +82,12 @@ export interface GameConfig {
     secondaryKeywords: string[];
     defaultOgImage: string;
   };
+  assets?: {
+    icon: string;
+    thumbnail: string;
+    hero: string;
+    screenshots: { src: string; alt: string }[];
+  };
   routes: { path: string; title: string; priority: string }[];
   socials?: {
     roblox?: string;
