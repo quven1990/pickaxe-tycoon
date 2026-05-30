@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getGameConfig } from '@/lib/data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const config = getGameConfig();
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="min-h-screen font-sans">
+        <GoogleAnalytics />
         <Header />
         <main className="min-h-[calc(100vh-180px)]">{children}</main>
         <Footer />
