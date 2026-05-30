@@ -42,12 +42,13 @@ export default function PrivacyPage() {
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Analytics Services</h2>
         <p>We use the following services to understand site usage and improve content:</p>
-        <ul>
-          <li><strong>Google Analytics (GA4)</strong> — traffic and page performance measurement</li>
-          <li><strong>Plausible Analytics</strong> — privacy-friendly, cookieless pageview statistics</li>
-          <li><strong>Microsoft Clarity</strong> — session recordings and heatmaps to improve usability</li>
-        </ul>
-        <p>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Google Analytics (GA4)</h3>
+        <p>Traffic and page performance measurement.</p>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Plausible Analytics</h3>
+        <p>Privacy-friendly, cookieless pageview statistics.</p>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Microsoft Clarity</h3>
+        <p>Session recordings and heatmaps to improve usability.</p>
+        <p className="mt-4">
           These providers may set cookies or use similar technologies. Each operates under its own privacy policy.
           We do not sell your personal data to third parties.
         </p>

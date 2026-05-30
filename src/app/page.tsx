@@ -105,7 +105,8 @@ export default function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="max-w-6xl mx-auto px-4 py-10">
+      <section className="max-w-6xl mx-auto px-4 py-10" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" className="sr-only">Pickaxe Tycoon Game Stats</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: 'Visits', value: config.stats.visits },
@@ -114,8 +115,8 @@ export default function HomePage() {
             { label: 'Pickaxe Index', value: '24' },
           ].map((stat) => (
             <div key={stat.label} className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
-              <div className="text-2xl font-bold text-amber-400">{stat.value}</div>
-              <div className="text-xs text-zinc-500 mt-1">{stat.label}</div>
+              <h3 className="text-2xl font-bold text-amber-400">{stat.value}</h3>
+              <p className="text-xs text-zinc-500 mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -150,8 +151,8 @@ export default function HomePage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
           {pickaxes.filter((p) => p.tier <= 12).map((p) => (
             <div key={p.id} className="p-3 rounded-lg bg-zinc-900 border border-zinc-800 text-center">
-              <div className="text-xs text-zinc-500 mb-1">Tier {p.tier}</div>
-              <div className="text-sm font-medium text-zinc-200 truncate">{p.name.replace(' Pickaxe', '')}</div>
+              <p className="text-xs text-zinc-500 mb-1">Tier {p.tier}</p>
+              <h3 className="text-sm font-medium text-zinc-200 truncate">{p.name.replace(' Pickaxe', '')}</h3>
             </div>
           ))}
         </div>

@@ -4,7 +4,8 @@ import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
   title: 'Terms of Service',
-  description: 'Terms of Service for Pickaxe Tycoon Guide website.',
+  description:
+    'Terms of Service for Pickaxe Tycoon Guide — an unofficial fan-made Roblox companion site. Review our disclaimer, non-affiliation notice, and usage rules.',
   path: '/terms/',
 });
 
@@ -23,13 +24,38 @@ export default function TermsPage() {
       <div className="max-w-3xl mx-auto px-4 py-10 prose-content">
         <h1 className="text-3xl font-bold text-white mb-4">Terms of Service</h1>
         <p className="text-zinc-400 text-sm mb-6">Last updated: May 31, 2026</p>
-        <p>By using this website, you agree to the following terms:</p>
-        <ul>
-          <li>This is a fan-made site and is not affiliated with Roblox or the game developer.</li>
-          <li>Game data is provided as-is and may not reflect the latest in-game values.</li>
-          <li>We are not responsible for any actions taken based on information on this site.</li>
-          <li>All Roblox trademarks belong to Roblox Corporation.</li>
-        </ul>
+
+        <h2 className="text-xl font-bold text-white mt-8 mb-3">Agreement to Terms</h2>
+        <p>
+          By using {config.seo.baseUrl}, you agree to these Terms of Service. If you do not agree,
+          please do not use this website.
+        </p>
+
+        <h2 className="text-xl font-bold text-white mt-8 mb-3">Non-Affiliation</h2>
+        <p>
+          {config.game.name} Guide & Tools is an <strong>unofficial, fan-made</strong> companion website.
+          We are not affiliated with, endorsed by, or connected to Roblox Corporation, Popular Marketplace,
+          or the {config.game.name} development team. This is not the official game website.
+        </p>
+
+        <h2 className="text-xl font-bold text-white mt-8 mb-3">Disclaimer</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Game Data Accuracy</h3>
+        <p>
+          Game data, tier lists, and calculator results are provided as-is based on community research
+          and public sources. Values may not reflect the latest in-game updates.
+        </p>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Limitation of Liability</h3>
+        <p>
+          We are not responsible for any actions taken based on information on this site, including
+          in-game progress, purchases, or account decisions on Roblox.
+        </p>
+
+        <h2 className="text-xl font-bold text-white mt-8 mb-3">Intellectual Property</h2>
+        <p>
+          All Roblox and {config.game.name} trademarks belong to their respective owners. This site
+          uses game information under fair use for educational and community guide purposes.
+        </p>
+
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
         <p>
           Questions about these terms? Email{' '}

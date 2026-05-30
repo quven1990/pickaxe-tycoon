@@ -21,7 +21,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight hover:text-amber-400 transition-colors">
           <Image
             src={gameIcon}
-            alt=""
+            alt={`${config.game.name} guide site logo`}
             width={28}
             height={28}
             className="w-7 h-7 rounded-md"
