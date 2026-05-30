@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pickaxe-tycoon.gg/sitemap.xml
+Sitemap: https://pickaxe-tycoon.xyz/sitemap.xml

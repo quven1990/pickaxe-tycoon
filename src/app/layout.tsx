@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   description: config.seo.siteDescription,
   keywords: [...config.seo.primaryKeywords, ...config.seo.secondaryKeywords],
   alternates: {
-    canonical: config.seo.baseUrl,
+    canonical: `${config.seo.baseUrl}/`,
   },
   openGraph: {
     title: config.seo.siteTitle,
     description: config.seo.siteDescription,
-    url: config.seo.baseUrl,
+    url: `${config.seo.baseUrl}/`,
     siteName: config.game.name,
     images: [{ url: `${config.seo.baseUrl}/og-default.jpg`, width: 1200, height: 630 }],
     type: 'website',

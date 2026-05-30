@@ -50,7 +50,7 @@ Requires `wrangler login` or `CLOUDFLARE_API_TOKEN` env var.
 
 ### Custom Domain
 
-In Cloudflare Dashboard → Workers & Pages → pickaxe-tycoon → Custom domains → add `pickaxe-tycoon.gg`.
+In Cloudflare Dashboard → Workers & Pages → pickaxe-tycoon → Custom domains → add `pickaxe-tycoon.xyz`.
 
 ## Tech Stack
 

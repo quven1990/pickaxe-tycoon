@@ -31,14 +31,14 @@ npm run deploy
 ## 第 3 步：绑定自定义域名
 
 1. [Cloudflare Dashboard](https://dash.cloudflare.com) → Workers & Pages → **pickaxe-tycoon**
-2. Custom domains → Add → `pickaxe-tycoon.gg`
+2. Custom domains → Add → `pickaxe-tycoon.xyz`
 
 ## 预期地址
 
 | 环境 | URL |
 |------|-----|
 | Cloudflare Pages 默认 | https://pickaxe-tycoon.pages.dev |
-| 自定义域名 | https://pickaxe-tycoon.gg |
+| 自定义域名 | https://pickaxe-tycoon.xyz |
 
 > 注意：当前 `pickaxe-tycoon.pages.dev` 可能还是旧版内容，成功部署后会更新为新站。
 

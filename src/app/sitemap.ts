@@ -1,16 +1,18 @@
 import { MetadataRoute } from 'next';
 import { getGameConfig } from '@/lib/data';
+import { getAllSitemapPages } from '@/lib/sitemap-pages';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const config = getGameConfig();
   const baseUrl = config.seo.baseUrl;
+  const lastModified = new Date(config.game.lastUpdated);
 
-  return config.routes.map((route) => ({
-    url: `${baseUrl}${route.path === '/' ? '' : route.path.replace(/\/$/, '')}`,
-    lastModified: new Date(config.game.lastUpdated),
-    changeFrequency: route.path === '/codes/' ? 'daily' : 'weekly',
-    priority: parseFloat(route.priority),
+  return getAllSitemapPages().map((page) => ({
+    url: page.path === '/' ? `${baseUrl}/` : `${baseUrl}${page.path}`,
+    lastModified,
+    changeFrequency: page.changeFrequency,
+    priority: parseFloat(page.priority),
   }));
 }
