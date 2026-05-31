@@ -3,23 +3,26 @@
     "name": "Pickaxe Tycoon",
     "robloxId": "73814003954154",
     "developer": "Popular Marketplace",
-    "genre": "Tycoon / Simulator",
+    "genre": "Simulation · Tycoon",
     "currentVersion": "Magmatic Cavern Update",
     "lastUpdated": "2026-05-23",
     "platforms": [
       "PC",
       "Mobile",
       "Console"
-    ]
+    ],
+    "robloxName": "Pickaxe Tycoon ⛏️",
+    "description": "Buy a pickaxe to start mining\nConvert your ores to money\nBuy more pickaxes and merge to get better ones\n\nBuild a giant mining tower and collect all the pickaxes!",
+    "created": "2026-04-25"
   },
   "stats": {
     "visits": "15M+",
     "favorites": "71,800+",
-    "likes": "133,800+",
+    "likes": "210,100+",
     "onlineNow": "16,000+",
     "serverSize": 6,
     "active": true,
-    "rating": "98.9%",
+    "rating": "99.0%",
     "pickaxeCount": 24
   },
   "contact": {
@@ -118,15 +121,20 @@
   "sync": {
     "robloxUniverseId": "10081194651",
     "robloxPlaceId": "73814003954154",
-    "lastSyncAt": "2026-05-31T02:01:06.448Z",
+    "lastSyncAt": "2026-05-31T02:04:36.905Z",
     "lastSyncSource": "roblox-games-api",
     "descriptionChanged": false,
     "raw": {
-      "visits": 15941829,
-      "favoritedCount": 71866,
-      "playing": 16928,
+      "visits": 15945818,
+      "favoritedCount": 71881,
+      "playing": 16858,
+      "upVotes": 210105,
+      "downVotes": 2124,
       "robloxUpdated": "2026-05-23T09:34:54.977Z",
-      "descriptionHash": "5f4393830fa1e278"
+      "robloxCreated": "2026-04-25T11:50:59.299Z",
+      "descriptionHash": "5f4393830fa1e278",
+      "genreL1": "Simulation",
+      "genreL2": "Tycoon"
     }
   },
   "calculator": {

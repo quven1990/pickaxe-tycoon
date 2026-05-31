@@ -58,10 +58,13 @@ export interface GameConfig {
   game: {
     name: string;
     robloxId: string;
+    robloxName?: string;
+    description?: string;
     developer: string;
     genre: string;
     currentVersion: string;
     lastUpdated: string;
+    created?: string;
     platforms: string[];
   };
   stats: {
@@ -102,8 +105,13 @@ export interface GameConfig {
       visits: number;
       favoritedCount: number;
       playing: number;
+      upVotes: number;
+      downVotes: number;
       robloxUpdated: string;
+      robloxCreated: string;
       descriptionHash: string;
+      genreL1: string;
+      genreL2: string;
     };
   };
   routes: { path: string; title: string; priority: string; lastUpdated?: string }[];

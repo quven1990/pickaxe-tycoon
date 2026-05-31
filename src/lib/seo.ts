@@ -107,14 +107,17 @@ export function generateWebSiteSchema(): object {
 
 export function generateVideoGameSchema(): object {
   const gameImage = config.assets?.thumbnail ?? config.seo.defaultOgImage;
+  const description = config.game.description ?? config.seo.siteDescription;
   return {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
-    name: config.game.name,
-    description: config.seo.siteDescription,
+    name: config.game.robloxName ?? config.game.name,
+    description,
     genre: config.game.genre,
     url: `https://www.roblox.com/games/${config.game.robloxId}`,
     image: `${baseUrl}${gameImage}`,
+    datePublished: config.game.created,
+    dateModified: config.game.lastUpdated,
     operatingSystem: config.game.platforms.join(', '),
     author: {
       '@type': 'Organization',

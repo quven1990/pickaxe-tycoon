@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Sync verified stats from Roblox Games API into game.config.json and codes.json.
+ * Mirrors public data shown on the Roblox game page (visits, playing, favorites, rating, etc.).
  * Only updates API-backed fields — never modifies pickaxes, ores, or code lists.
  */
 
@@ -9,7 +10,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   formatCount,
+  formatGenre,
   formatOnline,
+  formatRating,
   formatVisits,
   readJson,
   toDateOnly,
@@ -62,12 +65,28 @@ async function fetchGameStats(universeId) {
   return game;
 }
 
-/** @param {Record<string, unknown>} config @param {Record<string, unknown>} game @param {string} today */
-function applyStats(config, game, today) {
+/** @param {string} universeId */
+async function fetchGameVotes(universeId) {
+  const data = await fetchJson(
+    `https://games.roblox.com/v1/games/votes?universeIds=${universeId}`,
+  );
+  return data.data?.[0] ?? { upVotes: 0, downVotes: 0 };
+}
+
+/**
+ * @param {Record<string, unknown>} config
+ * @param {Record<string, unknown>} game
+ * @param {{ upVotes: number; downVotes: number }} votes
+ * @param {string} today
+ */
+function applyStats(config, game, votes, today) {
   const visits = Number(game.visits ?? 0);
   const favorites = Number(game.favoritedCount ?? 0);
   const playing = Number(game.playing ?? 0);
+  const upVotes = Number(votes.upVotes ?? 0);
+  const downVotes = Number(votes.downVotes ?? 0);
   const robloxUpdated = String(game.updated ?? '');
+  const robloxCreated = String(game.created ?? '');
   const description = String(game.description ?? '');
 
   const previousVisits = Number(config.sync?.raw?.visits ?? 0);
@@ -82,12 +101,26 @@ function applyStats(config, game, today) {
     config.sync?.raw?.descriptionHash &&
     config.sync.raw.descriptionHash !== descriptionHash;
 
+  // Stats shown on Roblox game page
   config.stats.visits = formatVisits(visits);
   config.stats.favorites = formatCount(favorites);
   config.stats.onlineNow = formatOnline(playing);
+  config.stats.likes = formatCount(upVotes);
+  config.stats.rating = formatRating(upVotes, downVotes);
   config.stats.serverSize = Number(game.maxPlayers ?? config.stats.serverSize ?? 6);
-  config.stats.active = true;
+  config.stats.active = playing > 0;
 
+  // Game metadata from Roblox
+  config.game.robloxName = String(game.name ?? config.game.name);
+  config.game.description = description.trim();
+  config.game.developer = String(game.creator?.name ?? config.game.developer);
+  config.game.genre = formatGenre(
+    String(game.genre_l1 ?? game.untranslated_genre_l1 ?? ''),
+    String(game.genre_l2 ?? ''),
+  );
+  if (robloxCreated) {
+    config.game.created = toDateOnly(robloxCreated);
+  }
   if (robloxUpdated) {
     config.game.lastUpdated = toDateOnly(robloxUpdated);
   }
@@ -102,8 +135,13 @@ function applyStats(config, game, today) {
       visits,
       favoritedCount: favorites,
       playing,
+      upVotes,
+      downVotes,
       robloxUpdated,
+      robloxCreated,
       descriptionHash,
+      genreL1: String(game.genre_l1 ?? ''),
+      genreL2: String(game.genre_l2 ?? ''),
     },
   };
 
@@ -113,7 +151,7 @@ function applyStats(config, game, today) {
     }
   }
 
-  return { descriptionChanged, visits, favorites, playing };
+  return { descriptionChanged, visits, favorites, playing, upVotes, downVotes };
 }
 
 function touchCodesCheck(today) {
@@ -131,17 +169,25 @@ async function main() {
   console.log(`Universe ID: ${universeId}`);
 
   console.log('Fetching game stats from Roblox API...');
-  const game = await fetchGameStats(universeId);
+  const [game, votes] = await Promise.all([
+    fetchGameStats(universeId),
+    fetchGameVotes(universeId),
+  ]);
 
-  const result = applyStats(config, game, today);
+  const result = applyStats(config, game, votes, today);
   writeJson(CONFIG_PATH, config);
   touchCodesCheck(today);
 
-  console.log('Updated stats:');
+  console.log('Updated from Roblox game page (via API):');
+  console.log(`  name:      ${config.game.robloxName}`);
   console.log(`  visits:    ${config.stats.visits} (raw ${result.visits})`);
+  console.log(`  playing:   ${config.stats.onlineNow} (raw ${result.playing})`);
   console.log(`  favorites: ${config.stats.favorites} (raw ${result.favorites})`);
-  console.log(`  online:    ${config.stats.onlineNow} (raw ${result.playing})`);
-  console.log(`  game.lastUpdated: ${config.game.lastUpdated}`);
+  console.log(`  likes:     ${config.stats.likes} (raw ${result.upVotes})`);
+  console.log(`  rating:    ${config.stats.rating} (${result.upVotes}↑ ${result.downVotes}↓)`);
+  console.log(`  genre:     ${config.game.genre}`);
+  console.log(`  created:   ${config.game.created ?? '—'}`);
+  console.log(`  updated:   ${config.game.lastUpdated}`);
   console.log(`  codes.lastChecked: ${today}`);
 
   if (result.descriptionChanged) {

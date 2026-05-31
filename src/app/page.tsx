@@ -69,7 +69,8 @@ export default function HomePage() {
               </div>
               <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
                 Merge calculator, tier list, codes, and guides for Roblox&apos;s hottest mining tycoon.
-                {config.stats.visits} visits, {config.stats.rating} rating — build your mining empire.
+                {config.stats.visits} visits, {config.stats.rating} rating
+                {config.stats.onlineNow ? `, ${config.stats.onlineNow} playing now` : ''} — build your mining empire.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -104,31 +105,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Stats — synced from Roblox game page via API */}
       <section className="max-w-6xl mx-auto px-4 py-10" aria-labelledby="stats-heading">
-        <h2 id="stats-heading" className="sr-only">Pickaxe Tycoon Game Stats</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <h2 id="stats-heading" className="text-2xl font-bold text-white mb-2">
+          Live on Roblox
+        </h2>
+        <p className="text-sm text-zinc-500 mb-6">
+          Same stats as{' '}
+          <a
+            href={config.socials?.roblox}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-400 hover:text-amber-300"
+          >
+            the official game page
+          </a>
+          , synced daily from Roblox API.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             { label: 'Visits', value: config.stats.visits },
-            { label: 'Rating', value: config.stats.rating || '98%+' },
+            { label: 'Playing Now', value: config.stats.onlineNow ?? '—' },
             { label: 'Favorites', value: config.stats.favorites },
-            { label: 'Pickaxe Index', value: '24' },
+            { label: 'Rating', value: config.stats.rating ?? '—' },
+            { label: 'Likes', value: config.stats.likes ?? '—' },
+            { label: 'Max Players', value: String(config.stats.serverSize) },
           ].map((stat) => (
             <div key={stat.label} className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
-              <h3 className="text-2xl font-bold text-amber-400">{stat.value}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-amber-400">{stat.value}</h3>
               <p className="text-xs text-zinc-500 mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
         {config.sync?.lastSyncAt && (
           <p className="text-xs text-zinc-600 text-center mt-3">
-            Live stats from Roblox · synced{' '}
+            Last synced{' '}
             <time dateTime={config.sync.lastSyncAt}>
-              {config.sync.lastSyncAt.slice(0, 10)}
+              {config.sync.lastSyncAt.replace('T', ' ').slice(0, 16)} UTC
             </time>
           </p>
         )}
       </section>
+
+      {/* Roblox game description */}
+      {config.game.description && (
+        <section className="max-w-6xl mx-auto px-4 pb-10">
+          <div className="p-6 rounded-xl bg-zinc-900 border border-zinc-800">
+            <h2 className="text-xl font-bold text-white mb-2">
+              {config.game.robloxName ?? config.game.name} on Roblox
+            </h2>
+            <p className="text-sm text-zinc-400 whitespace-pre-line mb-4">{config.game.description}</p>
+            <dl className="grid sm:grid-cols-3 gap-3 text-sm">
+              <div>
+                <dt className="text-zinc-500">Developer</dt>
+                <dd className="text-zinc-300">{config.game.developer}</dd>
+              </div>
+              <div>
+                <dt className="text-zinc-500">Genre</dt>
+                <dd className="text-zinc-300">{config.game.genre}</dd>
+              </div>
+              <div>
+                <dt className="text-zinc-500">Launched</dt>
+                <dd className="text-zinc-300">
+                  {config.game.created ? (
+                    <time dateTime={config.game.created}>{config.game.created}</time>
+                  ) : (
+                    '—'
+                  )}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      )}
 
       {/* Tools */}
       <section className="max-w-6xl mx-auto px-4 py-10">
