@@ -118,13 +118,13 @@
   "sync": {
     "robloxUniverseId": "10081194651",
     "robloxPlaceId": "73814003954154",
-    "lastSyncAt": "2026-05-31T01:50:17.821Z",
+    "lastSyncAt": "2026-05-31T02:01:06.448Z",
     "lastSyncSource": "roblox-games-api",
     "descriptionChanged": false,
     "raw": {
-      "visits": 15929792,
-      "favoritedCount": 71817,
-      "playing": 16876,
+      "visits": 15941829,
+      "favoritedCount": 71866,
+      "playing": 16928,
       "robloxUpdated": "2026-05-23T09:34:54.977Z",
       "descriptionHash": "5f4393830fa1e278"
     }
