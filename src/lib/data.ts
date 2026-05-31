@@ -92,6 +92,20 @@ export interface GameConfig {
     privacy: string;
     general: string;
   };
+  sync?: {
+    robloxUniverseId: string;
+    robloxPlaceId: string;
+    lastSyncAt?: string;
+    lastSyncSource: string;
+    descriptionChanged?: boolean;
+    raw?: {
+      visits: number;
+      favoritedCount: number;
+      playing: number;
+      robloxUpdated: string;
+      descriptionHash: string;
+    };
+  };
   routes: { path: string; title: string; priority: string; lastUpdated?: string }[];
   socials?: {
     roblox?: string;
@@ -121,6 +135,7 @@ export function getGameConfig(): GameConfig {
 export function getCodesData() {
   return codesData as {
     lastUpdated: string;
+    lastChecked?: string;
     activeCodes: CodeEntry[];
     expiredCodes: CodeEntry[];
     notes: string;

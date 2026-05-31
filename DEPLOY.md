@@ -71,6 +71,24 @@ npm run deploy
 https://pickaxe-tycoon.xyz/sitemap.xml
 ```
 
+## 每日自动同步（Roblox 统计）
+
+GitHub Actions workflow **`Daily Roblox Stats Sync`** 每天 UTC 6:00 运行：
+
+1. 从 Roblox Games API 拉取 visits / favorites / online
+2. 更新 `src/data/game.config.json` 统计与 `codes.json` 的 `lastChecked`
+3. 校验 pickaxes / codes 数据结构
+4. 有变更则 commit → 触发 Pages 部署
+
+本地手动运行：
+
+```bash
+npm run sync:roblox
+npm run validate:data
+```
+
+> 仅自动更新 **Roblox API 可验证的数据**。镐头、矿石、兑换码列表不会自动修改，需人工 PR。
+
 ## CI 状态
 
 首次 push 的 workflow 因缺少 `CLOUDFLARE_API_TOKEN` 失败（预期行为）。添加 Secret 后 re-run 即可。

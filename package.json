@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "sync:roblox": "node scripts/sync-roblox-stats.mjs",
+    "validate:data": "node scripts/validate-game-data.mjs",
     "deploy": "npm run build && wrangler pages deploy out --project-name=pickaxe-tycoon"
   },
   "dependencies": {

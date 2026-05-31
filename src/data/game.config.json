@@ -5,14 +5,18 @@
     "developer": "Popular Marketplace",
     "genre": "Tycoon / Simulator",
     "currentVersion": "Magmatic Cavern Update",
-    "lastUpdated": "2026-05-31",
-    "platforms": ["PC", "Mobile", "Console"]
+    "lastUpdated": "2026-05-23",
+    "platforms": [
+      "PC",
+      "Mobile",
+      "Console"
+    ]
   },
   "stats": {
     "visits": "15M+",
-    "favorites": "69,000+",
+    "favorites": "71,800+",
     "likes": "133,800+",
-    "onlineNow": "20,000+",
+    "onlineNow": "16,000+",
     "serverSize": 6,
     "active": true,
     "rating": "98.9%",
@@ -45,22 +49,86 @@
     "thumbnail": "/images/game-thumbnail.png",
     "hero": "/hero-bg.jpg",
     "screenshots": [
-      { "src": "/images/game-thumbnail.png", "alt": "Pickaxe Tycoon — mining tower overview" },
-      { "src": "/images/screenshot-1.png", "alt": "Pickaxe Tycoon — pickaxe collection" },
-      { "src": "/images/screenshot-2.png", "alt": "Pickaxe Tycoon — mining gameplay" },
-      { "src": "/images/screenshot-3.png", "alt": "Pickaxe Tycoon — merge system" },
-      { "src": "/images/screenshot-4.png", "alt": "Pickaxe Tycoon — Magmatic Cavern area" }
+      {
+        "src": "/images/game-thumbnail.png",
+        "alt": "Pickaxe Tycoon — mining tower overview"
+      },
+      {
+        "src": "/images/screenshot-1.png",
+        "alt": "Pickaxe Tycoon — pickaxe collection"
+      },
+      {
+        "src": "/images/screenshot-2.png",
+        "alt": "Pickaxe Tycoon — mining gameplay"
+      },
+      {
+        "src": "/images/screenshot-3.png",
+        "alt": "Pickaxe Tycoon — merge system"
+      },
+      {
+        "src": "/images/screenshot-4.png",
+        "alt": "Pickaxe Tycoon — Magmatic Cavern area"
+      }
     ]
   },
   "routes": [
-    { "path": "/", "title": "Pickaxe Tycoon Guide", "priority": "1.0", "lastUpdated": "2026-05-31" },
-    { "path": "/calculator/", "title": "Pickaxe Tycoon Merge Calculator", "priority": "0.9", "lastUpdated": "2026-05-18" },
-    { "path": "/codes/", "title": "Pickaxe Tycoon Codes", "priority": "0.9", "lastUpdated": "2026-05-31" },
-    { "path": "/tier-list/", "title": "Pickaxe Tycoon Tier List", "priority": "0.9", "lastUpdated": "2026-05-18" },
-    { "path": "/beginner-guide/", "title": "Pickaxe Tycoon Beginner Guide", "priority": "0.8", "lastUpdated": "2026-05-18" },
-    { "path": "/wiki/", "title": "Pickaxe Tycoon Wiki", "priority": "0.8", "lastUpdated": "2026-05-31" },
-    { "path": "/updates/", "title": "Pickaxe Tycoon Updates", "priority": "0.8", "lastUpdated": "2026-05-18" }
+    {
+      "path": "/",
+      "title": "Pickaxe Tycoon Guide",
+      "priority": "1.0",
+      "lastUpdated": "2026-05-31"
+    },
+    {
+      "path": "/calculator/",
+      "title": "Pickaxe Tycoon Merge Calculator",
+      "priority": "0.9",
+      "lastUpdated": "2026-05-18"
+    },
+    {
+      "path": "/codes/",
+      "title": "Pickaxe Tycoon Codes",
+      "priority": "0.9",
+      "lastUpdated": "2026-05-31"
+    },
+    {
+      "path": "/tier-list/",
+      "title": "Pickaxe Tycoon Tier List",
+      "priority": "0.9",
+      "lastUpdated": "2026-05-18"
+    },
+    {
+      "path": "/beginner-guide/",
+      "title": "Pickaxe Tycoon Beginner Guide",
+      "priority": "0.8",
+      "lastUpdated": "2026-05-18"
+    },
+    {
+      "path": "/wiki/",
+      "title": "Pickaxe Tycoon Wiki",
+      "priority": "0.8",
+      "lastUpdated": "2026-05-31"
+    },
+    {
+      "path": "/updates/",
+      "title": "Pickaxe Tycoon Updates",
+      "priority": "0.8",
+      "lastUpdated": "2026-05-18"
+    }
   ],
+  "sync": {
+    "robloxUniverseId": "10081194651",
+    "robloxPlaceId": "73814003954154",
+    "lastSyncAt": "2026-05-31T01:50:17.821Z",
+    "lastSyncSource": "roblox-games-api",
+    "descriptionChanged": false,
+    "raw": {
+      "visits": 15929792,
+      "favoritedCount": 71817,
+      "playing": 16876,
+      "robloxUpdated": "2026-05-23T09:34:54.977Z",
+      "descriptionHash": "5f4393830fa1e278"
+    }
+  },
   "calculator": {
     "type": "progression",
     "dataFile": "pickaxes.json"

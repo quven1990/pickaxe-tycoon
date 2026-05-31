@@ -56,7 +56,19 @@ export default function CodesPage() {
           All working codes for {config.game.name}. Verified daily.
         </p>
         <p className="text-sm text-zinc-500 mb-8">
-          Last updated: <time dateTime={codesData.lastUpdated}>{codesData.lastUpdated}</time>
+          Last checked:{' '}
+          <time dateTime={codesData.lastChecked ?? codesData.lastUpdated}>
+            {codesData.lastChecked ?? codesData.lastUpdated}
+          </time>
+          {codesData.lastUpdated !== codesData.lastChecked && (
+            <>
+              {' '}
+              · Codes last changed:{' '}
+              <time dateTime={codesData.lastUpdated}>{codesData.lastUpdated}</time>
+            </>
+          )}
+          {' '}
+          · Stats synced from Roblox API
         </p>
 
         {/* Active Codes */}

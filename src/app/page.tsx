@@ -120,6 +120,14 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+        {config.sync?.lastSyncAt && (
+          <p className="text-xs text-zinc-600 text-center mt-3">
+            Live stats from Roblox · synced{' '}
+            <time dateTime={config.sync.lastSyncAt}>
+              {config.sync.lastSyncAt.slice(0, 10)}
+            </time>
+          </p>
+        )}
       </section>
 
       {/* Tools */}
