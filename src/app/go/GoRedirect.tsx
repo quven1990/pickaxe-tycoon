@@ -8,14 +8,12 @@ export default function GoRedirect() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const videoId = searchParams.get('v') || 'youtube';
     const path = searchParams.get('to') || '/';
     const content = searchParams.get('c') || undefined;
 
     const target = buildTrackedUrl(path, {
       source: 'youtube',
       medium: 'comment',
-      campaign: videoId,
       content,
     });
 

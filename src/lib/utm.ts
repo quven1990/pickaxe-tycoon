@@ -28,48 +28,26 @@ export function buildTrackedUrl(path: string, params: UtmParams = {}): string {
   return url.toString();
 }
 
-/**
- * Best for YouTube comments — clean path, no `?` query string.
- * Example: https://pickaxe-tycoon.xyz/yt/qLk29P_Itz4/calculator/
- */
-export function buildYoutubeCommentLink(
-  videoId: string,
-  slug?: YtLandingSlug
-): string {
-  const baseUrl = getGameConfig().seo.baseUrl;
-  if (slug) {
-    return `${baseUrl}/yt/${videoId}/${slug}/`;
-  }
-  return `${baseUrl}/yt/${videoId}/`;
+/** Bare-domain short paths for YouTube comments (e.g. pickaxe-tycoon.xyz/c). */
+const YT_SHORT_PATH: Partial<Record<YtLandingSlug, string>> = {
+  calculator: 'c',
+  'beginner-guide': 'b',
+  'tier-list': 't',
+  wiki: 'w',
+  codes: 'c',
+};
+
+/** Comment link text — use bare domain without https for YouTube. */
+export function buildYoutubeCommentLink(slug?: YtLandingSlug): string {
+  const domain = new URL(getGameConfig().seo.baseUrl).host;
+  const short = slug ? YT_SHORT_PATH[slug] : undefined;
+  return short ? `${domain}/${short}` : domain;
 }
 
-/** Direct landing URL with UTM (also clickable on YouTube; use if /yt/ ever fails). */
-export function buildDirectYoutubeLink(
-  videoId: string,
-  path: string = '/'
-): string {
+/** Landing URL with youtube/comment UTM only (no per-video campaign). */
+export function buildDirectYoutubeLink(path: string = '/'): string {
   return buildTrackedUrl(path, {
     source: 'youtube',
     medium: 'comment',
-    campaign: videoId,
   });
-}
-
-/** @deprecated YouTube often won't auto-link query-string /go/ URLs — use buildYoutubeCommentLink */
-export function buildShortTrackingLink(options: {
-  videoId: string;
-  path?: string;
-  content?: string;
-}): string {
-  const slug = pathToYtSlug(options.path);
-  return buildYoutubeCommentLink(options.videoId, slug);
-}
-
-function pathToYtSlug(path?: string): YtLandingSlug | undefined {
-  if (!path || path === '/') return undefined;
-  const normalized = path.replace(/^\/|\/$/g, '');
-  if (normalized in YT_SLUG_TO_PATH) {
-    return normalized as YtLandingSlug;
-  }
-  return undefined;
 }
