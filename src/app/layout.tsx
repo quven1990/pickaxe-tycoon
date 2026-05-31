@@ -3,6 +3,7 @@ import { getGameConfig } from '@/lib/data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GoogleAdSense from '@/components/GoogleAdSense';
 import PlausibleAnalytics from '@/components/PlausibleAnalytics';
 import MicrosoftClarity from '@/components/MicrosoftClarity';
 import './globals.css';
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <GoogleAdSense />
       </head>
       <body className="min-h-screen font-sans">
         <GoogleAnalytics />
