@@ -1,4 +1,6 @@
 import { getGameConfig } from './data';
+import type { YtLandingSlug } from './youtube-promo';
+import { YT_SLUG_TO_PATH } from './youtube-promo';
 
 export interface UtmParams {
   source?: string;
@@ -26,20 +28,48 @@ export function buildTrackedUrl(path: string, params: UtmParams = {}): string {
   return url.toString();
 }
 
-/** Short redirect link: /go/?v=VIDEO_ID&to=/calculator/ */
+/**
+ * Best for YouTube comments — clean path, no `?` query string.
+ * Example: https://pickaxe-tycoon.xyz/yt/qLk29P_Itz4/calculator/
+ */
+export function buildYoutubeCommentLink(
+  videoId: string,
+  slug?: YtLandingSlug
+): string {
+  const baseUrl = getGameConfig().seo.baseUrl;
+  if (slug) {
+    return `${baseUrl}/yt/${videoId}/${slug}/`;
+  }
+  return `${baseUrl}/yt/${videoId}/`;
+}
+
+/** Direct landing URL with UTM (also clickable on YouTube; use if /yt/ ever fails). */
+export function buildDirectYoutubeLink(
+  videoId: string,
+  path: string = '/'
+): string {
+  return buildTrackedUrl(path, {
+    source: 'youtube',
+    medium: 'comment',
+    campaign: videoId,
+  });
+}
+
+/** @deprecated YouTube often won't auto-link query-string /go/ URLs — use buildYoutubeCommentLink */
 export function buildShortTrackingLink(options: {
   videoId: string;
   path?: string;
   content?: string;
 }): string {
-  const baseUrl = getGameConfig().seo.baseUrl;
-  const url = new URL(`${baseUrl}/go/`);
-  url.searchParams.set('v', options.videoId);
-  if (options.path && options.path !== '/') {
-    url.searchParams.set('to', options.path.startsWith('/') ? options.path : `/${options.path}`);
+  const slug = pathToYtSlug(options.path);
+  return buildYoutubeCommentLink(options.videoId, slug);
+}
+
+function pathToYtSlug(path?: string): YtLandingSlug | undefined {
+  if (!path || path === '/') return undefined;
+  const normalized = path.replace(/^\/|\/$/g, '');
+  if (normalized in YT_SLUG_TO_PATH) {
+    return normalized as YtLandingSlug;
   }
-  if (options.content) {
-    url.searchParams.set('c', options.content);
-  }
-  return url.toString();
+  return undefined;
 }

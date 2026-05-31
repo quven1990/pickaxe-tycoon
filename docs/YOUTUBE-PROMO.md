@@ -4,23 +4,30 @@
 
 评论里不要贴裸链接，使用 **带 UTM 的短链**，GA4 / Plausible 会自动记录来源。
 
-### 短链格式（推荐，按视频区分）
+### 短链格式（YouTube 评论推荐 — 无 query，可点击）
+
+```
+https://pickaxe-tycoon.xyz/yt/VIDEO_ID/calculator/
+https://pickaxe-tycoon.xyz/yt/VIDEO_ID/          → 首页
+```
+
+| 路径段 | 落地页 |
+|--------|--------|
+| `calculator` | 合并计算器 |
+| `beginner-guide` | 新手指南 |
+| `tier-list` | Tier 榜 |
+| `wiki` | Wiki |
+| `codes` | 兑换码 |
+
+跳转后仍会附加 UTM（在浏览器跳转时写入），GA4 campaign = 视频 ID。
+
+### 旧格式（勿用于 YouTube 评论）
 
 ```
 https://pickaxe-tycoon.xyz/go/?v=VIDEO_ID&to=/calculator/
 ```
 
-| 参数 | 含义 | 示例 |
-|------|------|------|
-| `v` | 视频 ID（写入 utm_campaign） | `qLk29P_Itz4` |
-| `to` | 落地页路径 | `/calculator/`、`/codes/`、`/` |
-| `c` | 可选，评论变体 A/B | `helpful-tip` |
-
-跳转后实际 URL 示例：
-
-```
-https://pickaxe-tycoon.xyz/calculator/?utm_source=youtube&utm_medium=comment&utm_campaign=qLk29P_Itz4
-```
+YouTube 常不把带 `?v=&to=` 的 URL 识别为可点击链接。
 
 ### 完整 UTM 链接（不用短链时）
 
