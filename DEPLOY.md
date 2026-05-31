@@ -71,6 +71,19 @@ npm run deploy
 https://pickaxe-tycoon.xyz/sitemap.xml
 ```
 
+### robots.txt / sitemap「无法抓取」排查
+
+1. **确认 GSC 属性域名正确** — 本站点是 `pickaxe-tycoon.xyz`，不要提交到其他域名属性。
+2. **Cloudflare Managed robots.txt** — Dashboard → **Security** / **Bots** → 若开启「Managed robots.txt」，Cloudflare 会在你的 `robots.txt` 前追加 AI 爬虫规则；一般不影响 Googlebot，但若异常可在 Cloudflare 关闭该功能。
+3. **Bot Fight Mode** — 若开启且拦截 Googlebot，在 **Security → Bots** 关闭或加白名单。
+4. **部署后重新提交** — GSC → 站点地图 → 输入 `sitemap.xml` → 提交；或点已有条目右侧 **⋮** → 重新抓取。
+5. **自检命令**：
+   ```bash
+   curl -I https://pickaxe-tycoon.xyz/sitemap.xml
+   curl -A "Googlebot/2.1" https://pickaxe-tycoon.xyz/robots.txt
+   ```
+   均应返回 HTTP 200。
+
 ## 每日自动同步（Roblox 统计）
 
 GitHub Actions workflow **`Daily Roblox Stats Sync`** 每天 UTC 6:00 运行：
