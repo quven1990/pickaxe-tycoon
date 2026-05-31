@@ -55,16 +55,25 @@ https://pickaxe-tycoon.xyz/calculator/?utm_source=youtube&utm_medium=comment&utm
 
 ## 适合评论的视频（Pickaxe Tycoon，非 Simulator）
 
-| 视频 | 频道 | 适合推广的页面 | 短链示例 |
-|------|------|----------------|----------|
-| [META Beginner Guide Tutorial](https://www.youtube.com/watch?v=qLk29P_Itz4) | AbductedByRobloxians | `/calculator/` | `.../go/?v=qLk29P_Itz4&to=/calculator/` |
-| [Spending $9,999,999 to MAX LEVEL](https://www.youtube.com/watch?v=TRQx52aLZOM) | Melon and Sunny Games | `/tier-list/` | `.../go/?v=TRQx52aLZOM&to=/tier-list/` |
-| [Just Got INSANE](https://www.youtube.com/watch?v=8ZHfR3bP6dg) | Itz Shivraj GamerZ | `/` | `.../go/?v=8ZHfR3bP6dg` |
-| [luckiest players](https://www.youtube.com/watch?v=M3A09zZl-ik) | MoreofApologist | `/wiki/` | `.../go/?v=M3A09zZl-ik&to=/wiki/` |
-| [Open 18 lvl axe](https://www.youtube.com/watch?v=Y7vmmbAcweU) | MyStreetFun | `/wiki/` | `.../go/?v=Y7vmmbAcweU&to=/wiki/` |
-| [100x MONEY Noob start](https://www.youtube.com/watch?v=dgMUGdxTt3E) | NagRoblox | `/beginner-guide/` | `.../go/?v=dgMUGdxTt3E&to=/beginner-guide/` |
-| [Took Pickaxe Tycoon TOO FAR](https://www.youtube.com/watch?v=tr81UVBjveo) | Bax | `/calculator/` | `.../go/?v=tr81UVBjveo&to=/calculator/` |
-| [Open mega Axe](https://www.youtube.com/watch?v=uZNLyLcVxGE) | MyStreetFun | `/tier-list/` | `.../go/?v=uZNLyLcVxGE&to=/tier-list/` |
+完整评论见 [`YOUTUBE-COMMENTS-READY.md`](./YOUTUBE-COMMENTS-READY.md)。
+
+| 视频 | 频道 | 短链 |
+|------|------|------|
+| [META Beginner Guide](https://www.youtube.com/watch?v=qLk29P_Itz4) | AbductedByRobloxians | `/yt/qLk29P_Itz4/calculator/` |
+| [Full Guide](https://www.youtube.com/watch?v=OOw3yi0C3J0) | Rondoblox | `/yt/OOw3yi0C3J0/beginner-guide/` |
+| [NOOB to PRO](https://www.youtube.com/watch?v=h_byDzchcFY) | Stu | `/yt/h_byDzchcFY/beginner-guide/` |
+| [How to Make Money](https://www.youtube.com/watch?v=uZzhQBvVH5Y) | Rondoblox | `/yt/uZzhQBvVH5Y/calculator/` |
+| [Basic Overview 0 Robux](https://www.youtube.com/watch?v=YEcEekyjVVE) | MBT | `/yt/YEcEekyjVVE/beginner-guide/` |
+| [100x MONEY Noob](https://www.youtube.com/watch?v=dgMUGdxTt3E) | NagRoblox | `/yt/dgMUGdxTt3E/beginner-guide/` |
+| [NOOB to PRO](https://www.youtube.com/watch?v=FZDkXHjvbOM) | AJPlays | `/yt/FZDkXHjvbOM/beginner-guide/` |
+| [MAX LEVEL $9,999,999](https://www.youtube.com/watch?v=TRQx52aLZOM) | Melon and Sunny Games | `/yt/TRQx52aLZOM/tier-list/` |
+| [TOO FAR](https://www.youtube.com/watch?v=tr81UVBjveo) | Bax | `/yt/tr81UVBjveo/calculator/` |
+| [Merging BILLIONS](https://www.youtube.com/watch?v=3v1cjdEOU7k) | OTTER ON ROBLOX | `/yt/3v1cjdEOU7k/calculator/` |
+| [STRONGEST Pickaxe](https://www.youtube.com/watch?v=KjMpOvhBgdk) | Its Me Younger | `/yt/KjMpOvhBgdk/tier-list/` |
+| [OVERPOWERED PICKAXE](https://www.youtube.com/watch?v=u8n7PtBBo30) | mykey | `/yt/u8n7PtBBo30/tier-list/` |
+| [Open 18 lvl axe](https://www.youtube.com/watch?v=Y7vmmbAcweU) | MyStreetFun | `/yt/Y7vmmbAcweU/wiki/` |
+| [Luckiest players](https://www.youtube.com/watch?v=M3A09zZl-ik) | MoreofApologist | `/yt/M3A09zZl-ik/wiki/` |
+| [Just Got INSANE](https://www.youtube.com/watch?v=8ZHfR3bP6dg) | Itz Shivraj GamerZ | `/yt/8ZHfR3bP6dg/` |
 
 > ⚠️ 避开 **Pickaxe Simulator** / **Pickaxe Mining Simulator** 视频（不同游戏）。
 

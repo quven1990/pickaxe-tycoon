@@ -1,259 +1,276 @@
-# YouTube 评论 — 复制即用
+# YouTube 评论 — 复制即用（2026-05 更新）
 
-> **链接格式已更新：** 请用 `/yt/视频ID/页面/`（无 `?` 参数），YouTube 才会显示为可点击蓝链。  
-> 旧 `/go/?v=...` 格式在 YouTube 里常被当成纯文本，请勿再用。
+> 链接格式：`https://pickaxe-tycoon.xyz/yt/视频ID/页面/`（**无问号**，YouTube 可点击）  
+> **链接请单独一行**，前后空行。每个视频只发 1 条。
 
 ---
 
-## 1. META Beginner Guide — AbductedByRobloxians
+## 发评论顺序（建议）
+
+| 顺序 | 视频 | 原因 |
+|------|------|------|
+| 1–4 | 新手攻略 / Full Guide | 观众最精准 |
+| 5–7 | 赚钱 / 100x / NOOB to PRO | 新玩家多 |
+| 8–11 | MAX LEVEL / merge / calculator | 深度玩家 |
+| 12–15 | tier / wiki / 综合 | 补量 |
+
+---
+
+## 1. META Beginner Guide — AbductedByRobloxians ⭐
 
 **视频：** https://www.youtube.com/watch?v=qLk29P_Itz4
 
-**评论（复制）：**
-
 ```
-Great guide! For the merge part — I use this free calculator to see how many pickaxes I need from Wood all the way to Legendary (3-merge math):
+Great beginner breakdown! For the merge math (3 pickaxes → 1 next tier), this calculator shows exactly how many you need from Wood up to Legendary:
 
 https://pickaxe-tycoon.xyz/yt/qLk29P_Itz4/calculator/
 
-Unofficial fan site, updated for Magmatic Cavern — not Pickaxe Simulator 👍
+Unofficial fan site — Pickaxe Tycoon only, not Pickaxe Simulator
 ```
 
 ---
 
-## 2. NOOB to PRO — Stu
+## 2. Full Guide — Rondoblox ⭐
+
+**视频：** https://www.youtube.com/watch?v=OOw3yi0C3J0
+
+```
+Solid full guide for new players. This step-by-step page covers deposit ore → collect money → merge platform (same game):
+
+https://pickaxe-tycoon.xyz/yt/OOw3yi0C3J0/beginner-guide/
+
+Fan-made guide, not official Popular Marketplace
+```
+
+---
+
+## 3. NOOB to PRO — Stu ⭐
 
 **视频：** https://www.youtube.com/watch?v=h_byDzchcFY
 
-**评论（复制）：**
-
 ```
-Solid progression video. If you're still early game, this beginner guide breaks down deposit → merge → tower step by step (same game, not Simulator):
+Nice progression path. If you're stuck on merges or processor upgrades, the beginner guide here is a good quick reference:
 
 https://pickaxe-tycoon.xyz/yt/h_byDzchcFY/beginner-guide/
 
-Fan-made site, not official 👍
+Unofficial fan site 👍
 ```
 
 ---
 
-## 3. Spending $9,999,999 MAX LEVEL — Melon and Sunny Games
+## 4. How to Make Money — Rondoblox ⭐
 
-**视频：** https://www.youtube.com/watch?v=TRQx52aLZOM
-
-**评论（复制）：**
+**视频：** https://www.youtube.com/watch?v=uZzhQBvVH5Y
 
 ```
-Insane grind 😂 Full 24-tier pickaxe ranking + which tiers matter most for late game:
+Good money tips. I also use this merge calculator to plan Buy 25 / Buy 100 before spending everything on the wrong tier:
 
-https://pickaxe-tycoon.xyz/yt/TRQx52aLZOM/tier-list/
+https://pickaxe-tycoon.xyz/yt/uZzhQBvVH5Y/calculator/
 
-Unofficial fan tier list — Pickaxe Tycoon only, not Pickaxe Simulator
+Not Pickaxe Simulator — fan tool for Pickaxe Tycoon ⛏️
 ```
 
 ---
 
-## 4. 100x MONEY Noob — NagRoblox
+## 5. Basic Overview [0 Robux] — MBT
+
+**视频：** https://www.youtube.com/watch?v=YEcEekyjVVE
+
+```
+Clean overview for f2p players. Beginner guide with controls + merge basics if you want a text version to bookmark:
+
+https://pickaxe-tycoon.xyz/yt/YEcEekyjVVE/beginner-guide/
+
+Unofficial fan site, updated for Magmatic Cavern
+```
+
+---
+
+## 6. 100x MONEY Noob — NagRoblox
 
 **视频：** https://www.youtube.com/watch?v=dgMUGdxTt3E
 
-**评论（复制）：**
-
 ```
-Nice fast start! For normal players without boosts, this guide covers the core loop (buy → merge → upgrade processor) pretty clearly:
+Fun boosted run! For normal progress without boosts, this guide explains the core loop pretty clearly:
 
 https://pickaxe-tycoon.xyz/yt/dgMUGdxTt3E/beginner-guide/
 
-Fan site — updated daily, not affiliated with Popular Marketplace
+Fan site — not affiliated with Roblox or Popular Marketplace
 ```
 
 ---
 
-## 5. I Took Pickaxe Tycoon TOO FAR — Bax
+## 7. NOOB to PRO — AJPlays
+
+**视频：** https://www.youtube.com/watch?v=FZDkXHjvbOM
+
+```
+Good grind video. The beginner section here helped me remember the merge platform only works when you have valid 3-merge combos:
+
+https://pickaxe-tycoon.xyz/yt/FZDkXHjvbOM/beginner-guide/
+
+Unofficial fan guide 👍
+```
+
+---
+
+## 8. $9,999,999 MAX LEVEL — Melon and Sunny Games
+
+**视频：** https://www.youtube.com/watch?v=TRQx52aLZOM
+
+```
+Insane late-game push 😂 Full 24-tier pickaxe list + what each tier is called (Wood → Legendary):
+
+https://pickaxe-tycoon.xyz/yt/TRQx52aLZOM/tier-list/
+
+Fan tier list — Pickaxe Tycoon, not Simulator
+```
+
+---
+
+## 9. Took Pickaxe Tycoon TOO FAR — Bax
 
 **视频：** https://www.youtube.com/watch?v=tr81UVBjveo
 
-**评论（复制）：**
-
 ```
-You went way past what most people merge 😅 This calculator helped me plan how many tier-1 pickaxes I need before going all-in on Buy 100:
+You merged way more than most people 😅 This calculator helped me figure out total pickaxes needed before going all-in on Buy 100:
 
 https://pickaxe-tycoon.xyz/yt/tr81UVBjveo/calculator/
 
-Unofficial fan tool — Pickaxe Tycoon merge math
+Unofficial merge calculator — fan site
 ```
 
 ---
 
-## 6. Merging BILLIONS of Pickaxes — OTTER ON ROBLOX
+## 10. Merging BILLIONS of Pickaxes — OTTER ON ROBLOX
 
 **视频：** https://www.youtube.com/watch?v=3v1cjdEOU7k
 
-**评论（复制）：**
-
 ```
-The merge spam is real in this game 😂 If you want to know total pickaxes needed for a target tier (3^n math), this free calculator saves a lot of guessing:
+The merge spam is real 😂 Free calculator for 3^n merge math if you're targeting a specific tier:
 
 https://pickaxe-tycoon.xyz/yt/3v1cjdEOU7k/calculator/
 
-Not official — fan site for Pickaxe Tycoon
+Not official — Pickaxe Tycoon fan tool
 ```
 
 ---
 
-## 7. Buying only 100 pack — Matrix Plays Games
-
-**视频：** https://www.youtube.com/watch?v=8dlDhGLEuUQ
-
-**评论（复制）：**
-
-```
-Buy 100 is so satisfying once income is stable. I checked my merge targets here before bulk buying so I didn't waste cash on the wrong tier:
-
-https://pickaxe-tycoon.xyz/yt/8dlDhGLEuUQ/calculator/
-
-Unofficial fan calculator 👍
-```
-
----
-
-## 8. STRONGEST Pickaxe — Its Me Younger
+## 11. STRONGEST Pickaxe — Its Me Younger
 
 **视频：** https://www.youtube.com/watch?v=KjMpOvhBgdk
 
-**评论（复制）：**
-
 ```
-Legendary grind is no joke. Full pickaxe tier list from Wood → Legendary + Magmatic Cavern tiers:
+Legendary grind is tough. Tier list shows all 24 pickaxes including Magmatic Cavern tiers:
 
 https://pickaxe-tycoon.xyz/yt/KjMpOvhBgdk/tier-list/
-
-Fan-made — not Pickaxe Simulator
-```
-
----
-
-## 9. Open 18 lvl axe — MyStreetFun
-
-**视频：** https://www.youtube.com/watch?v=Y7vmmbAcweU
-
-**评论（复制）：**
-
-```
-Nice pull on the high tier! Wiki has all 24 pickaxes listed with merge requirements + Magmatic Cavern info if you're chasing index completion:
-
-https://pickaxe-tycoon.xyz/yt/Y7vmmbAcweU/wiki/
-
-Unofficial fan wiki — Pickaxe Tycoon only
-```
-
----
-
-## 10. Open mega Axe — MyStreetFun
-
-**视频：** https://www.youtube.com/watch?v=uZNLyLcVxGE
-
-**评论（复制）：**
-
-```
-Mega axe moment 🔥 Tier list shows where each pickaxe sits in the 24-tier index if you're planning your next merges:
-
-https://pickaxe-tycoon.xyz/yt/uZNLyLcVxGE/tier-list/
-
-Fan site — not official Roblox / Popular Marketplace
-```
-
----
-
-## 11. Luckiest players — MoreofApologist
-
-**视频：** https://www.youtube.com/watch?v=M3A09zZl-ik
-
-**评论（复制）：**
-
-```
-RNG in this game is wild sometimes. For the full pickaxe index (all tiers + merge chain) I use this wiki:
-
-https://pickaxe-tycoon.xyz/yt/M3A09zZl-ik/wiki/
-
-Unofficial fan guide — separate from Pickaxe Simulator
-```
-
----
-
-## 12. Just Got INSANE — Itz Shivraj GamerZ
-
-**视频：** https://www.youtube.com/watch?v=8ZHfR3bP6dg
-
-**评论（复制）：**
-
-```
-Game blew up fast for a reason ⛏️ Codes page + merge calculator + tier list in one place (fan site, daily updates):
-
-https://pickaxe-tycoon.xyz/yt/8ZHfR3bP6dg/
-
-Not official — Pickaxe Tycoon fan hub, not Simulator
-```
-
----
-
-## 13. Millionaire in Pickaxe Tycoon — VibeBlox
-
-**视频：** https://www.youtube.com/watch?v=tu9wYotF_nk
-
-**评论（复制）：**
-
-```
-Money grind looks smooth here 💰 The merge calculator helps plan how many pickaxes to buy before each merge so you don't stall mid-run:
-
-https://pickaxe-tycoon.xyz/yt/tu9wYotF_nk/calculator/
-
-Unofficial fan tool 👍
-```
-
----
-
-## 14. Pickaxe Tycoon (long) — Jonas
-
-**视频：** https://www.youtube.com/watch?v=VjgiYjp7qaE
-
-**评论（复制）：**
-
-```
-Good gameplay! English wiki with all 24 pickaxe tiers + Magmatic Cavern update notes if anyone needs a reference:
-
-https://pickaxe-tycoon.xyz/yt/VjgiYjp7qaE/wiki/
 
 Unofficial fan site — not Pickaxe Simulator
 ```
 
 ---
 
-## 15. Pickaxe Tycoon — Majah Kale
+## 12. OVERPOWERED PICKAXE — mykey
 
-**视频：** https://www.youtube.com/watch?v=O3aDyDbsXyE
-
-**评论（复制）：**
+**视频：** https://www.youtube.com/watch?v=u8n7PtBBo30
 
 ```
-Fun tycoon loop. Beginner guide here covers deposit ore → collect money → merge platform basics:
+That pickaxe is cracked 🔥 Full tier ranking if you're planning what to merge toward next:
 
-https://pickaxe-tycoon.xyz/yt/O3aDyDbsXyE/beginner-guide/
+https://pickaxe-tycoon.xyz/yt/u8n7PtBBo30/tier-list/
 
-Fan-made guide — Pickaxe Tycoon ⛏️ only
+Fan-made tier list for Pickaxe Tycoon ⛏️
 ```
 
 ---
 
-## 链接格式说明
+## 13. Open 18 lvl axe — MyStreetFun
 
-| 格式 | YouTube 可点击？ | 追踪 |
-|------|------------------|------|
-| ✅ `pickaxe-tycoon.xyz/yt/VIDEO_ID/calculator/` | 是 | GA4 campaign = 视频 ID |
-| ❌ `pickaxe-tycoon.xyz/go/?v=...&to=...` | 常被当纯文本 | — |
+**视频：** https://www.youtube.com/watch?v=Y7vmmbAcweU
 
-**发评论技巧：** 链接单独占一行；前后留空行，更容易被识别为 URL。
+```
+Nice high-tier pull! Wiki lists all 24 pickaxes + merge chain if you're going for index completion:
+
+https://pickaxe-tycoon.xyz/yt/Y7vmmbAcweU/wiki/
+
+Unofficial fan wiki — separate from Pickaxe Simulator
+```
+
+---
+
+## 14. Luckiest players — MoreofApologist
+
+**视频：** https://www.youtube.com/watch?v=M3A09zZl-ik
+
+```
+RNG moments are wild in this game 🍀 Full pickaxe index + Magmatic Cavern notes here:
+
+https://pickaxe-tycoon.xyz/yt/M3A09zZl-ik/wiki/
+
+Fan site, not official
+```
+
+---
+
+## 15. Just Got INSANE — Itz Shivraj GamerZ
+
+**视频：** https://www.youtube.com/watch?v=8ZHfR3bP6dg
+
+```
+Game blew up for a reason ⛏️ Fan hub with calculator, tier list, codes tracker + wiki in one place:
+
+https://pickaxe-tycoon.xyz/yt/8ZHfR3bP6dg/
+
+Unofficial — Pickaxe Tycoon only, daily updates
+```
+
+---
+
+## 备用（有余力再发）
+
+### Buying only 100 pack — Matrix Plays Games
+
+**视频：** https://www.youtube.com/watch?v=8dlDhGLEuUQ
+
+```
+Buy 100 hits different once income is stable. I plan merges here before bulk buying:
+
+https://pickaxe-tycoon.xyz/yt/8dlDhGLEuUQ/calculator/
+
+Unofficial fan calculator 👍
+```
+
+### Open mega Axe — MyStreetFun
+
+**视频：** https://www.youtube.com/watch?v=uZNLyLcVxGE
+
+```
+Mega axe 🔥 Tier list for all 24 pickaxes if you're mapping your next merges:
+
+https://pickaxe-tycoon.xyz/yt/uZNLyLcVxGE/tier-list/
+
+Fan site — not official
+```
+
+### Most Addictive Game — MihirVerse
+
+**视频：** https://www.youtube.com/watch?v=MPjxOlbyfWI
+
+```
+Agreed, the merge loop is addictive. Fan site with guides + tools for this game:
+
+https://pickaxe-tycoon.xyz/yt/MPjxOlbyfWI/
+
+Unofficial Pickaxe Tycoon hub — not Simulator
+```
+
+---
 
 ## 追踪
 
-GA4 → 流量获取 → `youtube / comment` → `Session campaign` = 视频 ID。
+- GA4 → 流量获取 → `youtube / comment`
+- `Session campaign` = 视频 ID（如 `qLk29P_Itz4`）
+
+## 勿用
+
+❌ `pickaxe-tycoon.xyz/go/?v=...&to=...` — YouTube 常不识别为可点击链接

@@ -23,20 +23,25 @@ export const YOUTUBE_PROMO_LINKS: Array<{
   slug?: YtLandingSlug;
 }> = [
   { videoId: 'qLk29P_Itz4', slug: 'calculator' },
+  { videoId: 'OOw3yi0C3J0', slug: 'beginner-guide' },
   { videoId: 'h_byDzchcFY', slug: 'beginner-guide' },
-  { videoId: 'TRQx52aLZOM', slug: 'tier-list' },
+  { videoId: 'uZzhQBvVH5Y', slug: 'calculator' },
+  { videoId: 'YEcEekyjVVE', slug: 'beginner-guide' },
   { videoId: 'dgMUGdxTt3E', slug: 'beginner-guide' },
+  { videoId: 'FZDkXHjvbOM', slug: 'beginner-guide' },
+  { videoId: 'TRQx52aLZOM', slug: 'tier-list' },
   { videoId: 'tr81UVBjveo', slug: 'calculator' },
   { videoId: '3v1cjdEOU7k', slug: 'calculator' },
   { videoId: '8dlDhGLEuUQ', slug: 'calculator' },
   { videoId: 'KjMpOvhBgdk', slug: 'tier-list' },
+  { videoId: 'u8n7PtBBo30', slug: 'tier-list' },
   { videoId: 'Y7vmmbAcweU', slug: 'wiki' },
   { videoId: 'uZNLyLcVxGE', slug: 'tier-list' },
   { videoId: 'M3A09zZl-ik', slug: 'wiki' },
   { videoId: '8ZHfR3bP6dg' },
   { videoId: 'tu9wYotF_nk', slug: 'calculator' },
-  { videoId: 'VjgiYjp7qaE', slug: 'wiki' },
-  { videoId: 'O3aDyDbsXyE', slug: 'beginner-guide' },
+  { videoId: '-IdM_NynyBs', slug: 'wiki' },
+  { videoId: 'MPjxOlbyfWI' },
 ];
 
 export function resolveYtLandingPath(slug?: string): string {
