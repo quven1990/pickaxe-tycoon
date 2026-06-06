@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
+
+const seo = PAGE_SEO.beginnerGuide;
 
 export const metadata = generateSEOMetadata({
   title: 'Beginner Guide',
-  description:
-    'Complete Pickaxe Tycoon beginner guide — mining ores, 1.5x multiplier timing, merging pickaxes, and building your mining tower.',
+  absoluteTitle: seo.title,
+  description: seo.description,
   keywords: ['Pickaxe Tycoon guide', 'Pickaxe Tycoon beginner', 'how to play Pickaxe Tycoon'],
   path: '/beginner-guide/',
 });
@@ -52,6 +55,7 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>Getting Started</h2>
+        <h3>Your First Pickaxe and Ores</h3>
         <p>
           At spawn, you receive a free <strong>Wood Pickaxe</strong> that automatically mines ores.
           Ores accumulate in the wide basin behind the spawn area. Walk over them to collect,
@@ -59,6 +63,7 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>The Core Loop</h2>
+        <h3>Mine, Deposit, Merge, Repeat</h3>
         <ol>
           <li><strong>Mine</strong> — Your pickaxe mines ores automatically into the basin</li>
           <li><strong>Collect</strong> — Walk over ores to pick them up</li>
@@ -70,6 +75,7 @@ export default function BeginnerGuidePage() {
         </ol>
 
         <h2>Ore Multiplier Strategy</h2>
+        <h3>When to Deposit at 1.5x Peak</h3>
         <p>
           Watch the <strong>Ore Multiplier</strong> display behind your base anvil. It changes every 30 seconds
           and peaks at <strong>1.5x</strong>. Hold ores in inventory when below peak, and deposit large batches
@@ -78,6 +84,7 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>Pickaxe Progression</h2>
+        <h3>Key Tier Milestones (1–24)</h3>
         <p>
           The game has <strong>24 pickaxes</strong> in the index. Standard merge rule: combine 3 pickaxes
           of the same tier to get 1 of the next tier. Key milestones:
@@ -95,6 +102,7 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>Magmatic Cavern (May 2026)</h2>
+        <h3>New Ores and Tier 18 Magma Pickaxe</h3>
         <p>
           The May 2026 update expanded the <strong>Magmatic Cavern</strong> underground area with new ores
           (Amber, Kunzite) and tougher enemies. Tier 18 Magma Pickaxe is tied to this area.
@@ -102,6 +110,7 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>Recommended Gamepasses</h2>
+        <h3>Best Value Robux Purchases</h3>
         <ul>
           <li><strong>Auto Money (29 Robux)</strong> — Automatically collects processed money</li>
           <li><strong>2x All Money (12 Robux)</strong> — Doubles all income, best value</li>
@@ -110,6 +119,7 @@ export default function BeginnerGuidePage() {
         </ul>
 
         <h2>Pro Tips</h2>
+        <h3>Efficiency Tips for Faster Progress</h3>
         <ul>
           <li>Buy in bulk (Buy 25 / Buy 100) for faster merging once income is steady</li>
           <li>Always merge before buying more of the same tier to avoid inventory clutter</li>

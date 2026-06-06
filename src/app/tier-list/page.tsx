@@ -1,11 +1,14 @@
 import { getPickaxes, GRADE_COLORS } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+
+const seo = PAGE_SEO.tierList;
 
 export const metadata = generateSEOMetadata({
   title: 'Tier List',
-  description:
-    'Complete Pickaxe Tycoon tier list — all 24 pickaxes ranked from Wood (Tier 1) to Legendary (Tier 24). Merge info and area requirements.',
+  absoluteTitle: seo.title,
+  description: seo.description,
   keywords: ['Pickaxe Tycoon tier list', 'best pickaxe Pickaxe Tycoon', 'Pickaxe Tycoon legendary'],
   path: '/tier-list/',
 });
@@ -36,9 +39,16 @@ export default function TierListPage() {
         {byGrade.map(({ grade, pickaxes: group }) =>
           group.length > 0 ? (
             <section key={grade} className="mb-10">
-              <h2 className={`inline-block px-3 py-1 rounded-lg text-sm font-bold border mb-4 ${GRADE_COLORS[grade]}`}>
+              <h2 className={`inline-block px-3 py-1 rounded-lg text-sm font-bold border mb-2 ${GRADE_COLORS[grade]}`}>
                 Grade {grade}
               </h2>
+              <h3 className="text-lg font-semibold text-zinc-200 mb-4">
+                {grade === 'S' && 'Endgame Pickaxes — Legendary Tier Goals'}
+                {grade === 'A' && 'Late-Game Pickaxes — Magmatic Cavern & Beyond'}
+                {grade === 'B' && 'Mid-Game Pickaxes — Strong Merge Targets'}
+                {grade === 'C' && 'Early-Mid Pickaxes — First Upgrade Milestones'}
+                {grade === 'D' && 'Starter Pickaxes — Wood to Bronze'}
+              </h3>
               <div className="space-y-3">
                 {group.map((p) => (
                   <div

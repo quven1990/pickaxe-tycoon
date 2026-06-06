@@ -13,6 +13,8 @@ interface SEOProps {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  /** Use full <title> without layout template (recommended for 40–60 char titles). */
+  absoluteTitle?: string;
 }
 
 export function generateSEOMetadata(props: SEOProps): Metadata {
@@ -25,31 +27,33 @@ export function generateSEOMetadata(props: SEOProps): Metadata {
     type = 'website',
     publishedTime,
     modifiedTime,
+    absoluteTitle,
   } = props;
 
+  const displayTitle = absoluteTitle ?? title;
   const url = `${baseUrl}${path}`;
   const imageUrl = `${baseUrl}${ogImage}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: absoluteTitle } : title,
     description,
     keywords,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title,
+      title: displayTitle,
       description,
       url,
       siteName: config.game.name,
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: displayTitle }],
       type,
       ...(publishedTime && { publishedTime }),
       ...(modifiedTime && { modifiedTime }),
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: displayTitle,
       description,
       images: [imageUrl],
     },

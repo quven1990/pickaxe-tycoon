@@ -1,11 +1,14 @@
 import { getGameConfig } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
+
+const seo = PAGE_SEO.privacy;
 
 export const metadata = generateSEOMetadata({
   title: 'Privacy Policy',
-  description:
-    'Privacy Policy for Pickaxe Tycoon Guide — how we use analytics, cookies, and your data. Contact privacy@pickaxe-tycoon.xyz.',
+  absoluteTitle: seo.title,
+  description: seo.description,
   path: '/privacy-policy/',
 });
 
@@ -32,6 +35,7 @@ export default function PrivacyPage() {
         </p>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Information We Collect</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Automatically Collected Data</h3>
         <p>We do not ask you to create an account or submit personal information directly. However, we use third-party analytics services that may automatically collect:</p>
         <ul>
           <li>Pages visited and time spent on the site</li>
@@ -54,24 +58,28 @@ export default function PrivacyPage() {
         </p>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Cookies</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Cookie and Storage Settings</h3>
         <p>
           Analytics tools may use cookies or local storage. You can disable cookies in your browser settings.
           Plausible is designed to work without cookies in most cases.
         </p>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Third-Party Links</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">External Websites</h3>
         <p>
           Our site links to Roblox and other external services. We are not responsible for the privacy practices
           of those third-party websites.
         </p>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Your Rights</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Data Access and Deletion</h3>
         <p>
           Depending on your location, you may have rights to access, correct, or delete personal data held by
           analytics providers. Contact us and we will help direct your request.
         </p>
 
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
+        <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Privacy and General Inquiries</h3>
         <p>For privacy-related inquiries:</p>
         <p>
           <a href={`mailto:${privacyEmail}`} className="text-amber-400 hover:text-amber-300">

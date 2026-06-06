@@ -1,11 +1,14 @@
 import { getUpdates } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
+
+const seo = PAGE_SEO.updates;
 
 export const metadata = generateSEOMetadata({
   title: 'Updates & Patch Notes',
-  description:
-    'Latest Pickaxe Tycoon updates — Magmatic Cavern expansion, patch notes, and developer logs.',
+  absoluteTitle: seo.title,
+  description: seo.description,
   keywords: ['Pickaxe Tycoon update', 'Pickaxe Tycoon Magmatic Cavern', 'Pickaxe Tycoon news'],
   path: '/updates/',
   type: 'article',
@@ -25,9 +28,8 @@ export default function UpdatesPage() {
             { name: 'Updates', url: '/updates/' },
           ]),
           generateArticleSchema({
-            title: 'Pickaxe Tycoon Updates & Patch Notes',
-            description:
-              'Latest Pickaxe Tycoon updates — Magmatic Cavern expansion, patch notes, and developer logs.',
+            title: seo.title,
+            description: seo.description,
             path: '/updates/',
             publishedTime: '2026-04-24',
             modifiedTime: '2026-05-18',
@@ -49,6 +51,7 @@ export default function UpdatesPage() {
               </div>
               <h2 className="text-xl font-bold text-white mb-2">{update.title}</h2>
               <p className="text-zinc-400 text-sm mb-4">{update.summary}</p>
+              <h3 className="text-lg font-semibold text-zinc-300 mb-2">Update Highlights</h3>
               <ul className="text-sm text-zinc-500 space-y-1">
                 {update.highlights.map((h) => (
                   <li key={h}>• {h}</li>

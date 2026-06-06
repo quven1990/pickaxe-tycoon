@@ -2,15 +2,18 @@ import Link from 'next/link';
 import { CopyButton } from '@/components/CopyButton';
 import { JsonLd } from '@/components/JsonLd';
 import { getCodesData, getGameConfig } from '@/lib/data';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema, getCurrentDateString } from '@/lib/seo';
 
 const config = getGameConfig();
 const codesData = getCodesData();
 const currentDate = getCurrentDateString();
+const seo = PAGE_SEO.codes;
 
 export const metadata = generateSEOMetadata({
   title: `Codes (${currentDate})`,
-  description: `All working Pickaxe Tycoon codes for ${currentDate}. Active and expired codes verified daily. Get free rewards when new codes drop.`,
+  absoluteTitle: seo.title,
+  description: seo.description,
   keywords: ['Pickaxe Tycoon codes', 'Pickaxe Tycoon codes 2026', 'roblox Pickaxe Tycoon codes'],
   path: '/codes/',
 });
@@ -73,10 +76,11 @@ export default function CodesPage() {
 
         {/* Active Codes */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
             Active Codes
           </h2>
+          <h3 className="text-lg font-semibold text-zinc-200 mb-4">Currently Working Codes</h3>
           {codesData.activeCodes.length === 0 ? (
             <div className="p-6 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
               <p className="text-zinc-400 mb-2">No active codes right now.</p>
@@ -100,6 +104,7 @@ export default function CodesPage() {
         {/* How to Redeem */}
         <section className="mb-12 p-6 rounded-xl bg-zinc-900 border border-zinc-800">
           <h2 className="text-xl font-bold text-white mb-4">How to Redeem Codes</h2>
+          <h3 className="text-lg font-semibold text-zinc-200 mb-3">Step-by-Step Redemption</h3>
           <ol className="list-decimal list-inside space-y-2 text-sm text-zinc-400">
             <li>Launch <strong className="text-zinc-200">Pickaxe Tycoon</strong> on Roblox.</li>
             <li>Look for the <strong className="text-zinc-200">Settings</strong> or <strong className="text-zinc-200">Menu</strong> button.</li>
@@ -128,12 +133,12 @@ export default function CodesPage() {
         {/* FAQ */}
         <section>
           <h2 className="text-xl font-bold text-white mb-4">FAQ</h2>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {faqItems.map((f) => (
-              <details key={f.question} className="group border border-zinc-800 rounded-lg bg-zinc-900/50">
-                <summary className="cursor-pointer p-4 font-medium text-zinc-200">{f.question}</summary>
-                <div className="px-4 pb-4 text-sm text-zinc-400">{f.answer}</div>
-              </details>
+              <div key={f.question}>
+                <h3 className="text-lg font-semibold text-zinc-200 mb-1">{f.question}</h3>
+                <p className="text-sm text-zinc-400">{f.answer}</p>
+              </div>
             ))}
           </div>
         </section>

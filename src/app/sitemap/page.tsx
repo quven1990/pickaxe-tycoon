@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 import { getGameConfig } from '@/lib/data';
 import { formatSitemapUrl, getAllSitemapPages, getSitemapSections } from '@/lib/sitemap-pages';
 
+const seo = PAGE_SEO.sitemap;
+
 export const metadata = generateSEOMetadata({
   title: 'Sitemap',
-  description: 'Complete sitemap of Pickaxe Tycoon Guide — all tools, guides, wiki pages, and legal pages.',
+  absoluteTitle: seo.title,
+  description: seo.description,
   path: '/sitemap/',
 });
 
@@ -53,9 +57,14 @@ export default function SitemapPage() {
         <div className="space-y-10">
           {sections.map((section) => (
             <section key={section.title}>
-              <h2 className="text-xl font-bold text-white mb-4 border-b border-zinc-800 pb-2">
+              <h2 className="text-xl font-bold text-white mb-2 border-b border-zinc-800 pb-2">
                 {section.title}
               </h2>
+              <h3 className="text-lg font-semibold text-zinc-300 mb-4">
+                {section.title === 'Tools & Guides'
+                  ? 'Calculator, Codes, Wiki, and Guides'
+                  : 'About, Terms, Privacy, and Sitemap'}
+              </h3>
               <ul className="space-y-3">
                 {section.pages.map((page) => (
                   <li key={page.path}>
