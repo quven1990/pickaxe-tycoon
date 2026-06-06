@@ -48,8 +48,8 @@ export default function BeginnerGuidePage() {
           generateFAQSchema(faq),
         ]}
       />
-      <article className="max-w-3xl mx-auto px-4 py-10 prose-content">
-        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Beginner Guide</h1>
+      <article className="page-container prose-content max-w-3xl">
+        <h1 className="page-title mb-2">Pickaxe Tycoon Beginner Guide</h1>
         <p className="text-zinc-400 mb-8 text-base">
           Everything you need to know to start your mining empire — from your first ore to the Legendary Pickaxe.
         </p>

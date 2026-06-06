@@ -13,6 +13,17 @@
 
   body {
     @apply antialiased bg-zinc-950 text-zinc-100;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .page-container {
+    @apply mx-auto max-w-6xl px-4 py-6 sm:py-10;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-white sm:text-3xl;
   }
 }
 

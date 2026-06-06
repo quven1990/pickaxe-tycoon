@@ -36,8 +36,8 @@ export default function UpdatesPage() {
           }),
         ]}
       />
-      <div className="max-w-3xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Updates</h1>
+      <div className="page-container max-w-3xl">
+        <h1 className="page-title mb-2">Pickaxe Tycoon Updates</h1>
         <p className="text-zinc-400 mb-8">Patch notes and update history for Pickaxe Tycoon.</p>
 
         <div className="space-y-6">

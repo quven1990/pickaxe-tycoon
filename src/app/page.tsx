@@ -48,34 +48,34 @@ export default function HomePage() {
           style={{ backgroundImage: 'url(/hero-bg.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/80 to-zinc-950" />
-        <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
-          <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
+        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-24">
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-medium mb-4">
+              <div className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-400">
                 Updated {config.game.lastUpdated} — {config.game.currentVersion}
               </div>
-              <div className="flex items-center gap-4 mb-4">
+              <div className="mb-4 flex items-start gap-3 sm:items-center sm:gap-4">
                 <Image
                   src={gameIcon}
                   alt={`${config.game.name} icon`}
                   width={80}
                   height={80}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-amber-500/30 shadow-lg shadow-amber-500/10"
+                  className="h-14 w-14 shrink-0 rounded-2xl border border-amber-500/30 shadow-lg shadow-amber-500/10 sm:h-16 sm:w-16 md:h-20 md:w-20"
                   priority
                 />
-                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                   {config.game.name} Guide & Tools
                 </h1>
               </div>
-              <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
+              <p className="mb-6 text-base leading-relaxed text-zinc-400 sm:mb-8 sm:text-lg">
                 Merge calculator, tier list, codes, and guides for Roblox&apos;s hottest mining tycoon.
                 {config.stats.visits} visits, {config.stats.rating} rating
                 {config.stats.onlineNow ? `, ${config.stats.onlineNow} playing now` : ''} — build your mining empire.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/calculator/"
-                  className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold rounded-lg transition-colors"
+                  className="rounded-lg bg-amber-500 px-6 py-3 text-center font-bold text-zinc-950 transition-colors hover:bg-amber-400"
                 >
                   Merge Calculator
                 </Link>
@@ -83,14 +83,14 @@ export default function HomePage() {
                   href={config.socials?.roblox || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-medium rounded-lg border border-zinc-700 transition-colors"
+                  className="rounded-lg border border-zinc-700 bg-zinc-800 px-6 py-3 text-center font-medium text-white transition-colors hover:bg-zinc-700"
                 >
                   Play on Roblox
                 </Link>
               </div>
             </div>
             {screenshots[0] && (
-              <div className="hidden md:block w-80 lg:w-96 shrink-0">
+              <div className="mx-auto w-full max-w-sm shrink-0 md:mx-0 md:block md:w-80 lg:w-96">
                 <Image
                   src={screenshots[0].src}
                   alt={screenshots[0].alt}
@@ -106,7 +106,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats — synced from Roblox game page via API */}
-      <section className="max-w-6xl mx-auto px-4 py-10" aria-labelledby="stats-heading">
+      <section className="page-container" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="text-2xl font-bold text-white mb-2">
           Live on Roblox
         </h2>
@@ -149,7 +149,7 @@ export default function HomePage() {
 
       {/* Roblox game description */}
       {config.game.description && (
-        <section className="max-w-6xl mx-auto px-4 pb-10">
+        <section className="mx-auto max-w-6xl px-4 pb-8 sm:pb-10">
           <div className="p-6 rounded-xl bg-zinc-900 border border-zinc-800">
             <h2 className="text-xl font-bold text-white mb-2">
               {config.game.robloxName ?? config.game.name} on Roblox
@@ -180,8 +180,8 @@ export default function HomePage() {
       )}
 
       {/* Tools */}
-      <section className="max-w-6xl mx-auto px-4 py-10">
-        <h2 className="text-2xl font-bold text-white mb-6">Tools & Guides</h2>
+      <section className="page-container">
+        <h2 className="mb-6 text-xl font-bold text-white sm:text-2xl">Tools & Guides</h2>
         <div className="grid md:grid-cols-2 gap-4">
           {tools.map((tool) => (
             <Link
@@ -198,9 +198,9 @@ export default function HomePage() {
       </section>
 
       {/* Pickaxe Preview */}
-      <section className="max-w-6xl mx-auto px-4 py-10">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-white">Pickaxe Progression</h2>
+      <section className="page-container">
+        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="text-xl font-bold text-white sm:text-2xl">Pickaxe Progression</h2>
           <Link href="/wiki/" className="text-sm text-amber-400 hover:text-amber-300">
             View all pickaxes →
           </Link>
@@ -218,7 +218,7 @@ export default function HomePage() {
 
       {/* Game Gallery */}
       {screenshots.length > 0 && (
-        <section className="max-w-6xl mx-auto px-4 py-10 border-t border-zinc-800/60">
+        <section className="page-container border-t border-zinc-800/60">
           <h2 className="text-2xl font-bold text-white mb-2">In-Game Screenshots</h2>
           <p className="text-sm text-zinc-500 mb-6">
             Official gameplay from Roblox — mining, merging pickaxes, and building your tower.

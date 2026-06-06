@@ -21,7 +21,7 @@ export default function MergeCalculator() {
           id="target-tier"
           value={targetTier}
           onChange={(e) => setTargetTier(Number(e.target.value))}
-          className="w-full max-w-md px-4 py-3 rounded-lg bg-zinc-900 border border-zinc-700 text-white focus:outline-none focus:border-amber-500"
+          className="w-full px-4 py-3 text-base rounded-lg bg-zinc-900 border border-zinc-700 text-white focus:outline-none focus:border-amber-500"
         >
           {pickaxes.map((p) => (
             <option key={p.id} value={p.tier}>
@@ -42,7 +42,7 @@ export default function MergeCalculator() {
           </div>
           <div className="p-5 rounded-xl bg-zinc-900 border border-zinc-800">
             <div className="text-xs text-zinc-500 uppercase tracking-wide mb-1">Wood Pickaxes Needed</div>
-            <div className="text-2xl font-bold text-amber-400">{plan.totalPickaxesNeeded.toLocaleString()}</div>
+            <div className="text-lg font-bold break-all text-amber-400 sm:text-2xl">{plan.totalPickaxesNeeded.toLocaleString()}</div>
             <div className="text-xs text-zinc-500 mt-1">Starting from free Wood Pickaxes (3:1 merge)</div>
           </div>
         </div>

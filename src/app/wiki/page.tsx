@@ -29,7 +29,7 @@ export default function WikiPage() {
           { name: 'Wiki', url: '/wiki/' },
         ])}
       />
-      <div className="max-w-4xl mx-auto px-4 py-10">
+      <div className="page-container max-w-4xl">
         {banner && (
           <div className="mb-8 overflow-hidden rounded-xl border border-zinc-800">
             <Image
@@ -42,7 +42,7 @@ export default function WikiPage() {
             />
           </div>
         )}
-        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Wiki</h1>
+        <h1 className="page-title mb-2">Pickaxe Tycoon Wiki</h1>
         <p className="text-zinc-400 mb-8">
           Complete database of all 24 pickaxes, ores, areas, and merge mechanics.
         </p>

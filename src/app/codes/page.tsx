@@ -53,8 +53,8 @@ export default function CodesPage() {
           generateFAQSchema(faqItems),
         ]}
       />
-      <div className="max-w-4xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Codes ({currentDate})</h1>
+      <div className="page-container max-w-4xl">
+        <h1 className="page-title mb-2">Pickaxe Tycoon Codes ({currentDate})</h1>
         <p className="text-zinc-400 mb-2">
           All working codes for {config.game.name}. Verified daily.
         </p>
@@ -89,8 +89,8 @@ export default function CodesPage() {
           ) : (
             <div className="space-y-3">
               {codesData.activeCodes.map((item) => (
-                <div key={item.code} className="p-4 bg-zinc-900 rounded-lg border border-zinc-800">
-                  <div className="flex justify-between items-start mb-2">
+                <div key={item.code} className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
+                  <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <code className="text-xl font-mono font-bold text-green-400">{item.code}</code>
                     <CopyButton code={item.code} />
                   </div>

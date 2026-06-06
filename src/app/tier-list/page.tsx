@@ -30,8 +30,8 @@ export default function TierListPage() {
           { name: 'Tier List', url: '/tier-list/' },
         ])}
       />
-      <div className="max-w-4xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-white mb-2">Pickaxe Tycoon Tier List</h1>
+      <div className="page-container max-w-4xl">
+        <h1 className="page-title mb-2">Pickaxe Tycoon Tier List</h1>
         <p className="text-zinc-400 mb-8">
           All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Legendary Pickaxe) to complete the collection.
         </p>
@@ -53,14 +53,14 @@ export default function TierListPage() {
                 {group.map((p) => (
                   <div
                     key={p.id}
-                    className="flex items-center justify-between p-4 rounded-xl bg-zinc-900 border border-zinc-800"
+                    className="flex flex-col gap-2 rounded-xl border border-zinc-800 bg-zinc-900 p-4 sm:flex-row sm:items-center sm:justify-between"
                   >
-                    <div>
+                    <div className="min-w-0">
                       <div className="font-bold text-white">{p.name}</div>
                       <div className="text-sm text-zinc-500">Tier {p.tier}</div>
-                      <div className="text-xs text-zinc-600 mt-1">{p.description}</div>
+                      <div className="mt-1 text-xs text-zinc-600">{p.description}</div>
                     </div>
-                    <div className="text-right flex-shrink-0 ml-4">
+                    <div className="shrink-0 sm:ml-4 sm:text-right">
                       {p.tier === 1 ? (
                         <span className="text-xs text-green-400">Free</span>
                       ) : (
