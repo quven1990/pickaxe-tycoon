@@ -1,3 +1,4 @@
+import ContactEmail from '@/components/ContactEmail';
 import { getGameConfig } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
@@ -65,10 +66,7 @@ export default function TermsPage() {
         <h2 className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
         <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Questions About Terms</h3>
         <p>
-          Questions about these terms? Email{' '}
-          <a href={`mailto:${contactEmail}`} className="text-amber-400 hover:text-amber-300">
-            {contactEmail}
-          </a>
+          Questions about these terms? Email <ContactEmail email={contactEmail} />
         </p>
       </div>
     </>

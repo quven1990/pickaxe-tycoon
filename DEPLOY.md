@@ -77,7 +77,8 @@ https://pickaxe-tycoon.xyz/sitemap.xml
 2. **Cloudflare Managed robots.txt** — Dashboard → **Security** / **Bots** → 若开启「Managed robots.txt」，Cloudflare 会在你的 `robots.txt` 前追加 AI 爬虫规则；一般不影响 Googlebot，但若异常可在 Cloudflare 关闭该功能。
 3. **Bot Fight Mode** — 若开启且拦截 Googlebot，在 **Security → Bots** 关闭或加白名单。
 4. **部署后重新提交** — GSC → 站点地图 → 输入 `sitemap.xml` → 提交；或点已有条目右侧 **⋮** → 重新抓取。
-5. **自检命令**：
+5. **`/cdn-cgi/l/email-protection` 404** — Cloudflare「邮箱地址混淆」会把 `mailto:` 改成该路径。本站已改用 JS 打开邮箱、并在 `robots.txt` 屏蔽 `/cdn-cgi/`。可选：Cloudflare → **Scrape Shield** → 关闭 **Email Address Obfuscation**。
+6. **自检命令**：
    ```bash
    curl -I https://pickaxe-tycoon.xyz/sitemap.xml
    curl -A "Googlebot/2.1" https://pickaxe-tycoon.xyz/robots.txt

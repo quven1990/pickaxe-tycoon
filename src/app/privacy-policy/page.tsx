@@ -1,3 +1,4 @@
+import ContactEmail from '@/components/ContactEmail';
 import { getGameConfig } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
@@ -82,15 +83,11 @@ export default function PrivacyPage() {
         <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Privacy and General Inquiries</h3>
         <p>For privacy-related inquiries:</p>
         <p>
-          <a href={`mailto:${privacyEmail}`} className="text-amber-400 hover:text-amber-300">
-            {privacyEmail}
-          </a>
+          <ContactEmail email={privacyEmail} />
         </p>
         <p>For general site inquiries:</p>
         <p>
-          <a href={`mailto:${contactEmail}`} className="text-amber-400 hover:text-amber-300">
-            {contactEmail}
-          </a>
+          <ContactEmail email={contactEmail} />
         </p>
       </div>
     </>

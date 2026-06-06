@@ -14,7 +14,7 @@ export interface SitemapSection {
   pages: SitemapPage[];
 }
 
-const legalLastUpdated = '2026-05-31';
+const legalLastUpdated = '2026-06-06';
 
 const legalPages: SitemapPage[] = [
   {

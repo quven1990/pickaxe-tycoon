@@ -1,3 +1,4 @@
+import ContactEmail from '@/components/ContactEmail';
 import { getGameConfig } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
@@ -42,13 +43,10 @@ export default function AboutPage() {
           sourced from public gameplay, YouTube research, and community resources.
         </p>
 
-        <h2 className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
+        <h2 id="contact" className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
         <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Get in Touch</h3>
         <p>
-          Reach us at{' '}
-          <a href={`mailto:${contactEmail}`} className="text-amber-400 hover:text-amber-300">
-            {contactEmail}
-          </a>
+          Reach us at <ContactEmail email={contactEmail} />
         </p>
       </div>
     </>

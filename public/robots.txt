@@ -12,5 +12,6 @@ Allow: /
 # Redirect / tracking paths (noindex; save crawl budget)
 Disallow: /go/
 Disallow: /yt/
+Disallow: /cdn-cgi/
 
 Sitemap: https://pickaxe-tycoon.xyz/sitemap.xml
