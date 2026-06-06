@@ -39,14 +39,6 @@ const legalPages: SitemapPage[] = [
     changeFrequency: 'monthly',
     lastUpdated: legalLastUpdated,
   },
-  {
-    path: '/sitemap/',
-    title: 'Sitemap',
-    description: 'Full list of pages on this site.',
-    priority: '0.3',
-    changeFrequency: 'monthly',
-    lastUpdated: legalLastUpdated,
-  },
 ];
 
 const pageDescriptions: Record<string, string> = {

@@ -63,7 +63,7 @@ export default function SitemapPage() {
               <h3 className="text-lg font-semibold text-zinc-300 mb-4">
                 {section.title === 'Tools & Guides'
                   ? 'Calculator, Codes, Wiki, and Guides'
-                  : 'About, Terms, Privacy, and Sitemap'}
+                  : 'About, Terms, and Privacy'}
               </h3>
               <ul className="space-y-3">
                 {section.pages.map((page) => (
