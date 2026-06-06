@@ -77,7 +77,10 @@ https://pickaxe-tycoon.xyz/sitemap.xml
 2. **Cloudflare Managed robots.txt** — Dashboard → **Security** / **Bots** → 若开启「Managed robots.txt」，Cloudflare 会在你的 `robots.txt` 前追加 AI 爬虫规则；一般不影响 Googlebot，但若异常可在 Cloudflare 关闭该功能。
 3. **Bot Fight Mode** — 若开启且拦截 Googlebot，在 **Security → Bots** 关闭或加白名单。
 4. **部署后重新提交** — GSC → 站点地图 → 输入 `sitemap.xml` → 提交；或点已有条目右侧 **⋮** → 重新抓取。
-5. **`/cdn-cgi/l/email-protection` 404** — Cloudflare「邮箱地址混淆」会把 `mailto:` 改成该路径。本站已改用 JS 打开邮箱、并在 `robots.txt` 屏蔽 `/cdn-cgi/`。可选：Cloudflare → **Scrape Shield** → 关闭 **Email Address Obfuscation**。
+5. **`/cdn-cgi/l/email-protection` 404** — Cloudflare **Scrape Shield → Email Address Obfuscation** 会把 HTML 里的 `user@domain` 改成 `/cdn-cgi/l/email-protection` 链接；静态 Pages 无该路由，爬虫/GSC 会报 404。
+   - **推荐（一劳永逸）**：Cloudflare Dashboard → 域名 **pickaxe-tycoon.xyz** → **Scrape Shield** → 关闭 **Email Address Obfuscation**。
+   - **代码侧**：`ContactEmail` 仅在浏览器 hydration 后拼接邮箱，静态 HTML 不出现 `@` 完整地址；`robots.txt` 已 `Disallow: /cdn-cgi/`。
+   - **验证**：`curl -sL https://pickaxe-tycoon.xyz/about/ | grep email-protection` 应无输出。
 6. **自检命令**：
    ```bash
    curl -I https://pickaxe-tycoon.xyz/sitemap.xml

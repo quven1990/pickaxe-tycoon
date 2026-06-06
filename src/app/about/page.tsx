@@ -1,4 +1,5 @@
 import ContactEmail from '@/components/ContactEmail';
+import { parseEmailAddress } from '@/lib/contact-email';
 import { getGameConfig } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
@@ -15,7 +16,9 @@ export const metadata = generateSEOMetadata({
 
 export default function AboutPage() {
   const config = getGameConfig();
-  const contactEmail = config.contact?.general ?? 'contract@pickaxe-tycoon.xyz';
+  const contact = parseEmailAddress(
+    config.contact?.general ?? 'contract@pickaxe-tycoon.xyz',
+  );
 
   return (
     <>
@@ -46,7 +49,7 @@ export default function AboutPage() {
         <h2 id="contact" className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
         <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Get in Touch</h3>
         <p>
-          Reach us at <ContactEmail email={contactEmail} />
+          Reach us at <ContactEmail local={contact.local} domain={contact.domain} />
         </p>
       </div>
     </>
