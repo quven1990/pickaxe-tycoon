@@ -10,7 +10,12 @@ GitHub Actions 已配置，首次部署需要添加 Cloudflare Token。
 4. Value: 与 `build-a-ring-farm-wiki` 项目相同的 Token（或新建一个）
 
 > 创建 Token：https://dash.cloudflare.com/profile/api-tokens  
-> 模板：**Edit Cloudflare Workers**（包含 Pages 部署权限）
+> 权限需包含：
+> - **Account → Cloudflare Pages → Edit**（部署）
+> - **Zone → Zone → Read**（查 zone id）
+> - **Zone → Cache Purge → Purge**（部署后自动清缓存）
+>
+> 可用模板 **Edit Cloudflare Workers**，再手动加上 Zone 的 Read + Cache Purge。
 
 ## 第 2 步：触发部署
 
