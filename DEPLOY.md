@@ -81,7 +81,8 @@ https://pickaxe-tycoon.xyz/sitemap.xml
    - **推荐（一劳永逸）**：Cloudflare Dashboard → 域名 **pickaxe-tycoon.xyz** → **Scrape Shield** → 关闭 **Email Address Obfuscation**。
    - **代码侧**：`ContactEmail` 仅在浏览器 hydration 后拼接邮箱，静态 HTML 不出现 `@` 完整地址；`robots.txt` 已 `Disallow: /cdn-cgi/`。
    - **验证**：`curl -sL https://pickaxe-tycoon.xyz/about/ | grep email-protection` 应无输出。
-6. **自检命令**：
+6. **上线后页面无 CSS** — 通常是部署后浏览器/CDN 缓存了旧 HTML，仍引用已删除的 `/_next/static/css/<hash>.css`（404）。本站 `_headers` 对 HTML 设 `max-age=0, must-revalidate`，对 `/_next/static/*` 设 `immutable` 长缓存。若仍遇到，硬刷新或 Cloudflare **Caching → Purge Everything**。
+7. **自检命令**：
    ```bash
    curl -I https://pickaxe-tycoon.xyz/sitemap.xml
    curl -A "Googlebot/2.1" https://pickaxe-tycoon.xyz/robots.txt
