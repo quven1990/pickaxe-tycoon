@@ -71,23 +71,51 @@ npm run deploy
 
 ## Google Search Console
 
-域名 Active 后，提交 sitemap：
+### 第 1 步：确认资源类型（最重要）
+
+GSC 里必须用下面**之一**，不要用 `http://` 或 `www` 单独建资源：
+
+| 推荐 | 资源 |
+|------|------|
+| ⭐ 首选 | **网域资源** → `pickaxe-tycoon.xyz`（DNS 验证） |
+| 备选 | **网址前缀** → `https://pickaxe-tycoon.xyz/`（注意是 **https** + 无 www） |
+
+### 第 2 步：提交 sitemap
+
+在 **站点地图** 输入框只填（不要带域名重复）：
+
+```
+sitemap.xml
+```
+
+或完整 URL：
+
 ```
 https://pickaxe-tycoon.xyz/sitemap.xml
 ```
 
+### 第 3 步：用 URL 检查工具验证
+
+GSC → **网址检查** → 输入 `https://pickaxe-tycoon.xyz/sitemap.xml` → **测试实际网址**。
+
+- 应显示 **200**、类型 XML、约 10 条 URL
+- 若这里失败，说明 Google 仍被 Cloudflare 拦截，继续看下面 Cloudflare 项
+
 ### robots.txt / sitemap「无法抓取」排查
 
-1. **确认 GSC 属性域名正确** — 本站点是 `pickaxe-tycoon.xyz`，不要提交到其他域名属性。
+1. **确认 GSC 属性域名正确** — 本站点是 `pickaxe-tycoon.xyz`，不要提交到 `http://`、`www` 或其他域名属性。
 2. **Cloudflare Managed robots.txt** — Dashboard → **Security** / **Bots** → 若开启「Managed robots.txt」，Cloudflare 会在你的 `robots.txt` 前追加 AI 爬虫规则；一般不影响 Googlebot，但若异常可在 Cloudflare 关闭该功能。本站 `robots.txt` 由 `src/app/robots.ts` 在构建时生成（含 `Disallow: /go/`、`/yt/`、`/cdn-cgi/`）。
-3. **Bot Fight Mode** — 若开启且拦截 Googlebot，在 **Security → Bots** 关闭或加白名单。
-4. **部署后重新提交** — GSC → 站点地图 → 输入 `sitemap.xml` → 提交；或点已有条目右侧 **⋮** → 重新抓取。
-5. **`/cdn-cgi/l/email-protection` 404** — Cloudflare **Scrape Shield → Email Address Obfuscation** 会把 HTML 里的 `user@domain` 改成 `/cdn-cgi/l/email-protection` 链接；静态 Pages 无该路由，爬虫/GSC 会报 404。
+3. **Bot Fight Mode / Super Bot Fight Mode** — **必须关闭**或确保 Verified Bots 放行。路径：**Security → Bots**。这是 GSC「无法抓取」最常见原因之一。
+4. **WAF 自定义规则** — 检查是否有规则拦截 `Googlebot` 或 `sitemap.xml`。
+5. **SSL 模式** — **SSL/TLS → Overview** 选 **Full** 或 **Full (strict)**，不要 Flexible。
+6. **删除旧 sitemap 后等 24–48h** — GSC 状态更新很慢；删除 → 重新提交 `sitemap.xml` 后，「上次读取」可能要隔天才有。
+7. **`/cdn-cgi/l/email-protection` 404** — Cloudflare **Scrape Shield → Email Address Obfuscation** 会把 HTML 里的 `user@domain` 改成 `/cdn-cgi/l/email-protection` 链接；静态 Pages 无该路由，爬虫/GSC 会报 404。
    - **推荐（一劳永逸）**：Cloudflare Dashboard → 域名 **pickaxe-tycoon.xyz** → **Scrape Shield** → 关闭 **Email Address Obfuscation**。
    - **代码侧**：`ContactEmail` 仅在浏览器 hydration 后拼接邮箱，静态 HTML 不出现 `@` 完整地址；`robots.txt` 已 `Disallow: /cdn-cgi/`。
    - **验证**：`curl -sL https://pickaxe-tycoon.xyz/about/ | grep email-protection` 应无输出。
-6. **上线后页面无 CSS** — 通常是部署后浏览器/CDN 缓存了旧 HTML，仍引用已删除的 `/_next/static/css/<hash>.css`（404）。本站 `_headers` 对 HTML 设 `max-age=0, must-revalidate`，对 `/_next/static/*` 设 `immutable` 长缓存。若仍遇到，硬刷新或 Cloudflare **Caching → Purge Everything**。
-7. **自检命令**：
+8. **sitemap 响应头** — `curl -sI https://pickaxe-tycoon.xyz/sitemap.xml` 应只有**一条** `cache-control`，`content-type: application/xml`。若出现两条 cache-control 说明 `_headers` 规则冲突（已修复）。
+9. **上线后页面无 CSS** — 通常是部署后 CDN 仍缓存旧 HTML。GitHub Actions 在 **Deploy to Cloudflare Pages** 之后会自动跑 **Purge Cloudflare cache**；若该步失败，去 Token 补 **Zone → Cache Purge** 权限后 Re-run。也可手动：Cloudflare **Caching → Purge Everything**。
+10. **自检命令**：
    ```bash
    curl -I https://pickaxe-tycoon.xyz/sitemap.xml
    curl -A "Googlebot/2.1" https://pickaxe-tycoon.xyz/robots.txt
