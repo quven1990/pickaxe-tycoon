@@ -1,6 +1,19 @@
 {
   "updates": [
     {
+      "id": "site-sitemap-indexnow-june9",
+      "title": "Website — Sitemap & IndexNow",
+      "date": "2026-06-09",
+      "version": "Site · June 2026",
+      "summary": "New sitemap_index.xml with all page URLs, Bing IndexNow auto-submit, and stronger crawler setup for pickaxe-tycoon.xyz.",
+      "highlights": [
+        "sitemap_index.xml lists all 10 indexable pages (same as sitemap.xml)",
+        "robots.txt now points to sitemap_index.xml; static file replaces build-time robots.ts",
+        "Bing IndexNow: key file live + all URLs submitted after each deploy",
+        "Deploy workflow verifies sitemap reachability and purges Cloudflare cache"
+      ]
+    },
+    {
       "id": "site-deploy-cache-june7",
       "title": "Website — Deploy & Cache",
       "date": "2026-06-07",

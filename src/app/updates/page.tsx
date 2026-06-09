@@ -13,7 +13,7 @@ export const metadata = generateSEOMetadata({
   path: '/updates/',
   type: 'article',
   publishedTime: '2026-04-24',
-  modifiedTime: '2026-06-07',
+  modifiedTime: '2026-06-09',
 });
 
 export default function UpdatesPage() {
@@ -32,7 +32,7 @@ export default function UpdatesPage() {
             description: seo.description,
             path: '/updates/',
             publishedTime: '2026-04-24',
-            modifiedTime: '2026-06-07',
+            modifiedTime: '2026-06-09',
           }),
         ]}
       />
