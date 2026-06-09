@@ -6,7 +6,7 @@ const UA = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.h
 const CHECKS = [
   {
     url: 'https://pickaxe-tycoon.xyz/sitemap_index.xml',
-    mustInclude: ['<sitemapindex', '<sitemap>'],
+    mustInclude: ['<urlset', '<loc>'],
     label: 'sitemap_index',
   },
   {

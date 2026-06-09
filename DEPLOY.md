@@ -94,7 +94,7 @@ sitemap_index.xml
 https://pickaxe-tycoon.xyz/sitemap_index.xml
 ```
 
-（`sitemap.xml` 仍保留，由 index 引用。）
+（`sitemap_index.xml` 与 `sitemap.xml` 内容相同，均含全部 10 个页面 URL，任选其一提交 GSC 即可。）
 
 ### 第 3 步：用 URL 检查工具验证（最关键）
 
