@@ -82,21 +82,23 @@ GSC 里必须用下面**之一**，不要用 `http://` 或 `www` 单独建资源
 
 ### 第 2 步：提交 sitemap
 
-在 **站点地图** 输入框只填（不要带域名重复）：
+在 **站点地图** 输入框只填（推荐新地址）：
 
 ```
-sitemap.xml
+sitemap_index.xml
 ```
 
 或完整 URL：
 
 ```
-https://pickaxe-tycoon.xyz/sitemap.xml
+https://pickaxe-tycoon.xyz/sitemap_index.xml
 ```
+
+（`sitemap.xml` 仍保留，由 index 引用。）
 
 ### 第 3 步：用 URL 检查工具验证（最关键）
 
-GSC → **网址检查** → 输入 `https://pickaxe-tycoon.xyz/sitemap.xml` → 点 **测试实际网址**（不是「测试已发布网址」）。
+GSC → **网址检查** → 输入 `https://pickaxe-tycoon.xyz/sitemap_index.xml` → 点 **测试实际网址**（不是「测试已发布网址」）。
 
 | 结果 | 含义 |
 |------|------|

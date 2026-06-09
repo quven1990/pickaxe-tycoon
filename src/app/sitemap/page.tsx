@@ -49,6 +49,10 @@ export default function SitemapPage() {
         </p>
         <p className="text-sm text-zinc-500 mb-8">
           For search engines:{' '}
+          <a href="/sitemap_index.xml" className="text-amber-400 hover:text-amber-300">
+            sitemap_index.xml
+          </a>
+          {' · '}
           <a href="/sitemap.xml" className="text-amber-400 hover:text-amber-300">
             sitemap.xml
           </a>

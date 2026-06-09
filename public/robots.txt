@@ -18,4 +18,4 @@ Disallow: /go/
 Disallow: /yt/
 Disallow: /cdn-cgi/
 
-Sitemap: https://pickaxe-tycoon.xyz/sitemap.xml
+Sitemap: https://pickaxe-tycoon.xyz/sitemap_index.xml
