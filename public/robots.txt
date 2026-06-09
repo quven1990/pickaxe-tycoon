@@ -1,0 +1,21 @@
+# Pickaxe Tycoon Guide — https://pickaxe-tycoon.xyz
+
+User-agent: Googlebot
+Allow: /
+Disallow: /go/
+Disallow: /yt/
+Disallow: /cdn-cgi/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /go/
+Disallow: /yt/
+Disallow: /cdn-cgi/
+
+User-agent: *
+Allow: /
+Disallow: /go/
+Disallow: /yt/
+Disallow: /cdn-cgi/
+
+Sitemap: https://pickaxe-tycoon.xyz/sitemap.xml

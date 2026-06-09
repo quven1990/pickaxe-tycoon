@@ -10,6 +10,7 @@
     "sync:roblox": "node scripts/sync-roblox-stats.mjs",
     "validate:data": "node scripts/validate-game-data.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
+    "verify:sitemap": "node scripts/verify-sitemap-live.mjs",
     "deploy": "npm run build && wrangler pages deploy out --project-name=pickaxe-tycoon"
   },
   "dependencies": {

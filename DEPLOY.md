@@ -94,17 +94,31 @@ sitemap.xml
 https://pickaxe-tycoon.xyz/sitemap.xml
 ```
 
-### 第 3 步：用 URL 检查工具验证
+### 第 3 步：用 URL 检查工具验证（最关键）
 
-GSC → **网址检查** → 输入 `https://pickaxe-tycoon.xyz/sitemap.xml` → **测试实际网址**。
+GSC → **网址检查** → 输入 `https://pickaxe-tycoon.xyz/sitemap.xml` → 点 **测试实际网址**（不是「测试已发布网址」）。
 
-- 应显示 **200**、类型 XML、约 10 条 URL
-- 若这里失败，说明 Google 仍被 Cloudflare 拦截，继续看下面 Cloudflare 项
+| 结果 | 含义 |
+|------|------|
+| ✅ 200 + 能下载 XML | sitemap 没问题，GSC 站点地图页只是**更新慢**（等 24–72h） |
+| ❌ 无法抓取 / 403 / 5xx | Cloudflare 仍在拦 Google，按下面 Cloudflare 项操作 |
+
+> **说明：** 我用 curl 模拟 Googlebot 访问 sitemap 返回 **200**，文件合法。若 GSC「站点地图」仍显示无法抓取但「网址检查」成功，属于 GSC 状态延迟，不必反复删加 sitemap。
+
+### 常见误区：GSC 资源类型错了
+
+| 错误资源 | 问题 |
+|----------|------|
+| `http://pickaxe-tycoon.xyz` | 协议不对，sitemap 易报无法抓取 |
+| `https://www.pickaxe-tycoon.xyz` | www 会 301，部分 GSC 视图会异常 |
+| `pickaxe-tycoon.pages.dev` | 不是正式域名 |
+
+**正确：** 网域资源 `pickaxe-tycoon.xyz`，或网址前缀 `https://pickaxe-tycoon.xyz/`
 
 ### robots.txt / sitemap「无法抓取」排查
 
 1. **确认 GSC 属性域名正确** — 本站点是 `pickaxe-tycoon.xyz`，不要提交到 `http://`、`www` 或其他域名属性。
-2. **Cloudflare Managed robots.txt** — Dashboard → **Security** / **Bots** → 若开启「Managed robots.txt」，Cloudflare 会在你的 `robots.txt` 前追加 AI 爬虫规则；一般不影响 Googlebot，但若异常可在 Cloudflare 关闭该功能。本站 `robots.txt` 由 `src/app/robots.ts` 在构建时生成（含 `Disallow: /go/`、`/yt/`、`/cdn-cgi/`）。
+2. **Cloudflare Managed robots.txt（强烈建议关闭）** — Dashboard → **Security** → **Bots** → 关闭 **Managed robots.txt** / Content Signals。开启后 Cloudflare 会在你的 `robots.txt` **前面**插入大段 AI 爬虫规则，部分 GSC 抓取会异常。本站使用静态 `public/robots.txt`。
 3. **Bot Fight Mode / Super Bot Fight Mode** — **必须关闭**或确保 Verified Bots 放行。路径：**Security → Bots**。这是 GSC「无法抓取」最常见原因之一。
 4. **WAF 自定义规则** — 检查是否有规则拦截 `Googlebot` 或 `sitemap.xml`。
 5. **SSL 模式** — **SSL/TLS → Overview** 选 **Full** 或 **Full (strict)**，不要 Flexible。

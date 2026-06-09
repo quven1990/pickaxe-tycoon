@@ -89,5 +89,10 @@ jobs:
           fi
           echo "Cloudflare cache purged successfully."
 
+      - name: Verify live sitemap (Googlebot)
+        run: |
+          sleep 8
+          node scripts/verify-sitemap-live.mjs
+
       - name: Submit URLs to Bing IndexNow
         run: node scripts/submit-indexnow.mjs
