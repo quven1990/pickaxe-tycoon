@@ -1,6 +1,44 @@
 {
   "updates": [
     {
+      "id": "site-deploy-cache-june7",
+      "title": "Website — Deploy & Cache",
+      "date": "2026-06-07",
+      "version": "Site · June 2026",
+      "summary": "Improved how pickaxe-tycoon.xyz deploys so new builds show up immediately without stale CSS or cached HTML.",
+      "highlights": [
+        "GitHub Actions now purges Cloudflare CDN cache after every deploy",
+        "Cache headers: HTML always revalidates; hashed JS/CSS cached long-term",
+        "Fixes occasional “no styles” after deploy when browsers held old HTML"
+      ]
+    },
+    {
+      "id": "site-seo-crawl-june6",
+      "title": "Website — SEO & Crawling",
+      "date": "2026-06-06",
+      "version": "Site · June 2026",
+      "summary": "Search-engine and crawler fixes for pickaxe-tycoon.xyz — sitemap, robots.txt, and broken email links.",
+      "highlights": [
+        "Sitemap trimmed to 10 indexable pages; robots.txt generated at build time",
+        "Blocked /go/, /yt/, and /cdn-cgi/ from crawlers (tracking + Cloudflare junk paths)",
+        "Fixed Cloudflare email-protection 404 links on About, Terms, and Privacy",
+        "H3 headings and optimized meta titles/descriptions on all guide pages"
+      ]
+    },
+    {
+      "id": "site-mobile-nav-june6",
+      "title": "Website — Mobile & Navigation",
+      "date": "2026-06-06",
+      "version": "Site · June 2026",
+      "summary": "Better navigation and phone layout across the fan guide site.",
+      "highlights": [
+        "Active page highlight in header (desktop + mobile)",
+        "Hamburger menu with full-screen overlay on small screens",
+        "Responsive spacing on calculator, tier list, codes, wiki, and footer",
+        "YouTube comment short links: pickaxe-tycoon.xyz/c, /b, /t, /w"
+      ]
+    },
+    {
       "id": "magmatic-cavern-may16",
       "title": "Magmatic Cavern Expansion",
       "date": "2026-05-16",

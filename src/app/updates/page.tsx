@@ -13,7 +13,7 @@ export const metadata = generateSEOMetadata({
   path: '/updates/',
   type: 'article',
   publishedTime: '2026-04-24',
-  modifiedTime: '2026-05-18',
+  modifiedTime: '2026-06-07',
 });
 
 export default function UpdatesPage() {
@@ -32,13 +32,15 @@ export default function UpdatesPage() {
             description: seo.description,
             path: '/updates/',
             publishedTime: '2026-04-24',
-            modifiedTime: '2026-05-18',
+            modifiedTime: '2026-06-07',
           }),
         ]}
       />
       <div className="page-container max-w-3xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Updates</h1>
-        <p className="text-zinc-400 mb-8">Patch notes and update history for Pickaxe Tycoon.</p>
+        <p className="text-zinc-400 mb-8">
+          In-game patch notes and pickaxe-tycoon.xyz site changelog.
+        </p>
 
         <div className="space-y-6">
           {updates.map((update) => (
