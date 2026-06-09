@@ -25,3 +25,8 @@
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
+
+# Bing IndexNow key verification
+/83d2fecd2b67485c9292249d3d936875.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400

@@ -88,3 +88,6 @@ jobs:
             exit 1
           fi
           echo "Cloudflare cache purged successfully."
+
+      - name: Submit URLs to Bing IndexNow
+        run: node scripts/submit-indexnow.mjs
