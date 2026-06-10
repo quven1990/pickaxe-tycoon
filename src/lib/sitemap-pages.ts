@@ -47,6 +47,7 @@ const pageDescriptions: Record<string, string> = {
   '/codes/': 'Active and expired codes, updated daily.',
   '/tier-list/': 'All 24 pickaxes ranked by grade.',
   '/beginner-guide/': 'Complete starter guide for new players.',
+  '/guides/max-level/': 'Reach Tier 24 Legendary — merge route and late-game tips.',
   '/wiki/': 'Pickaxe database, ores, and Magmatic Cavern info.',
   '/updates/': 'Patch notes and update history.',
 };

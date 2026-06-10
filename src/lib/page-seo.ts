@@ -21,6 +21,11 @@ export const PAGE_SEO = {
     description:
       'Pickaxe Tycoon beginner guide for Roblox. Learn mining, ore deposits, 1.5x multiplier timing, merging pickaxes, and how to build your mining tower fast.',
   },
+  maxLevelGuide: {
+    title: 'Pickaxe Tycoon Max Level Guide — Reach Legendary (2026)',
+    description:
+      'How to reach max level Legendary Pickaxe in Pickaxe Tycoon on Roblox. Merge route, gamepass tips, and Magmatic Cavern milestones from Melon & Sunny gameplay.',
+  },
   wiki: {
     title: 'Pickaxe Tycoon Wiki — Pickaxes, Ores & Merge Guide',
     description:

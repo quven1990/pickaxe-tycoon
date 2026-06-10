@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://pickaxe-tycoon.xyz/</loc>
-<lastmod>2026-06-09T00:00:00.000Z</lastmod>
+<lastmod>2026-06-10T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1</priority>
 </url>
@@ -14,7 +14,7 @@
 </url>
 <url>
 <loc>https://pickaxe-tycoon.xyz/codes/</loc>
-<lastmod>2026-06-09T00:00:00.000Z</lastmod>
+<lastmod>2026-06-10T00:00:00.000Z</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.9</priority>
 </url>
@@ -29,6 +29,12 @@
 <lastmod>2026-05-18T00:00:00.000Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
+</url>
+<url>
+<loc>https://pickaxe-tycoon.xyz/guides/max-level/</loc>
+<lastmod>2026-06-10T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.75</priority>
 </url>
 <url>
 <loc>https://pickaxe-tycoon.xyz/wiki/</loc>
