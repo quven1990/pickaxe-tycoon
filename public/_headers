@@ -2,6 +2,7 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: unload=()
 
 # Hashed Next.js bundles — long cache, no overlap with /*
 /_next/static/*

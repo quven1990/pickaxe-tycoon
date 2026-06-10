@@ -1,6 +1,18 @@
 {
   "updates": [
     {
+      "id": "site-adsense-perf-june9",
+      "title": "Website — AdSense & Performance",
+      "date": "2026-06-09",
+      "version": "Site · June 2026",
+      "summary": "Mitigated Google Search Console deprecated API warning from AdSense scripts and added ads.txt.",
+      "highlights": [
+        "AdSense script deferred to lazyOnload (loads after page is idle)",
+        "Permissions-Policy: unload=() blocks deprecated unload handlers site-wide",
+        "Added ads.txt for AdSense publisher verification"
+      ]
+    },
+    {
       "id": "site-sitemap-indexnow-june9",
       "title": "Website — Sitemap & IndexNow",
       "date": "2026-06-09",
