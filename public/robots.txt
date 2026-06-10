@@ -4,18 +4,33 @@ User-agent: Googlebot
 Allow: /
 Disallow: /go/
 Disallow: /yt/
+Disallow: /c/
+Disallow: /b/
+Disallow: /t/
+Disallow: /w/
+Disallow: /m/
 Disallow: /cdn-cgi/
 
 User-agent: Bingbot
 Allow: /
 Disallow: /go/
 Disallow: /yt/
+Disallow: /c/
+Disallow: /b/
+Disallow: /t/
+Disallow: /w/
+Disallow: /m/
 Disallow: /cdn-cgi/
 
 User-agent: *
 Allow: /
 Disallow: /go/
 Disallow: /yt/
+Disallow: /c/
+Disallow: /b/
+Disallow: /t/
+Disallow: /w/
+Disallow: /m/
 Disallow: /cdn-cgi/
 
 Sitemap: https://pickaxe-tycoon.xyz/sitemap_index.xml

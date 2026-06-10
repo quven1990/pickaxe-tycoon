@@ -5,6 +5,7 @@ export const YT_LANDING_SLUGS = [
   'tier-list',
   'beginner-guide',
   'codes',
+  'max-level',
 ] as const;
 
 export type YtLandingSlug = (typeof YT_LANDING_SLUGS)[number];
@@ -15,6 +16,7 @@ export const YT_SLUG_TO_PATH: Record<YtLandingSlug, string> = {
   'tier-list': '/tier-list/',
   'beginner-guide': '/beginner-guide/',
   codes: '/codes/',
+  'max-level': '/guides/max-level/',
 };
 
 /** All pre-built /yt/ routes for static export + comment links. */
@@ -29,7 +31,7 @@ export const YOUTUBE_PROMO_LINKS: Array<{
   { videoId: 'YEcEekyjVVE', slug: 'beginner-guide' },
   { videoId: 'dgMUGdxTt3E', slug: 'beginner-guide' },
   { videoId: 'FZDkXHjvbOM', slug: 'beginner-guide' },
-  { videoId: 'TRQx52aLZOM', slug: 'tier-list' },
+  { videoId: 'TRQx52aLZOM', slug: 'max-level' },
   { videoId: 'tr81UVBjveo', slug: 'calculator' },
   { videoId: '3v1cjdEOU7k', slug: 'calculator' },
   { videoId: '8dlDhGLEuUQ', slug: 'calculator' },

@@ -34,6 +34,12 @@ const tools = [
     description: 'Complete starter walkthrough — mining, merging, and building your tower.',
     keyword: 'Pickaxe Tycoon guide',
   },
+  {
+    href: '/guides/max-level/',
+    title: 'Max Level Guide',
+    description: 'Reach Tier 24 Legendary — merge milestones, gamepass tips, and late-game route.',
+    keyword: 'Pickaxe Tycoon legendary',
+  },
 ];
 
 export default function HomePage() {

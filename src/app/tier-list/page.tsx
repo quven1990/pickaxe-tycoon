@@ -33,7 +33,10 @@ export default function TierListPage() {
       <div className="page-container max-w-4xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Tier List</h1>
         <p className="text-zinc-400 mb-8">
-          All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Legendary Pickaxe) to complete the collection.
+          All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Legendary Pickaxe) to complete the collection.{' '}
+          <a href="/guides/max-level/" className="text-amber-400 hover:text-amber-300">
+            Max level guide →
+          </a>
         </p>
 
         {byGrade.map(({ grade, pickaxes: group }) =>

@@ -35,6 +35,7 @@ const YT_SHORT_PATH: Partial<Record<YtLandingSlug, string>> = {
   'tier-list': 't',
   wiki: 'w',
   codes: 'c',
+  'max-level': 'm',
 };
 
 /** Comment link text — use bare domain without https for YouTube. */

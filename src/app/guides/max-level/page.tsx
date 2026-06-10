@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { GUIDES } from '@/lib/guides';
 import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo';
 
+const guide = GUIDES.maxLevel;
 const seo = PAGE_SEO.maxLevelGuide;
-const VIDEO_URL = 'https://www.youtube.com/watch?v=TRQx52aLZOM';
+const VIDEO_URL = `https://www.youtube.com/watch?v=${guide.videoId}`;
 
 export const metadata = generateSEOMetadata({
   title: 'Max Level Guide',
@@ -16,7 +18,7 @@ export const metadata = generateSEOMetadata({
     'Pickaxe Tycoon legendary pickaxe',
     'Melon and Sunny Pickaxe Tycoon',
   ],
-  path: '/guides/max-level/',
+  path: guide.path,
   type: 'article',
   publishedTime: '2026-06-10',
   modifiedTime: '2026-06-10',
@@ -46,12 +48,12 @@ export default function MaxLevelGuidePage() {
         data={[
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Max Level Guide', url: '/guides/max-level/' },
+            { name: 'Max Level Guide', url: guide.path },
           ]),
           generateArticleSchema({
             title: seo.title,
             description: seo.description,
-            path: '/guides/max-level/',
+            path: guide.path,
             publishedTime: '2026-06-10',
             modifiedTime: '2026-06-10',
           }),
@@ -69,7 +71,14 @@ export default function MaxLevelGuidePage() {
           >
             Melon &amp; Sunny&apos;s max-level run
           </a>
-          . Fan summary — not official.
+          . Fan summary — not official. Permanent link:{' '}
+          <Link href={guide.shortPath} className="text-amber-400 hover:text-amber-300">
+            pickaxe-tycoon.xyz/m
+          </Link>
+          .
+        </p>
+        <p className="mb-6 text-xs text-zinc-600">
+          Video unavailable? Search YouTube: &quot;Melon Sunny Pickaxe Tycoon max level&quot;.
         </p>
 
         <Figure
