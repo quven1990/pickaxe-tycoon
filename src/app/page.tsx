@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getGameConfig, getPickaxes } from '@/lib/data';
+import { getGameConfig, getPickaxes, getRelatedSites } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { generateVideoGameSchema, generateWebSiteSchema } from '@/lib/seo';
 
 const config = getGameConfig();
 const pickaxes = getPickaxes();
+const relatedSites = getRelatedSites();
 const gameIcon = config.assets?.icon ?? '/images/game-icon.png';
 const screenshots = config.assets?.screenshots ?? [];
 
@@ -202,6 +203,32 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {relatedSites.length > 0 && (
+        <section className="page-container" aria-labelledby="more-guides-heading">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-5 py-4 sm:px-6">
+            <h2 id="more-guides-heading" className="text-sm font-semibold text-zinc-300 mb-1">
+              More Roblox Guides
+            </h2>
+            <ul className="space-y-2">
+              {relatedSites.map((site) => (
+                <li key={site.url} className="text-sm text-zinc-500">
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-amber-400 hover:text-amber-300"
+                  >
+                    {site.label}
+                  </a>
+                  <span className="text-zinc-600"> — </span>
+                  {site.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Pickaxe Preview */}
       <section className="page-container">

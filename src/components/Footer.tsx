@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { getGameConfig, getRelatedSites } from '@/lib/data';
+import { getGameConfig } from '@/lib/data';
 
 const config = getGameConfig();
-const relatedSites = getRelatedSites();
 
 const footerLinks = [
   { href: '/terms/', label: 'Terms' },
@@ -31,24 +30,6 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        {relatedSites.length > 0 && (
-          <p className="mb-4 text-xs text-zinc-600 sm:text-sm">
-            More Roblox guides:{' '}
-            {relatedSites.map((site, i) => (
-              <span key={site.url}>
-                {i > 0 && ' · '}
-                <a
-                  href={site.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-500 underline decoration-zinc-700 underline-offset-2 transition-colors hover:text-amber-400"
-                >
-                  {site.label}
-                </a>
-              </span>
-            ))}
-          </p>
-        )}
         <p className="mx-auto mb-2 max-w-xl text-xs leading-relaxed sm:text-sm">
           {config.game.name} Guide & Tools — Fan-made companion site. Not affiliated with Roblox Corporation or Popular Marketplace.
         </p>
