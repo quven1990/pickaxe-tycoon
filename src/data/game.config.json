@@ -121,7 +121,7 @@
       "path": "/updates/",
       "title": "Pickaxe Tycoon Updates",
       "priority": "0.8",
-      "lastUpdated": "2026-06-09"
+      "lastUpdated": "2026-06-10"
     }
   ],
   "sync": {
@@ -149,5 +149,12 @@
   },
   "socials": {
     "roblox": "https://www.roblox.com/games/73814003954154/Pickaxe-Tycoon"
-  }
+  },
+  "relatedSites": [
+    {
+      "url": "https://buildaring.online/",
+      "label": "Build A Ring Farm Wiki",
+      "description": "Unofficial player toolkit for Build A Ring Farm on Roblox — active codes, 51-seed database, mutations, rings, and a free profit calculator."
+    }
+  ]
 }

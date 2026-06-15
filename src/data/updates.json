@@ -1,6 +1,19 @@
 {
   "updates": [
     {
+      "id": "site-max-level-guide-june10",
+      "title": "Website — Max Level Guide",
+      "date": "2026-06-10",
+      "version": "Site · June 2026",
+      "summary": "New late-game guide for reaching Tier 24 Legendary, plus internal links so the page is easy to find from homepage, tier list, and sitemap.",
+      "highlights": [
+        "New guide at /guides/max-level/ — merge route and late-game tips (Melon & Sunny run)",
+        "Homepage Tools & Guides card and Tier List page link to the guide",
+        "Short link pickaxe-tycoon.xyz/m/ for YouTube comments; guide registry avoids orphan pages",
+        "sitemap_index.xml now lists 11 indexable URLs (added max-level guide)"
+      ]
+    },
+    {
       "id": "site-adsense-perf-june9",
       "title": "Website — AdSense & Performance",
       "date": "2026-06-09",

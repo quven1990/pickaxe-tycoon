@@ -1,6 +1,6 @@
 import ContactEmail from '@/components/ContactEmail';
 import { parseEmailAddress } from '@/lib/contact-email';
-import { getGameConfig } from '@/lib/data';
+import { getGameConfig, getRelatedSites } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -16,6 +16,7 @@ export const metadata = generateSEOMetadata({
 
 export default function AboutPage() {
   const config = getGameConfig();
+  const relatedSites = getRelatedSites();
   const contact = parseEmailAddress(
     config.contact?.general ?? 'contract@pickaxe-tycoon.xyz',
   );
@@ -45,6 +46,29 @@ export default function AboutPage() {
           This site is not affiliated with Roblox Corporation or Popular Marketplace. All game data is
           sourced from public gameplay, YouTube research, and community resources.
         </p>
+
+        {relatedSites.length > 0 && (
+          <>
+            <h2 className="text-xl font-bold text-white mt-8 mb-3">Related Fan Wikis</h2>
+            <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Other Roblox Game Guides</h3>
+            <ul className="space-y-3">
+              {relatedSites.map((site) => (
+                <li key={site.url}>
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-amber-400 hover:text-amber-300"
+                  >
+                    {site.label}
+                  </a>
+                  <span className="text-zinc-500"> — </span>
+                  <span className="text-zinc-400">{site.description}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         <h2 id="contact" className="text-xl font-bold text-white mt-8 mb-3">Contact</h2>
         <h3 className="text-lg font-semibold text-zinc-200 mt-4 mb-2">Get in Touch</h3>

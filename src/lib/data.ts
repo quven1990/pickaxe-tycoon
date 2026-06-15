@@ -119,6 +119,11 @@ export interface GameConfig {
     roblox?: string;
     discord?: string;
   };
+  relatedSites?: {
+    url: string;
+    label: string;
+    description: string;
+  }[];
 }
 
 const pickaxes: Pickaxe[] = (pickaxesData as { pickaxes: Pickaxe[] }).pickaxes;
@@ -138,6 +143,10 @@ export function getPickaxeBySlug(slug: string): Pickaxe | undefined {
 
 export function getGameConfig(): GameConfig {
   return config;
+}
+
+export function getRelatedSites() {
+  return config.relatedSites ?? [];
 }
 
 export function getCodesData() {
