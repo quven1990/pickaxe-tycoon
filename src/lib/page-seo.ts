@@ -1,15 +1,26 @@
-/** Per-page absolute titles (40–60 chars) and meta descriptions (140–160 chars). */
+/**
+ * Per-page absolute titles (40–60 chars) and meta descriptions (140–160 chars).
+ *
+ * Title/description patterns informed by SERP competitors:
+ * - Codes: officialcodezone.com, buildaring.online/codes, lawod.com
+ * - Calculator: pickaxe-tycoon-bd3.pages.dev
+ * - Beginner: gamelandinsider.com/pickaxe-tycoon-guide
+ * - Wiki: pickaxetycoon.wiki
+ */
 
 export const PAGE_SEO = {
   calculator: {
-    title: 'Pickaxe Tycoon Merge Calculator — Free Roblox Tool (2026)',
+    // bd3: "Pickaxe Tycoon Calculator - Merge, Income & Upgrade ROI Tools"
+    title: 'Pickaxe Tycoon Merge Calculator — Wood to Legendary',
     description:
-      'Free Pickaxe Tycoon merge calculator for Roblox. Plan Wood to Legendary, see pickaxes needed, merge steps, and buy costs for all 24 pickaxe tiers.',
+      'Free Pickaxe Tycoon merge calculator for Roblox. Plan your 3:1 merge path, see pickaxes needed, step-by-step tiers, and buy costs from Wood to Legendary Tier 24.',
   },
   codes: {
-    title: 'Pickaxe Tycoon Codes (2026) — Working & Expired List',
+    // officialcodezone: "Pickaxe Tycoon Codes June 2026! | Latest Roblox Codes"
+    // buildaring: "Codes (2026) — Free Seeds, Cash & Rewards List" + daily updated
+    title: 'Pickaxe Tycoon Codes — Working & Expired List',
     description:
-      'All Pickaxe Tycoon codes for Roblox in 2026. Active and expired codes checked daily. Learn how to redeem rewards when new codes drop — not Pickaxe Simulator.',
+      'All Pickaxe Tycoon codes for Roblox — active and expired list checked daily. Copy codes, learn how to redeem, and bookmark for new drops. Not Pickaxe Simulator.',
   },
   tierList: {
     title: 'Pickaxe Tycoon Tier List — All 24 Pickaxes Ranked',
@@ -17,19 +28,22 @@ export const PAGE_SEO = {
       'Complete Pickaxe Tycoon tier list for Roblox. All 24 pickaxes ranked from Wood to Legendary with merge info, grades, and Magmatic Cavern requirements.',
   },
   beginnerGuide: {
-    title: 'Pickaxe Tycoon Beginner Guide — How to Play (2026)',
+    // gamelandinsider: "Pickaxe Tycoon Roblox Guide: Merging, Ore Tiers & Tips"
+    title: 'Pickaxe Tycoon Beginner Guide — Mining, Merge & Tower',
     description:
-      'Pickaxe Tycoon beginner guide for Roblox. Learn mining, ore deposits, 1.5x multiplier timing, merging pickaxes, and how to build your mining tower fast.',
+      'Roblox Pickaxe Tycoon beginner guide: mine ores, merge pickaxes, upgrade your furnace, and build a mining tower. Core loop and tips for new players in 2026.',
   },
   maxLevelGuide: {
-    title: 'Pickaxe Tycoon Max Level Guide — Reach Legendary (2026)',
+    title: 'Pickaxe Tycoon Max Level Guide — Tier 24 Legendary Route',
     description:
-      'How to reach max level Legendary Pickaxe in Pickaxe Tycoon on Roblox. Merge route, gamepass tips, and Magmatic Cavern milestones from Melon & Sunny gameplay.',
+      'How to reach max level Legendary (Tier 24) in Pickaxe Tycoon on Roblox. Merge milestones, gamepass tips, and late-game route from Melon & Sunny gameplay.',
   },
   wiki: {
-    title: 'Pickaxe Tycoon Wiki — Pickaxes, Ores & Merge Guide',
+    // pickaxetycoon.wiki: "Wiki - Guide, Codes, Pickaxes and Updates" (thin data, source labels)
+    // Differentiate: full 24-pickaxe DB + calculator hook, not empty "in progress" tables
+    title: 'Pickaxe Tycoon Wiki — 24 Pickaxes, Tools & Updates',
     description:
-      'Pickaxe Tycoon wiki with all 24 pickaxes, ore types, Magmatic Cavern area info, and merge rules. Unofficial Roblox fan database — updated for 2026.',
+      'Pickaxe Tycoon wiki with all 24 pickaxes, ores, Magmatic Cavern areas, and merge rules. Free calculator and daily-checked codes status — unofficial Roblox fan database.',
   },
   updates: {
     title: 'Pickaxe Tycoon Updates — Patch Notes & News (2026)',
@@ -57,3 +71,8 @@ export const PAGE_SEO = {
       'Full sitemap of Pickaxe Tycoon Guide. Browse all calculator, codes, tier list, wiki, beginner guide, updates, and legal pages on pickaxe-tycoon.xyz.',
   },
 } as const;
+
+/** officialcodezone-style: "Pickaxe Tycoon Codes June 2026! | Latest Roblox Codes" */
+export function codesAbsoluteTitle(monthYear: string): string {
+  return `Pickaxe Tycoon Codes — ${monthYear} | Daily Updated List`;
+}

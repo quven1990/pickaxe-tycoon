@@ -1,4 +1,5 @@
-import { getPickaxes, getAreas, getOres, getGameConfig, GRADE_COLORS } from '@/lib/data';
+import Link from 'next/link';
+import { getPickaxes, getAreas, getOres, getGameConfig, getCodesData, GRADE_COLORS } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -19,7 +20,38 @@ export default function WikiPage() {
   const areas = getAreas();
   const ores = getOres();
   const config = getGameConfig();
+  const codesData = getCodesData();
   const banner = config.assets?.thumbnail;
+  const lastChecked = codesData.lastChecked ?? codesData.lastUpdated;
+  const hasActiveCodes = codesData.activeCodes.length > 0;
+  const lastSync = config.sync?.lastSyncAt?.slice(0, 10);
+
+  const startHere = [
+    {
+      href: '/calculator/',
+      label: 'Merge Calculator',
+      hint: 'Plan Wood → Legendary tiers',
+      icon: '⛏',
+    },
+    {
+      href: '/tier-list/',
+      label: 'Tier List',
+      hint: 'All 24 pickaxes ranked',
+      icon: '📊',
+    },
+    {
+      href: '/codes/',
+      label: 'Codes Status',
+      hint: hasActiveCodes ? `${codesData.activeCodes.length} active` : 'No active codes',
+      icon: '#',
+    },
+    {
+      href: '/beginner-guide/',
+      label: 'Beginner Guide',
+      hint: 'Mining, merge & tower loop',
+      icon: '⇄',
+    },
+  ];
 
   return (
     <>
@@ -43,9 +75,61 @@ export default function WikiPage() {
           </div>
         )}
         <h1 className="page-title mb-2">Pickaxe Tycoon Wiki</h1>
-        <p className="text-zinc-400 mb-8">
-          Complete database of all 24 pickaxes, ores, areas, and merge mechanics.
+        <p className="text-zinc-400 mb-4">
+          Guides, all 24 pickaxes, merge rules, ores, and daily-checked codes for the Roblox mining tycoon.
         </p>
+
+        <div className="mb-8 flex flex-wrap gap-2 text-xs">
+          <span className="rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1 text-green-400">
+            24 pickaxes indexed
+          </span>
+          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-amber-400">
+            Free merge calculator
+          </span>
+          <span
+            className={`rounded-full border px-3 py-1 ${
+              hasActiveCodes
+                ? 'border-green-500/30 bg-green-500/10 text-green-400'
+                : 'border-zinc-700 bg-zinc-800/80 text-zinc-400'
+            }`}
+          >
+            {hasActiveCodes ? `${codesData.activeCodes.length} active codes` : 'No active codes'}
+          </span>
+          {lastSync && (
+            <span className="rounded-full border border-zinc-700 bg-zinc-800/80 px-3 py-1 text-zinc-400">
+              Roblox stats synced <time dateTime={lastSync}>{lastSync}</time>
+            </span>
+          )}
+          <span className="rounded-full border border-zinc-700 bg-zinc-800/80 px-3 py-1 text-zinc-400">
+            Codes checked <time dateTime={lastChecked}>{lastChecked}</time>
+          </span>
+        </div>
+
+        <section className="mb-10" aria-labelledby="start-here-heading">
+          <h2 id="start-here-heading" className="text-xl font-bold text-white mb-2">
+            Start Here
+          </h2>
+          <p className="text-sm text-zinc-500 mb-4">
+            Pick a goal — each page targets a different search need. Full database tables are below.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {startHere.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900 p-4 transition-colors hover:border-amber-500/30"
+              >
+                <span className="text-lg" aria-hidden>
+                  {item.icon}
+                </span>
+                <span>
+                  <span className="block font-semibold text-white">{item.label}</span>
+                  <span className="text-sm text-zinc-500">{item.hint}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <section className="mb-10 p-6 rounded-xl bg-zinc-900 border border-zinc-800">
           <h2 className="text-xl font-bold text-white mb-3">Merge Rules</h2>
@@ -127,6 +211,11 @@ export default function WikiPage() {
             </table>
           </div>
         </section>
+
+        <p className="text-xs text-zinc-600">
+          Unofficial fan wiki — not affiliated with Roblox or Popular Marketplace. Pickaxe data from
+          in-game index and community research; codes checked daily against public lists.
+        </p>
       </div>
     </>
   );

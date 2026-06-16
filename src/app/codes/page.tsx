@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { CopyButton } from '@/components/CopyButton';
 import { JsonLd } from '@/components/JsonLd';
 import { getCodesData, getGameConfig } from '@/lib/data';
-import { PAGE_SEO } from '@/lib/page-seo';
+import { PAGE_SEO, codesAbsoluteTitle } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema, getCurrentDateString } from '@/lib/seo';
 
 const config = getGameConfig();
@@ -12,7 +12,7 @@ const seo = PAGE_SEO.codes;
 
 export const metadata = generateSEOMetadata({
   title: `Codes (${currentDate})`,
-  absoluteTitle: seo.title,
+  absoluteTitle: codesAbsoluteTitle(currentDate),
   description: seo.description,
   keywords: ['Pickaxe Tycoon codes', 'Pickaxe Tycoon codes 2026', 'roblox Pickaxe Tycoon codes'],
   path: '/codes/',

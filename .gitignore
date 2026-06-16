@@ -30,6 +30,11 @@ yarn-error.log*
 
 # env files
 .env*.local
+.env.local
+
+# google / bing api credentials (ops scripts)
+/credentials/*.json
+!credentials/.gitkeep
 
 # typescript
 *.tsbuildinfo
