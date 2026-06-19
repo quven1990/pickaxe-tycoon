@@ -12,6 +12,7 @@
     "indexnow": "node scripts/submit-indexnow.mjs",
     "verify:sitemap": "node scripts/verify-sitemap-live.mjs",
     "ops:report": "node scripts/ops-report.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "deploy": "npm run build && wrangler pages deploy out --project-name=pickaxe-tycoon"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "^15.3.3",
     "googleapis": "^148.0.0",
+    "sharp": "^0.35.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.94.0"

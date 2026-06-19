@@ -3,7 +3,7 @@ import { getPickaxes, getAreas, getOres, getGameConfig, getCodesData, GRADE_COLO
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
-import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const seo = PAGE_SEO.wiki;
 
@@ -64,7 +64,7 @@ export default function WikiPage() {
       <div className="page-container max-w-4xl">
         {banner && (
           <div className="mb-8 overflow-hidden rounded-xl border border-zinc-800">
-            <Image
+            <OptimizedImage
               src={banner}
               alt={`${config.game.name} gameplay`}
               width={768}

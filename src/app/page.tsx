@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 import { getGameConfig, getPickaxes, getRelatedSites } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { generateVideoGameSchema, generateWebSiteSchema } from '@/lib/seo';
@@ -50,10 +50,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-800">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/hero-bg.jpg)' }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center opacity-20 hero-bg" />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/80 to-zinc-950" />
         <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-24">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
@@ -62,7 +59,7 @@ export default function HomePage() {
                 Updated {config.game.lastUpdated} — {config.game.currentVersion}
               </div>
               <div className="mb-4 flex items-start gap-3 sm:items-center sm:gap-4">
-                <Image
+                <OptimizedImage
                   src={gameIcon}
                   alt={`${config.game.name} icon`}
                   width={80}
@@ -98,7 +95,7 @@ export default function HomePage() {
             </div>
             {screenshots[0] && (
               <div className="mx-auto w-full max-w-sm shrink-0 md:mx-0 md:block md:w-80 lg:w-96">
-                <Image
+                <OptimizedImage
                   src={screenshots[0].src}
                   alt={screenshots[0].alt}
                   width={768}
@@ -262,12 +259,13 @@ export default function HomePage() {
                 key={shot.src}
                 className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 hover:border-amber-500/30 transition-colors"
               >
-                <Image
+                <OptimizedImage
                   src={shot.src}
                   alt={shot.alt}
                   width={768}
                   height={432}
                   className="w-full h-auto"
+                  loading="lazy"
                 />
               </div>
             ))}

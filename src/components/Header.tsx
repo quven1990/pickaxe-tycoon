@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 import { usePathname } from 'next/navigation';
 import { getGameConfig } from '@/lib/data';
 
@@ -92,7 +92,7 @@ export default function Header() {
               : 'text-white hover:text-amber-400'
           }`}
         >
-          <Image
+          <OptimizedImage
             src={gameIcon}
             alt={`${config.game.name} guide site logo`}
             width={28}

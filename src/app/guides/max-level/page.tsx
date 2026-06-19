@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { GUIDES } from '@/lib/guides';
@@ -35,7 +35,7 @@ function Figure({
 }) {
   return (
     <figure className="my-6 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-      <Image src={src} alt={alt} width={1200} height={675} className="h-auto w-full" />
+      <OptimizedImage src={src} alt={alt} width={768} height={432} className="h-auto w-full" loading="lazy" />
       <figcaption className="px-4 py-2 text-xs text-zinc-500">{caption}</figcaption>
     </figure>
   );

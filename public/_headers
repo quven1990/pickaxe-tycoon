@@ -15,6 +15,12 @@
 /hero-bg.jpg
   Cache-Control: public, max-age=604800
 
+/hero-bg.webp
+  Cache-Control: public, max-age=604800
+
+/*.webp
+  Cache-Control: public, max-age=604800
+
 /og-default.jpg
   Cache-Control: public, max-age=604800
 
