@@ -45,34 +45,38 @@ export default function CalculatorPage() {
       />
       <div className="page-container max-w-4xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Merge Calculator</h1>
-        <p className="text-zinc-400 mb-8">
-          Select your target tier to see the merge path, pickaxes needed, and estimated buy cost.
+        <p className="text-zinc-400 mb-6 sm:mb-8">
+          Enter the pickaxes you have and instantly see what you still need to reach your target tier.
         </p>
-
-        <section className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-3">How to Use This Calculator</h2>
-          <h3 className="text-lg font-semibold text-zinc-200 mb-2">Select Your Target Tier</h3>
-          <p className="text-sm text-zinc-400 mb-4">
-            Choose any pickaxe from Wood (Tier 1) to Legendary (Tier 24). The tool calculates how many
-            starting pickaxes you need using the standard 3:1 merge rule.
-          </p>
-          <h3 className="text-lg font-semibold text-zinc-200 mb-2">Read the Merge Path</h3>
-          <p className="text-sm text-zinc-400">
-            The step-by-step merge path shows each tier transition so you can plan bulk buys and avoid
-            wasting money on the wrong upgrade level.
-          </p>
-        </section>
 
         <MergeCalculator />
 
+        <details className="group mt-8 rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+          <summary className="min-h-8 cursor-pointer list-none text-lg font-bold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500">
+            How to use this calculator <span className="float-right text-zinc-500 group-open:rotate-180">⌄</span>
+          </summary>
+          <div className="mt-4 grid gap-5 sm:grid-cols-2">
+            <div>
+              <h3 className="font-semibold text-zinc-200">1. Enter what you have</h3>
+              <p className="mt-1 text-sm leading-6 text-zinc-400">Select your current pickaxe tier and quantity. Use zero if you are starting from scratch.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-zinc-200">2. Choose your target</h3>
+              <p className="mt-1 text-sm leading-6 text-zinc-400">Pick the tier and quantity you want. Your result and exact 3:1 merge path update instantly.</p>
+            </div>
+          </div>
+        </details>
+
         <section className="mt-10">
           <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faq.map((f) => (
-              <div key={f.question}>
-                <h3 className="text-lg font-semibold text-zinc-200 mb-1">{f.question}</h3>
-                <p className="text-sm text-zinc-400">{f.answer}</p>
-              </div>
+              <details key={f.question} className="group rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
+                <summary className="min-h-8 cursor-pointer list-none font-semibold text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500">
+                  {f.question} <span className="float-right ml-3 text-zinc-500 group-open:rotate-180">⌄</span>
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-zinc-400">{f.answer}</p>
+              </details>
             ))}
           </div>
         </section>
