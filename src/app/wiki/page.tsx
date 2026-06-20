@@ -30,7 +30,7 @@ export default function WikiPage() {
     {
       href: '/calculator/',
       label: 'Merge Calculator',
-      hint: 'Plan Wood → Legendary tiers',
+      hint: 'Plan Wood → Golden tiers',
       icon: '⛏',
     },
     {

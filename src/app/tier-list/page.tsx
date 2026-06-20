@@ -1,4 +1,4 @@
-import { getPickaxes, GRADE_COLORS } from '@/lib/data';
+import { getPickaxes, GRADE_COLORS, formatMoney } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo';
@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata({
   title: 'Tier List',
   absoluteTitle: seo.title,
   description: seo.description,
-  keywords: ['Pickaxe Tycoon tier list', 'best pickaxe Pickaxe Tycoon', 'Pickaxe Tycoon legendary'],
+  keywords: ['Pickaxe Tycoon tier list', 'best pickaxe Pickaxe Tycoon', 'Pickaxe Tycoon Golden Pickaxe'],
   path: '/tier-list/',
 });
 
@@ -33,7 +33,7 @@ export default function TierListPage() {
       <div className="page-container max-w-4xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Tier List</h1>
         <p className="text-zinc-400 mb-8">
-          All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Legendary Pickaxe) to complete the collection.{' '}
+          All 24 pickaxes in the index, ranked by grade. Reach Tier 24 (Golden Pickaxe) to complete the collection.{' '}
           <a href="/guides/max-level/" className="text-amber-400 hover:text-amber-300">
             Max level guide →
           </a>
@@ -46,11 +46,11 @@ export default function TierListPage() {
                 Grade {grade}
               </h2>
               <h3 className="text-lg font-semibold text-zinc-200 mb-4">
-                {grade === 'S' && 'Endgame Pickaxes — Legendary Tier Goals'}
-                {grade === 'A' && 'Late-Game Pickaxes — Magmatic Cavern & Beyond'}
+                {grade === 'S' && 'Endgame Pickaxes — Golden Tier Goals'}
+                {grade === 'A' && 'Late-Game Pickaxes — Molten to Dragonbone'}
                 {grade === 'B' && 'Mid-Game Pickaxes — Strong Merge Targets'}
                 {grade === 'C' && 'Early-Mid Pickaxes — First Upgrade Milestones'}
-                {grade === 'D' && 'Starter Pickaxes — Wood to Bronze'}
+                {grade === 'D' && 'Starter Pickaxes — Wood to Titanium'}
               </h3>
               <div className="space-y-3">
                 {group.map((p) => (
@@ -64,8 +64,8 @@ export default function TierListPage() {
                       <div className="mt-1 text-xs text-zinc-600">{p.description}</div>
                     </div>
                     <div className="shrink-0 sm:ml-4 sm:text-right">
-                      {p.tier === 1 ? (
-                        <span className="text-xs text-green-400">Free</span>
+                      {p.tier === 1 && p.price !== null ? (
+                        <span className="text-xs text-green-400">Buy for {formatMoney(p.price)}</span>
                       ) : (
                         <span className="text-xs text-amber-400/80">Merge 3x prev tier</span>
                       )}

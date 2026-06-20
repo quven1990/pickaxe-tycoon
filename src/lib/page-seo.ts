@@ -11,9 +11,9 @@
 export const PAGE_SEO = {
   calculator: {
     // bd3: "Pickaxe Tycoon Calculator - Merge, Income & Upgrade ROI Tools"
-    title: 'Pickaxe Tycoon Merge Calculator — Wood to Legendary',
+    title: 'Pickaxe Tycoon Merge Calculator — Wood to Golden',
     description:
-      'Free Pickaxe Tycoon merge calculator for Roblox. Plan your 3:1 merge path, see pickaxes needed, step-by-step tiers, and buy costs from Wood to Legendary Tier 24.',
+      'Free Pickaxe Tycoon merge calculator for Roblox. Plan your 3:1 merge path, see pickaxes needed, and follow all tiers from Wood to Golden Tier 24.',
   },
   codes: {
     // officialcodezone: "Pickaxe Tycoon Codes June 2026! | Latest Roblox Codes"
@@ -25,7 +25,7 @@ export const PAGE_SEO = {
   tierList: {
     title: 'Pickaxe Tycoon Tier List — All 24 Pickaxes Ranked',
     description:
-      'Complete Pickaxe Tycoon tier list for Roblox. All 24 pickaxes ranked from Wood to Legendary with merge info, grades, and Magmatic Cavern requirements.',
+      'Complete Pickaxe Tycoon tier list for Roblox. All 24 in-game pickaxes ranked from Wood to Golden with names, merge info, grades, and tier numbers.',
   },
   beginnerGuide: {
     // gamelandinsider: "Pickaxe Tycoon Roblox Guide: Merging, Ore Tiers & Tips"
@@ -34,9 +34,9 @@ export const PAGE_SEO = {
       'Roblox Pickaxe Tycoon beginner guide: mine ores, merge pickaxes, upgrade your furnace, and build a mining tower. Core loop and tips for new players in 2026.',
   },
   maxLevelGuide: {
-    title: 'Pickaxe Tycoon Max Level Guide — Tier 24 Legendary Route',
+    title: 'Pickaxe Tycoon Max Level Guide — Tier 24 Golden Route',
     description:
-      'How to reach max level Legendary (Tier 24) in Pickaxe Tycoon on Roblox. Merge milestones, gamepass tips, and late-game route from Melon & Sunny gameplay.',
+      'How to reach the Golden Pickaxe (Tier 24) in Pickaxe Tycoon on Roblox. Merge milestones, gamepass tips, and late-game route from gameplay.',
   },
   wiki: {
     // pickaxetycoon.wiki: "Wiki - Guide, Codes, Pickaxes and Updates" (thin data, source labels)

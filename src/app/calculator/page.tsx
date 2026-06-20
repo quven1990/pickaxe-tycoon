@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata({
   title: 'Merge Calculator',
   absoluteTitle: seo.title,
   description: seo.description,
-  keywords: ['Pickaxe Tycoon calculator', 'Pickaxe Tycoon merge', 'Pickaxe Tycoon legendary pickaxe'],
+  keywords: ['Pickaxe Tycoon calculator', 'Pickaxe Tycoon merge', 'Pickaxe Tycoon Golden Pickaxe'],
   path: '/calculator/',
 });
 
@@ -20,9 +20,9 @@ const faq = [
       'Merge 3 pickaxes of the same tier to get 1 of the next tier. All 24 pickaxes follow this 3:1 rule.',
   },
   {
-    question: 'How many pickaxes do I need to reach Tier 24 (Legendary)?',
+    question: 'How many pickaxes do I need to reach Tier 24 (Golden)?',
     answer:
-      'To reach the Legendary Pickaxe (Tier 24), you need 3^23 = 94,143,178,827 Wood Pickaxes if merging from scratch with the standard 3:1 merge rule.',
+      'To reach the Golden Pickaxe (Tier 24), you need 3^23 = 94,143,178,827 Wood Pickaxes if merging from scratch with the standard 3:1 merge rule.',
   },
   {
     question: 'Can I buy pickaxes instead of merging?',

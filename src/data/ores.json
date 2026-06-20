@@ -14,7 +14,7 @@
       "description": "Fiery underground zone with tougher ores. Expanded in the May 2026 update with a locked gate hinting at future content.",
       "ores": ["amber", "kunzite"],
       "enemies": ["Galatean Warrior"],
-      "pickaxeUnlock": "Magma Pickaxe (Tier 18)"
+      "pickaxeUnlock": "Dragonbone Pickaxe (Tier 18)"
     },
     {
       "id": "upcoming-zone",

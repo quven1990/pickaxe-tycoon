@@ -43,11 +43,11 @@ const legalPages: SitemapPage[] = [
 
 const pageDescriptions: Record<string, string> = {
   '/': 'Home — tools, guides, and pickaxe progression overview.',
-  '/calculator/': 'Merge calculator — plan your path from Wood to Legendary.',
+  '/calculator/': 'Merge calculator — plan your path from Wood to Golden.',
   '/codes/': 'Active and expired codes, updated daily.',
   '/tier-list/': 'All 24 pickaxes ranked by grade.',
   '/beginner-guide/': 'Complete starter guide for new players.',
-  '/guides/max-level/': 'Reach Tier 24 Legendary — merge route and late-game tips.',
+  '/guides/max-level/': 'Reach Tier 24 Golden — merge route and late-game tips.',
   '/wiki/': 'Pickaxe database, ores, and Magmatic Cavern info.',
   '/updates/': 'Patch notes and update history.',
 };

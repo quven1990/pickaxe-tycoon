@@ -15,7 +15,7 @@ export const metadata = generateSEOMetadata({
   description: seo.description,
   keywords: [
     'Pickaxe Tycoon max level',
-    'Pickaxe Tycoon legendary pickaxe',
+    'Pickaxe Tycoon Golden Pickaxe',
     'Melon and Sunny Pickaxe Tycoon',
   ],
   path: guide.path,
@@ -84,14 +84,14 @@ export default function MaxLevelGuidePage() {
         <Figure
           src="/images/game-thumbnail.png"
           alt="Pickaxe Tycoon mining tower with multiple pickaxe tiers"
-          caption="Late-game towers stack dozens of pickaxes — the goal is Tier 24 Legendary."
+          caption="Late-game towers stack dozens of pickaxes — the goal is Tier 24 Golden."
         />
 
         <h2>What &quot;Max Level&quot; Means</h2>
         <p>
-          Max level = <strong>Tier 24 Legendary Pickaxe</strong>, the final index entry. Merge{' '}
-          <strong>3 Void Pickaxes</strong> (Tier 23) on the merge platform. There is no tier above
-          Legendary in the current build.
+          Max level = <strong>Tier 24 Golden Pickaxe</strong>, the final index entry. Merge{' '}
+          <strong>3 Meteorite Pickaxes</strong> (Tier 23) on the merge platform. There is no tier above
+          Golden in the current build.
         </p>
 
         <h2>The Core Loop (Every Run Starts Here)</h2>
@@ -126,7 +126,7 @@ export default function MaxLevelGuidePage() {
         <p>
           Melon calls it one of the hardest tycoons they&apos;ve played. Coal sells for almost
           nothing (a few dollars per deposit early on). You need <strong>three merges per tier</strong>{' '}
-          across 23 upgrades — exponential pickaxe count. Without boosts, Legendary takes a very
+          across 23 upgrades — exponential pickaxe count. Without boosts, Golden takes a very
           long grind.
         </p>
 
@@ -164,33 +164,33 @@ export default function MaxLevelGuidePage() {
         </p>
         <ul>
           <li>
-            <strong>Tier 7 Gold</strong> — first real income jump; stop sitting on Wood/Stone.
+            <strong>Tier 7 Crystal</strong> — first real mid-game milestone; stop sitting on Wood/Stone.
           </li>
           <li>
-            <strong>Tier 12 Sapphire</strong> — mid-game; ore types diversify on higher floors.
+            <strong>Tier 12 Carbon</strong> — mid-game; ore types diversify on higher floors.
           </li>
           <li>
-            <strong>Tier 18 Magma</strong> — needs Magmatic Cavern access; gate for S-tier picks.
+            <strong>Tier 18 Dragonbone</strong> — the last A-grade milestone before endgame picks.
           </li>
           <li>
-            <strong>Tiers 19–23</strong> (Inferno → Void) — pure endgame; only buy when you can
+            <strong>Tiers 19–23</strong> (Void → Meteorite) — pure endgame; only buy when you can
             merge immediately.
           </li>
           <li>
-            <strong>Tier 24 Legendary</strong> — 3× Void → done. Index complete.
+            <strong>Tier 24 Golden</strong> — 3× Meteorite → done. Index complete.
           </li>
         </ul>
 
         <Figure
           src="/images/screenshot-4.png"
           alt="Pickaxe Tycoon Magmatic Cavern area with lava theme"
-          caption="Magmatic Cavern unlocks Magma-tier merges (Tier 18+) and higher-value ores."
+          caption="Late-game areas and higher-value ores help fund the final merge tiers."
         />
 
         <h2>Practical Tips From the Run</h2>
         <h3>Merge Before You Buy More</h3>
         <p>
-          Three Wood → one Stone beats hoarding six Wood. Same rule at every tier until Legendary.
+          Three Wood → one Stone beats hoarding six Wood. Same rule at every tier until Golden.
         </p>
         <h3>Watch the Ore Multiplier</h3>
         <p>
@@ -214,7 +214,7 @@ export default function MaxLevelGuidePage() {
         <Figure
           src="/images/screenshot-1.png"
           alt="Pickaxe Tycoon pickaxe collection index screen"
-          caption="Complete the pickaxe index — Legendary is the final slot."
+          caption="Complete the pickaxe index — Golden is the final slot."
         />
 
         <h2>Bottom Line</h2>

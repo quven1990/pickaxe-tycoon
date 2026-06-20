@@ -17,7 +17,7 @@ const faq = [
   {
     question: 'How do I start playing Pickaxe Tycoon?',
     answer:
-      'You spawn with a free Wood Pickaxe that mines ores automatically. Collect ores from the basin, deposit them at the Deposit Ore platform, then collect money from the Collect Money platform.',
+      'Buy your first Wood Pickaxe for $5 and it will mine ores automatically. Collect ores from the basin, deposit them at the Deposit Ore platform, then collect money from the Collect Money platform.',
   },
   {
     question: 'How does merging pickaxes work?',
@@ -51,13 +51,13 @@ export default function BeginnerGuidePage() {
       <article className="page-container prose-content max-w-3xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Beginner Guide</h1>
         <p className="text-zinc-400 mb-8 text-base">
-          Everything you need to know to start your mining empire — from your first ore to the Legendary Pickaxe.
+          Everything you need to know to start your mining empire — from your first ore to the Golden Pickaxe.
         </p>
 
         <h2>Getting Started</h2>
         <h3>Your First Pickaxe and Ores</h3>
         <p>
-          At spawn, you receive a free <strong>Wood Pickaxe</strong> that automatically mines ores.
+          At spawn, buy your first <strong>Wood Pickaxe</strong> for $5. It automatically mines ores.
           Ores accumulate in the wide basin behind the spawn area. Walk over them to collect,
           then head to the <strong>Deposit Ore</strong> platform to process them into money.
         </p>
@@ -90,11 +90,11 @@ export default function BeginnerGuidePage() {
           of the same tier to get 1 of the next tier. Key milestones:
         </p>
         <ul>
-          <li><strong>Tier 1 Wood</strong> — Free starter pickaxe</li>
-          <li><strong>Tier 7 Gold</strong> — First major mid-game milestone</li>
-          <li><strong>Tier 14 Crystal</strong> — Late mid-game</li>
-          <li><strong>Tier 18 Magma</strong> — Requires Magmatic Cavern access</li>
-          <li><strong>Tier 24 Legendary</strong> — MAX tier, final index entry</li>
+          <li><strong>Tier 1 Wood</strong> — $5 starter pickaxe</li>
+          <li><strong>Tier 7 Crystal</strong> — First major mid-game milestone</li>
+          <li><strong>Tier 14 Molten</strong> — Late mid-game</li>
+          <li><strong>Tier 18 Dragonbone</strong> — Start of the highest-value progression stretch</li>
+          <li><strong>Tier 24 Golden</strong> — MAX tier, final index entry</li>
         </ul>
         <p>
           Use our <Link href="/calculator/" className="text-amber-400 hover:text-amber-300">Merge Calculator</Link> to
@@ -102,10 +102,11 @@ export default function BeginnerGuidePage() {
         </p>
 
         <h2>Magmatic Cavern (May 2026)</h2>
-        <h3>New Ores and Tier 18 Magma Pickaxe</h3>
+        <h3>New Ores and Higher-Tier Progression</h3>
         <p>
           The May 2026 update expanded the <strong>Magmatic Cavern</strong> underground area with new ores
-          (Amber, Kunzite) and tougher enemies. Tier 18 Magma Pickaxe is tied to this area.
+          (Amber, Kunzite) and tougher enemies. The pickaxe index continues through Dragonbone, Void,
+          Infernal, Holy, Rainbow, Meteorite, and Golden in the late game.
           A locked gate hints at future content — watch the <Link href="/updates/" className="text-amber-400 hover:text-amber-300">Updates</Link> page.
         </p>
 

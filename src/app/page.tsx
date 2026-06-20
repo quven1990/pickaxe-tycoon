@@ -14,13 +14,13 @@ const tools = [
   {
     href: '/calculator/',
     title: 'Merge Calculator',
-    description: 'Plan your pickaxe merge path from Wood to Legendary. See merge steps and pickaxes needed.',
+    description: 'Plan your pickaxe merge path from Wood to Golden. See merge steps and pickaxes needed.',
     keyword: 'Pickaxe Tycoon merge',
   },
   {
     href: '/tier-list/',
     title: 'Tier List',
-    description: 'All 24 pickaxe tiers ranked — from Wood (Tier 1) to Legendary (Tier 24).',
+    description: 'All 24 pickaxe tiers ranked — from Wood (Tier 1) to Golden (Tier 24).',
     keyword: 'Pickaxe Tycoon tier list',
   },
   {
@@ -38,8 +38,8 @@ const tools = [
   {
     href: '/guides/max-level/',
     title: 'Max Level Guide',
-    description: 'Reach Tier 24 Legendary — merge milestones, gamepass tips, and late-game route.',
-    keyword: 'Pickaxe Tycoon legendary',
+    description: 'Reach Tier 24 Golden — merge milestones, gamepass tips, and late-game route.',
+    keyword: 'Pickaxe Tycoon Golden Pickaxe',
   },
 ];
 
