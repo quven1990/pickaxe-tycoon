@@ -7,7 +7,7 @@
 import sharp from 'sharp';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { statSync, renameSync } from 'node:fs';
+import { statSync, renameSync, readFileSync, writeFileSync } from 'node:fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = resolve(__dirname, '../public');
@@ -42,6 +42,19 @@ async function writePair(baseName, pipeline, { webpQuality = 82 } = {}) {
   renameSync(tmpPath, pngOrJpg);
 
   console.log(`  ${baseName}: ${kb(pngOrJpg)} | ${webpName}: ${kb(webpPath)}`);
+}
+
+/** Browsers block external images in SVG favicons — embed favicon-32 as data URI. */
+function writeFaviconSvg() {
+  const png = readFileSync(resolve(PUBLIC, 'favicon-32.png'));
+  const b64 = png.toString('base64');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs><clipPath id="clip"><rect width="32" height="32" rx="6"/></clipPath></defs>
+  <image href="data:image/png;base64,${b64}" width="32" height="32" clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice"/>
+</svg>
+`;
+  writeFileSync(resolve(PUBLIC, 'favicon.svg'), svg);
+  console.log(`  favicon.svg: ${kb(resolve(PUBLIC, 'favicon.svg'))} (embedded PNG)`);
 }
 
 async function main() {
@@ -81,6 +94,7 @@ async function main() {
     sharp(resolve(PUBLIC, 'images/game-icon.png')).resize(32, 32, { fit: 'cover' }),
     { webpQuality: 90 },
   );
+  writeFaviconSvg();
 
   await writePair('og-default.jpg', sharp(resolve(PUBLIC, 'og-default.jpg')).resize(1200, 630, {
     fit: 'cover',
