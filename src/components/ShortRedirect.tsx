@@ -1,10 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { analyticsPath, trackEvent } from '@/lib/analytics';
 import { buildTrackedUrl } from '@/lib/utm';
 
 export default function ShortRedirect({ path }: { path: string }) {
+  const tracked = useRef(false);
+
   useEffect(() => {
+    if (tracked.current) return;
+    tracked.current = true;
+
+    trackEvent('campaign_redirect', {
+      channel: 'youtube',
+      destination: analyticsPath(path),
+    });
+
     const target = buildTrackedUrl(path, {
       source: 'youtube',
       medium: 'comment',

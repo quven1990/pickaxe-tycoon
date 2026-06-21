@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getPickaxes, GRADE_COLORS, type Pickaxe } from '@/lib/data';
 import { calculateMergePlan } from '@/lib/calculator';
+import { tierBucket, trackEvent } from '@/lib/analytics';
 
 const MAX_QUANTITY = 9_999;
 
@@ -180,6 +181,7 @@ export default function MergeCalculator() {
   };
 
   const reset = () => {
+    trackEvent('calculator_reset', { location: 'calculator' });
     setCurrentTier(1);
     setCurrentQuantityInput('0');
     setTargetTier(24);
@@ -193,6 +195,11 @@ export default function MergeCalculator() {
       : `Need ${plan.additionalPickaxesNeeded.toLocaleString()} more ${quantityName(plan.currentPickaxe.name, plan.additionalPickaxesNeeded)} to craft ${plan.targetQuantity.toLocaleString()} ${quantityName(plan.targetPickaxe.name, plan.targetQuantity)}.`;
     await navigator.clipboard.writeText(result);
     setCopied(true);
+    trackEvent('calculator_copy', {
+      location: 'calculator',
+      ready: plan.additionalPickaxesNeeded === 0 ? 'yes' : 'no',
+      target_tier_bucket: tierBucket(plan.targetPickaxe.tier),
+    });
   };
 
   if (!plan) return null;

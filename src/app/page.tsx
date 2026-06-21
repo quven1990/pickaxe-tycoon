@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import HeroBackground from '@/components/HeroBackground';
+import AnalyticsLink, { OutboundLink } from '@/components/AnalyticsLink';
 import OptimizedImage from '@/components/OptimizedImage';
 import { getGameConfig, getPickaxes, getRelatedSites } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
@@ -80,20 +80,21 @@ export default function HomePage() {
                 {config.stats.onlineNow ? `, ${config.stats.onlineNow} playing now` : ''} — build your mining empire.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link
+                <AnalyticsLink
                   href="/calculator/"
+                  location="homepage_hero"
                   className="rounded-lg bg-amber-500 px-6 py-3 text-center font-bold text-zinc-950 transition-colors hover:bg-amber-400"
                 >
                   Merge Calculator
-                </Link>
-                <Link
+                </AnalyticsLink>
+                <OutboundLink
                   href={config.socials?.roblox || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  location="homepage_hero"
+                  event="outbound_roblox"
                   className="rounded-lg border border-zinc-700 bg-zinc-800 px-6 py-3 text-center font-medium text-white transition-colors hover:bg-zinc-700"
                 >
                   Play on Roblox
-                </Link>
+                </OutboundLink>
               </div>
             </div>
             {screenshots[0] && (
@@ -118,14 +119,14 @@ export default function HomePage() {
         </h2>
         <p className="text-sm text-zinc-500 mb-6">
           Same stats as{' '}
-          <a
-            href={config.socials?.roblox}
-            target="_blank"
-            rel="noopener noreferrer"
+          <OutboundLink
+            href={config.socials?.roblox ?? '#'}
+            location="homepage_stats"
+            event="outbound_roblox"
             className="text-amber-400 hover:text-amber-300"
           >
             the official game page
-          </a>
+          </OutboundLink>
           , synced daily from Roblox API.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -190,15 +191,16 @@ export default function HomePage() {
         <h2 className="mb-6 text-xl font-bold text-white sm:text-2xl">Tools & Guides</h2>
         <div className="grid md:grid-cols-2 gap-4">
           {tools.map((tool) => (
-            <Link
+            <AnalyticsLink
               key={tool.href}
               href={tool.href}
+              location="homepage_tools"
               className="card-hover p-6 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-amber-500/30 block"
             >
               <h3 className="text-lg font-bold text-white mb-2">{tool.title}</h3>
               <p className="text-sm text-zinc-400 mb-3">{tool.description}</p>
               <span className="text-xs text-amber-500/80">{tool.keyword}</span>
-            </Link>
+            </AnalyticsLink>
           ))}
         </div>
       </section>
@@ -212,14 +214,14 @@ export default function HomePage() {
             <ul className="space-y-2">
               {relatedSites.map((site) => (
                 <li key={site.url} className="text-sm text-zinc-500">
-                  <a
+                  <OutboundLink
                     href={site.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="homepage_related"
+                    event="related_site_click"
                     className="font-medium text-amber-400 hover:text-amber-300"
                   >
                     {site.label}
-                  </a>
+                  </OutboundLink>
                   <span className="text-zinc-600"> — </span>
                   {site.description}
                 </li>
@@ -233,9 +235,9 @@ export default function HomePage() {
       <section className="page-container">
         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-xl font-bold text-white sm:text-2xl">Pickaxe Progression</h2>
-          <Link href="/wiki/" className="text-sm text-amber-400 hover:text-amber-300">
+          <AnalyticsLink href="/wiki/" location="homepage_wiki" className="text-sm text-amber-400 hover:text-amber-300">
             View all pickaxes →
-          </Link>
+          </AnalyticsLink>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
           {pickaxes.filter((p) => p.tier <= 12).map((p) => (
@@ -245,7 +247,7 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <p className="text-sm text-zinc-500 mt-3">Showing Tiers 1–12 of 24. <Link href="/wiki/" className="text-amber-400 hover:text-amber-300">View full index →</Link></p>
+        <p className="text-sm text-zinc-500 mt-3">Showing Tiers 1–12 of 24. <AnalyticsLink href="/wiki/" location="homepage_wiki" className="text-amber-400 hover:text-amber-300">View full index →</AnalyticsLink></p>
       </section>
 
       {/* Game Gallery */}

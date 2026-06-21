@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import AnalyticsLink from '@/components/AnalyticsLink';
 import { CopyButton } from '@/components/CopyButton';
 import { JsonLd } from '@/components/JsonLd';
 import { getCodesData, getGameConfig } from '@/lib/data';
@@ -109,18 +109,20 @@ export default function CodesPage() {
               <p className="text-sm text-zinc-500 mb-5">{codesData.notes}</p>
               <p className="text-sm font-medium text-zinc-400 mb-3">While you wait</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link
+                <AnalyticsLink
                   href="/calculator/"
+                  location="codes_wait"
                   className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors"
                 >
                   Merge Calculator →
-                </Link>
-                <Link
+                </AnalyticsLink>
+                <AnalyticsLink
                   href="/beginner-guide/"
+                  location="codes_wait"
                   className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors"
                 >
                   Beginner Guide →
-                </Link>
+                </AnalyticsLink>
               </div>
             </div>
           )}
@@ -143,15 +145,15 @@ export default function CodesPage() {
         <section className="mb-12 p-6 rounded-xl border border-amber-500/20 bg-amber-500/5">
           <h2 className="text-lg font-bold text-amber-300 mb-3">More Guides</h2>
           <div className="flex flex-wrap gap-3">
-            <Link href="/tier-list/" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
+            <AnalyticsLink href="/tier-list/" location="codes_related" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
               Tier List →
-            </Link>
-            <Link href="/calculator/" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
+            </AnalyticsLink>
+            <AnalyticsLink href="/calculator/" location="codes_related" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
               Merge Calculator →
-            </Link>
-            <Link href="/beginner-guide/" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
+            </AnalyticsLink>
+            <AnalyticsLink href="/beginner-guide/" location="codes_related" className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors">
               Beginner Guide →
-            </Link>
+            </AnalyticsLink>
           </div>
         </section>
 

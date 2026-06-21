@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import AnalyticsLink from '@/components/AnalyticsLink';
 import { getPickaxes, getAreas, getOres, getGameConfig, getCodesData, GRADE_COLORS } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
 import { PAGE_SEO } from '@/lib/page-seo';
@@ -114,9 +114,10 @@ export default function WikiPage() {
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {startHere.map((item) => (
-              <Link
+              <AnalyticsLink
                 key={item.href}
                 href={item.href}
+                location="wiki_hub"
                 className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900 p-4 transition-colors hover:border-amber-500/30"
               >
                 <span className="text-lg" aria-hidden>
@@ -126,7 +127,7 @@ export default function WikiPage() {
                   <span className="block font-semibold text-white">{item.label}</span>
                   <span className="text-sm text-zinc-500">{item.hint}</span>
                 </span>
-              </Link>
+              </AnalyticsLink>
             ))}
           </div>
         </section>

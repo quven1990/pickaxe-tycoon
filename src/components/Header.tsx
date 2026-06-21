@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import OptimizedImage from '@/components/OptimizedImage';
+import { analyticsPath, trackEvent } from '@/lib/analytics';
 import { usePathname } from 'next/navigation';
 import { getGameConfig } from '@/lib/data';
 
@@ -43,18 +44,23 @@ function NavLink({
   pathname,
   onNavigate,
   className = '',
+  navLocation,
 }: {
   href: string;
   label: string;
   pathname: string;
   onNavigate?: () => void;
   className?: string;
+  navLocation: 'header_nav' | 'mobile_nav';
 }) {
   const active = isNavActive(pathname, href);
   return (
     <Link
       href={href}
-      onClick={onNavigate}
+      onClick={() => {
+        trackEvent('nav_click', { location: navLocation, destination: analyticsPath(href) });
+        onNavigate?.();
+      }}
       aria-current={active ? 'page' : undefined}
       className={`${linkBase} ${active ? linkActive : linkIdle} ${className}`}
     >
@@ -116,6 +122,7 @@ export default function Header() {
               href={link.href}
               label={link.label}
               pathname={pathname}
+              navLocation="header_nav"
             />
           ))}
         </nav>
@@ -161,6 +168,7 @@ export default function Header() {
                 label="Home"
                 pathname={pathname}
                 onNavigate={closeMenu}
+                navLocation="mobile_nav"
                 className="text-base py-3"
               />
               {navLinks.map((link) => (
@@ -170,6 +178,7 @@ export default function Header() {
                   label={link.label}
                   pathname={pathname}
                   onNavigate={closeMenu}
+                  navLocation="mobile_nav"
                   className="text-base py-3"
                 />
               ))}
