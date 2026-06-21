@@ -27,7 +27,7 @@ const tools = [
   {
     href: '/codes/',
     title: 'Codes',
-    description: 'Active and expired codes monitored daily. Get free rewards when codes drop.',
+    description: 'Daily codes tracker — none active yet. Bookmark for new drops.',
     keyword: 'Pickaxe Tycoon codes',
   },
   {

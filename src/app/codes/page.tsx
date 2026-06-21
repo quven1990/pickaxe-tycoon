@@ -8,6 +8,8 @@ import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema, getCu
 const config = getGameConfig();
 const codesData = getCodesData();
 const currentDate = getCurrentDateString();
+const lastChecked = codesData.lastChecked ?? codesData.lastUpdated;
+const hasActiveCodes = codesData.activeCodes.length > 0;
 const seo = PAGE_SEO.codes;
 
 export const metadata = generateSEOMetadata({
@@ -21,8 +23,9 @@ export const metadata = generateSEOMetadata({
 const faqItems = [
   {
     question: 'Are there any active Pickaxe Tycoon codes?',
-    answer:
-      'As of May 2026, no verified active codes exist. Pickaxe Tycoon is a new game and has not yet implemented a standard code redemption system. This page is monitored daily.',
+    answer: hasActiveCodes
+      ? `Yes — ${codesData.activeCodes.length} verified active code(s) as of ${lastChecked}. Copy from the Active Codes section above and redeem in-game.`
+      : `No — as of ${lastChecked}, there are no verified active codes. Pickaxe Tycoon launched April 2026 and has not added a standard redeem system yet. This page is checked daily.`,
   },
   {
     question: 'How do I redeem Pickaxe Tycoon codes when they release?',
@@ -55,14 +58,19 @@ export default function CodesPage() {
       />
       <div className="page-container max-w-4xl">
         <h1 className="page-title mb-2">Pickaxe Tycoon Codes ({currentDate})</h1>
-        <p className="text-zinc-400 mb-2">
-          All working codes for {config.game.name}. Verified daily.
-        </p>
+        {hasActiveCodes ? (
+          <p className="text-zinc-400 mb-2">
+            All working codes for {config.game.name}. Verified daily.
+          </p>
+        ) : (
+          <p className="text-zinc-400 mb-2">
+            No active codes right now — last checked{' '}
+            <time dateTime={lastChecked}>{lastChecked}</time>. This page updates when codes drop.
+          </p>
+        )}
         <p className="text-sm text-zinc-500 mb-8">
           Last checked:{' '}
-          <time dateTime={codesData.lastChecked ?? codesData.lastUpdated}>
-            {codesData.lastChecked ?? codesData.lastUpdated}
-          </time>
+          <time dateTime={lastChecked}>{lastChecked}</time>
           {codesData.lastUpdated !== codesData.lastChecked && (
             <>
               {' '}
@@ -77,16 +85,13 @@ export default function CodesPage() {
         {/* Active Codes */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+            {hasActiveCodes && (
+              <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+            )}
             Active Codes
           </h2>
           <h3 className="text-lg font-semibold text-zinc-200 mb-4">Currently Working Codes</h3>
-          {codesData.activeCodes.length === 0 ? (
-            <div className="p-6 rounded-xl bg-zinc-900 border border-zinc-800 text-center">
-              <p className="text-zinc-400 mb-2">No active codes right now.</p>
-              <p className="text-sm text-zinc-500">{codesData.notes}</p>
-            </div>
-          ) : (
+          {hasActiveCodes ? (
             <div className="space-y-3">
               {codesData.activeCodes.map((item) => (
                 <div key={item.code} className="rounded-lg border border-zinc-800 bg-zinc-900 p-4">
@@ -97,6 +102,26 @@ export default function CodesPage() {
                   <div className="text-sm text-zinc-300">Reward: {item.reward}</div>
                 </div>
               ))}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-amber-500/20 bg-zinc-900 p-6 text-center">
+              <p className="text-zinc-300 mb-2">No active codes right now.</p>
+              <p className="text-sm text-zinc-500 mb-5">{codesData.notes}</p>
+              <p className="text-sm font-medium text-zinc-400 mb-3">While you wait</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link
+                  href="/calculator/"
+                  className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors"
+                >
+                  Merge Calculator →
+                </Link>
+                <Link
+                  href="/beginner-guide/"
+                  className="px-4 py-2 text-sm bg-zinc-800 rounded-lg hover:bg-zinc-700 transition-colors"
+                >
+                  Beginner Guide →
+                </Link>
+              </div>
             </div>
           )}
         </section>

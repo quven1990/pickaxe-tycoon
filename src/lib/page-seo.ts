@@ -23,9 +23,9 @@ export const PAGE_SEO = {
       'All Pickaxe Tycoon codes for Roblox — active and expired list checked daily. Copy codes, learn how to redeem, and bookmark for new drops. Not Pickaxe Simulator.',
   },
   tierList: {
-    title: 'Pickaxe Tycoon Tier List — All 24 Pickaxes Ranked',
+    title: 'Pickaxe Tycoon Tier List — All 24 Pickaxes Ranked (2026)',
     description:
-      'Complete Pickaxe Tycoon tier list for Roblox. All 24 in-game pickaxes ranked from Wood to Golden with names, merge info, grades, and tier numbers.',
+      'Full Pickaxe Tycoon tier list for Roblox — all 24 pickaxes from Wood (Tier 1) to Golden (Tier 24) with grades, merge info, and tier numbers. Updated for Magmatic Cavern.',
   },
   beginnerGuide: {
     // gamelandinsider: "Pickaxe Tycoon Roblox Guide: Merging, Ore Tiers & Tips"
