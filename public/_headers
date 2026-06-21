@@ -1,8 +1,9 @@
 /
   Link: </hero-bg.webp>; rel=preload; as=image; type=image/webp
 
-# Security headers (all paths)
+# Security + HTML revalidation (must-revalidate prevents stale HTML → missing CSS after deploy)
 /*
+  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: unload=()
