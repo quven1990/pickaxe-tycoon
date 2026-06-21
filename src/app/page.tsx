@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroBackground from '@/components/HeroBackground';
 import OptimizedImage from '@/components/OptimizedImage';
 import { getGameConfig, getPickaxes, getRelatedSites } from '@/lib/data';
 import { JsonLd } from '@/components/JsonLd';
@@ -50,7 +51,7 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-800">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20 hero-bg" />
+        <HeroBackground />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/80 to-zinc-950" />
         <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-24">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto] md:gap-10">
@@ -65,7 +66,6 @@ export default function HomePage() {
                   width={80}
                   height={80}
                   className="h-14 w-14 shrink-0 rounded-2xl border border-amber-500/30 shadow-lg shadow-amber-500/10 sm:h-16 sm:w-16 md:h-20 md:w-20"
-                  priority
                 />
                 <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                   {config.game.name} Guide & Tools
@@ -101,7 +101,6 @@ export default function HomePage() {
                   width={768}
                   height={432}
                   className="rounded-xl border border-zinc-700/80 shadow-2xl shadow-black/40"
-                  priority
                 />
               </div>
             )}

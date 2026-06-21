@@ -98,7 +98,6 @@ export default function Header() {
             width={28}
             height={28}
             className="h-7 w-7 shrink-0 rounded-md sm:h-8 sm:w-8"
-            priority
           />
           <span className="truncate">{config.game.name}</span>
           <span className="hidden font-normal text-zinc-500 sm:inline lg:hidden xl:inline">

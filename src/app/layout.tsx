@@ -64,13 +64,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
       </head>
       <body className="min-h-screen font-sans">
+        <Header />
+        <main className="min-h-[calc(100vh-180px)]">{children}</main>
+        <Footer />
         <GoogleAdSense />
         <GoogleAnalytics />
         <PlausibleAnalytics />
         <MicrosoftClarity />
-        <Header />
-        <main className="min-h-[calc(100vh-180px)]">{children}</main>
-        <Footer />
       </body>
     </html>
   );
