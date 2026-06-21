@@ -50,7 +50,10 @@ export default function HomePage() {
       <JsonLd data={[generateWebSiteSchema(), generateVideoGameSchema()]} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-zinc-800">
+      <section
+        className="relative overflow-hidden border-b border-zinc-800"
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
         <HeroBackground />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/80 to-zinc-950" />
         <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-16 md:py-24">

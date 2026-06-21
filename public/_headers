@@ -1,3 +1,6 @@
+/
+  Link: </hero-bg.webp>; rel=preload; as=image; type=image/webp
+
 # Security headers (all paths)
 /*
   X-Content-Type-Options: nosniff
