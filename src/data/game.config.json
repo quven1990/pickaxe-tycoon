@@ -17,8 +17,8 @@
   },
   "stats": {
     "visits": "38M+",
-    "favorites": "154,900+",
-    "likes": "436,800+",
+    "favorites": "156,000+",
+    "likes": "439,100+",
     "onlineNow": "3,000+",
     "serverSize": 6,
     "active": true,
@@ -79,7 +79,7 @@
       "path": "/",
       "title": "Pickaxe Tycoon Guide",
       "priority": "1.0",
-      "lastUpdated": "2026-06-30"
+      "lastUpdated": "2026-07-01"
     },
     {
       "path": "/calculator/",
@@ -91,7 +91,7 @@
       "path": "/codes/",
       "title": "Pickaxe Tycoon Codes",
       "priority": "0.9",
-      "lastUpdated": "2026-06-30"
+      "lastUpdated": "2026-07-01"
     },
     {
       "path": "/tier-list/",
@@ -127,15 +127,15 @@
   "sync": {
     "robloxUniverseId": "10081194651",
     "robloxPlaceId": "73814003954154",
-    "lastSyncAt": "2026-06-30T09:32:36.374Z",
+    "lastSyncAt": "2026-07-01T09:42:45.695Z",
     "lastSyncSource": "roblox-games-api",
     "descriptionChanged": false,
     "raw": {
-      "visits": 38505398,
-      "favoritedCount": 154983,
-      "playing": 3317,
-      "upVotes": 436807,
-      "downVotes": 4416,
+      "visits": 38831941,
+      "favoritedCount": 156050,
+      "playing": 3463,
+      "upVotes": 439174,
+      "downVotes": 4431,
       "robloxUpdated": "2026-05-23T09:34:54.977Z",
       "robloxCreated": "2026-04-25T11:50:59.299Z",
       "descriptionHash": "5f4393830fa1e278",
