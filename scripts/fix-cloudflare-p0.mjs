@@ -39,7 +39,10 @@ async function getZoneId() {
 }
 
 async function disableManagedRobotsTxt(zoneId) {
-  const payload = { is_robots_txt_managed: false };
+  const payload = {
+    is_robots_txt_managed: false,
+    cf_robots_variant: 'off',
+  };
   for (const method of ['PUT', 'PATCH']) {
     const { ok, data, status } = await cfRequest(`/zones/${zoneId}/bot_management`, {
       method,
