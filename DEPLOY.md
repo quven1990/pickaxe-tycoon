@@ -159,3 +159,39 @@ npm run validate:data
 ## CI 状态
 
 首次 push 的 workflow 因缺少 `CLOUDFLARE_API_TOKEN` 失败（预期行为）。添加 Secret 后 re-run 即可。
+
+## 部署失败排查（Cloudflare 红色记录）
+
+若 Cloudflare Pages 里每天出现 `chore: daily Roblox stats sync` 的红色失败，但你没有手动操作，通常是 **两套部署源冲突**：
+
+| 部署源 | 触发方式 | 本项目预期 |
+|--------|----------|------------|
+| **GitHub Actions + wrangler** | push / daily sync 完成后 | ✅ 唯一正确路径 |
+| **Cloudflare Pages 直连 Git** | 每次 push 自动构建 | ❌ 应关闭 |
+
+### 原因
+
+1. `Daily Roblox Stats Sync` 用 `github-actions[bot]` 自动 push → **不会触发** GitHub 的 `push` workflow（GitHub 防循环机制）。
+2. Cloudflare Pages 若仍绑定 GitHub 仓库，会对每次 bot push 尝试构建，但 Pages 侧没有正确 build 配置 → 显示 `No deployment available`（红色）。
+3. 你手动 push（如 Evomon 外链）时，GitHub Actions 能成功部署（绿色那条）。
+
+### 修复步骤
+
+**A. 关闭 Cloudflare 直连 Git（必做，一次即可）**
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com) → Workers & Pages → **pickaxe-tycoon**
+2. **Settings** → **Builds & deployments**（或 **Build configuration**）
+3. 若显示已连接 GitHub 仓库 → **Disconnect** / 改为 **Direct Upload only**
+4. 之后只由 GitHub Actions 的 `wrangler pages deploy` 上传 `out/`
+
+**B. 确认 GitHub Secret 有效**
+
+1. [Actions Secrets](https://github.com/quven1990/pickaxe-tycoon/settings/secrets/actions) → `CLOUDFLARE_API_TOKEN` 存在且未过期
+2. Token 权限：Account **Pages Edit** + Zone **Read** + **Cache Purge**
+
+**C. 手动验证部署**
+
+1. [Actions](https://github.com/quven1990/pickaxe-tycoon/actions) → **Deploy to Cloudflare Pages** → **Run workflow**
+2. 或本地：`npm run deploy`（需 `CLOUDFLARE_API_TOKEN`）
+
+`deploy-cloudflare.yml` 已配置：daily sync 完成后自动链式触发 Deploy，无需每天手动操作。
